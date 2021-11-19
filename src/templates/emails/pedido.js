@@ -1,5 +1,15 @@
-const pedidoEmail = ({ id, titulo_pedido, nif, centro_custos, curso, servicoCA, servicoCT,
-  num_paginas, num_copias, modo_envio, observacoes
+const pedidoEmail = ({
+  id,
+  titulo_pedido,
+  nif,
+  centro_custos,
+  curso,
+  servicoCA,
+  servicoCT,
+  num_paginas,
+  num_copias,
+  modo_envio,
+  observacoes,
 }) => ` 
   
 <!doctype html>
@@ -488,6 +498,6 @@ const pedidoEmail = ({ id, titulo_pedido, nif, centro_custos, curso, servicoCA, 
 
 </html>
   
-  `
+  `;
 
 module.exports = pedidoEmail;

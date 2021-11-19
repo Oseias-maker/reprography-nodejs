@@ -1,107 +1,100 @@
-//Biblioteca do sequelize 
-const Sequelize = require("sequelize");
-//Operadores do sequelize
-const Op = Sequelize.Op;
+// Biblioteca do sequelize
+const Sequelize = require('sequelize');
+// Operadores do sequelize
+const { Op } = Sequelize;
 
-//Inicializando as models e as recebendo
-const { initModels } = require("../models/init-models")
-var { usuario, tipo_usuario } = initModels(sequelize)
+// Inicializando as models e as recebendo
+const { initModels } = require('../models/init-models');
 
-//Funções do usuário 
+const { usuario, tipo_usuario } = initModels(sequelize);
+
+// Funções do usuário
 module.exports = {
+  // Registrar usuário
+  addUser: async ({ param }) => {
+    const user = await usuario.create(param);
 
-    //Registrar usuário
-    addUser: async ({ param }) => {
-        const user = await usuario.create(param);
+    return user;
+  },
 
-        return user;
-    },
+  findAllUsers: async (ativado) => {
+    const usuarios = await usuario.findAll({
+      where: {
+        ativado,
+      },
+      include: ['roles'],
+    });
 
-    findAllUsers: async (ativado) => {
-        const usuarios = await usuario.findAll({
-            where: {
-                ativado: ativado
-            },
-            include: [
-                'roles'
-            ],
+    return usuarios;
+  },
 
-        });
+  findUserbyPk: async (nif, { attributes }) => {
+    const user = await usuario.findByPk(nif, {
+      include: ['roles'],
+      attributes,
+    });
 
-        return usuarios;
-    },
+    return user;
+  },
 
-    findUserbyPk: async (nif, { attributes }) => {
-        const user = await usuario.findByPk(nif, {
-            include: [
-                'roles'
-            ],
-            attributes: attributes,
-        });
+  findOneByEmail: async (email) => {
+    const user = await usuario.findOne({
+      where: {
+        email,
+      },
+    });
 
-        return user;
-    },
+    return user;
+  },
 
-    findOneByEmail: async (email) => {
-        const user = await usuario.findOne({
-            where: {
-                email: email
-            }
-        });
+  findAllByName: async (user) => {
+    const usuarios = await usuario.findAll({
+      where: {
+        nome: {
+          [Op.like]: `${user}%`,
+        },
+      },
+      include: ['roles'],
+      attributes: { exclude: ['senha'] },
+    });
 
-        return user;
-    },
+    return usuarios;
+  },
 
-    findAllByName: async (user) => {
-        const usuarios = await usuario.findAll({
-            where: {
-                nome: {
-                    [Op.like]: `${user}%`
-                },
-            },
-            include: [
-                'roles'
-            ],
-            attributes: { exclude: ["senha"] },
-        });
+  updateUser: async ({ user, param }) => {
+    const updated = await user.update(param);
 
-        return usuarios;
-    },
+    return updated;
+  },
 
-    updateUser: async ({ user, param }) => {
-        const updated = await user.update(param);
+  destroyUser: async (user) => {
+    await usuario.sequelize.query('SET FOREIGN_KEY_CHECKS=0;');
+    const deleted = await user.destroy();
 
-        return updated;
-    },
+    return deleted;
+  },
 
-    destroyUser: async (user) => {
-        await usuario.sequelize.query("SET FOREIGN_KEY_CHECKS=0;");
-        const deleted = await user.destroy();
+  getRoles: async (user) => {
+    const roles = await user.getRoles();
 
-        return deleted;
-    },
+    return roles;
+  },
 
-    getRoles: async (user) => {
-        const roles = await user.getRoles();
+  getDescRoles: async (admin) => {
+    const roles = await tipo_usuario.findAll({
+      where: {
+        descricao: {
+          [Op.or]: admin,
+        },
+      },
+    });
 
-        return roles;
-    },
+    return roles;
+  },
 
-    getDescRoles: async (admin) => {
-        const roles = await tipo_usuario.findAll({
-            where: {
-                descricao: {
-                    [Op.or]: admin
-                }
-            }
-        });
+  setRoles: async (user, roles) => {
+    const userRoles = await user.setRoles(roles);
 
-        return roles;
-    },
-
-    setRoles: async (user, roles) => {
-        var userRoles = await user.setRoles(roles);
-
-        return userRoles;
-    },
-}
+    return userRoles;
+  },
+};

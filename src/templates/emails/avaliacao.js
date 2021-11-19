@@ -1,4 +1,10 @@
-const avaliacaoEmail = ({ id, titulo_pedido, nif, avaliacao_obs, avaliacao_pedido }) => `
+const avaliacaoEmail = ({
+  id,
+  titulo_pedido,
+  nif,
+  avaliacao_obs,
+  avaliacao_pedido,
+}) => `
 <!doctype html>
 <html>
 
@@ -461,6 +467,6 @@ const avaliacaoEmail = ({ id, titulo_pedido, nif, avaliacao_obs, avaliacao_pedid
 </body>
 
 </html>
-`
+`;
 
 module.exports = avaliacaoEmail;

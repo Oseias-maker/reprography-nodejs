@@ -1,13 +1,15 @@
-//Inicializando as models e as recebendo
-const { initModels } = require("../models/init-models");
-var { pedido } = initModels(sequelize)
+// Inicializando as models e as recebendo
+const { initModels } = require('../models/init-models');
 
-module.exports = {    //Todos os pedidos feito por tal pessoa (nif)
-    findByPk: async (id) => {
-        var pedidos = await pedido.findByPk(id, {
-            include: ['det_pedidos', 'servico_pedidos']
-        });
+const { pedido } = initModels(sequelize);
 
-        return pedidos;
-    }
-}
+module.exports = {
+  // Todos os pedidos feito por tal pessoa (nif)
+  findByPk: async (id) => {
+    const pedidos = await pedido.findByPk(id, {
+      include: ['det_pedidos', 'servico_pedidos'],
+    });
+
+    return pedidos;
+  },
+};
