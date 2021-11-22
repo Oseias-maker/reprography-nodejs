@@ -14,7 +14,7 @@ const createDatabase = async () => {
             password: config.password || "",
         }).then(connection => {
             connection.query(`CREATE DATABASE IF NOT EXISTS ${dbName};`).then(() => {
-                console.info("Banco de dados criado ou verificado com sucesso!");
+                console.info(`Banco de dados ${dbName} criado ou verificado com sucesso!`);
                 
             });
         });

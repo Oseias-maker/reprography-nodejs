@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Usando rota de Uploads para renderizar as imagens que estão em /uploads no diretório da API
-app.use("/uploads", express.static("uploads"));
+app.use("/src/uploads", express.static("src/uploads"));
 
 // Routers
 app.use(router);

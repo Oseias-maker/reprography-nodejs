@@ -442,7 +442,7 @@ const pedidoEmail = ({ id, titulo_pedido, nif, centro_custos, curso, servicoCA, 
 
                     <p>Centro de Custos: ${centro_custos}</p>
                     <p>Curso: ${curso}</p>
-                    <p>Observações: ${observacoes}</p>
+                    <p><strong>Observações:</strong> ${observacoes}</p>
             </td>
         </tr>
         </tbody>

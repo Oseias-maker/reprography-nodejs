@@ -7,8 +7,8 @@ var token = "";
 describe("Login", () => {
     it("Resgatando token do usuário ADMIN pelo Login", async () => {
         const response = await request(app).post("/login").send({
-            emailOrNif: "123",
-            senha: "123"
+            emailOrNif: process.env.ADMIN_NIF,
+            senha: process.env.ADMIN_PASS
         });
 
         console.log(response);

@@ -2,6 +2,9 @@
 // * Logar antes de registrar um usuário
 // pois realizamos os testes em uma ordem de execução específica
 
+require("dotenv").config({ path: ".env.test" });
+console.log("Banco de dados utilizado: " + process.env.DB_DATABASE);
+
 // ADMIN -> Aqui realizamos login na conta ADMIN da aplicação
 // depois criamos um usuário comum e testamos outras rotas privadas.
 require("./tests-flow/integration/admin.spec");

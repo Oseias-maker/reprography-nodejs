@@ -11,7 +11,7 @@ module.exports = {
 
     //Buscar todos os pedidos da tabela pedido
     findAllRated: async (rated) => {
-        var pedidos = await pedido.findAll(
+        const pedidos = await pedido.findAll(
             {
                 where: {
                     id_avaliacao_pedido: {
@@ -27,7 +27,7 @@ module.exports = {
 
     //Buscar todos os pedidos da tabela pedido
     findAllRatedbyNif: async (nif, rated) => {
-        var pedidos = await pedido.findAll({
+        const pedidos = await pedido.findAll({
             where: {
                 nif: nif,
                 id_avaliacao_pedido: {
@@ -42,7 +42,7 @@ module.exports = {
 
     findByName: async (titulo) => {
         // const query = `%${req.query.search}`;
-        var pedidos = await pedido.findAll({
+        const pedidos = await pedido.findAll({
             where: {
                 titulo_pedido: {
                     [Op.like]: `${titulo}%`
@@ -56,7 +56,7 @@ module.exports = {
 
     //Todos os pedidos feito por tal pessoa (nif)
     findByPk: async (id) => {
-        var pedidos = await pedido.findByPk(id)
+        const pedidos = await pedido.findByPk(id);
         // include: ['det_pedidos', 'servico_pedidos']
 
         return pedidos;
@@ -65,19 +65,19 @@ module.exports = {
     //Adicionar pedido com detalhe solicitado por nif (usuario)
     pedidoCreate: async ({ param }) => {
         //Inserindo um pedido e seus detalhes/serviços:
-        var pedidoCreated = await pedido.create(param, { include: ['det_pedidos', 'nif_usuario'] });
+        const pedidoCreated = await pedido.create(param, { include: ['det_pedidos', 'nif_usuario'] });
 
         return pedidoCreated;
     },
 
     tableMidCreate: async ({ param }) => {
-        var tableMidCreated = await servico_pedido.create(param);
+        const tableMidCreated = await servico_pedido.create(param);
 
         return tableMidCreated;
     },
 
     updateRequest: async ({ request, param }) => {
-        var pedidoUpdated = await request.update(param);
+        const pedidoUpdated = await request.update(param);
 
         return pedidoUpdated;
     },

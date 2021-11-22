@@ -5,7 +5,10 @@ const Op = Sequelize.Op;
 
 //Inicializando as models e as recebendo
 const { initModels } = require("../models/init-models");
-var { servicoCapaAcabamento, servicoCopiaTamanho } = initModels(sequelize)
+var { servicoCapaAcabamento, servicoCopiaTamanho } = initModels(sequelize);
+
+//Validators
+const validators = require("../validators/servico.validator");
 
 module.exports = {
 
@@ -28,14 +31,10 @@ module.exports = {
 
     findServicoByPk: async ({ type, id }) => {
 
-        if (type === "ct") {
-            var servico = servicoCopiaTamanho;
-        }
-        else if (type === "ca") {
-            var servico = servicoCapaAcabamento;
-        }
-        else {
-            return;
+        const servico = await validators.isParameterValid(type);
+
+        if(servico === false){
+            return false;
         }
 
         const serv = await servico.findByPk(id);
@@ -45,14 +44,10 @@ module.exports = {
 
     createServico: async ({ type, params }) => {
 
-        if (type === "ct") {
-            var servico = servicoCopiaTamanho;
-        }
-        else if (type === "ca") {
-            var servico = servicoCapaAcabamento;
-        }
-        else {
-            return;
+        const servico = await validators.isParameterValid(type);
+
+        if(servico === false){
+            return false;
         }
 
         const serv = await servico.create(params);
@@ -62,14 +57,10 @@ module.exports = {
 
     serviceDecrement: async ({ type, number, param }) => {
 
-        if (type === "ct") {
-            var servico = servicoCopiaTamanho;
-        }
-        else if (type === "ca") {
-            var servico = servicoCapaAcabamento;
-        }
-        else {
-            return;
+        const servico = await validators.isParameterValid(type);
+
+        if(servico === false){
+            return false;
         }
 
         const serv = await servico.decrement({ quantidade: + param }, {
@@ -89,6 +80,6 @@ module.exports = {
     },
 
     destroyServico: async () => {
-
+        return "Método não implementado!";
     },
 };

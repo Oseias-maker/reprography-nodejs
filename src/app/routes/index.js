@@ -10,5 +10,4 @@ require("./servico.routes")(app);
 require("./estatisticas.routes")(app);
 require("./swagger.routes")(app);
 
-
 module.exports = app;

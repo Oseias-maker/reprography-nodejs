@@ -11,7 +11,7 @@ createDatabase().then(() => {
     // Force como "true" para ele recriar o banco de testes do 0.
     db.sequelize.sync({ force: true }).then(async () => {
         await inserirRegistros.InserirRegistros();
-        await inserirRegistros.InserirUsuario("123");
+        await inserirRegistros.InserirUsuario();
         console.log("Banco de dados, tabelas e registros criados para teste!");
         process.exit(0);
     });

@@ -15,7 +15,7 @@ const verificaQtdade = (req, res, prop) => {
         req.err = true;
         return res.json({ message: `Serviço ${prop.descricao} não contém quantidade suficiente para essa solicitação` });
     }
-}
+};
 
 const verifyService = async (req, res, next) => {
 
@@ -44,6 +44,6 @@ const verifyService = async (req, res, next) => {
         next();
         return;
     };
-}
+};
 
 module.exports = verifyService;

@@ -8,7 +8,7 @@ describe("Login", () => {
     it("Resgatando token do usuário COMUM pelo Login", async () => {
         const response = await request(app).post("/login").send({
             emailOrNif: "555",
-            senha: "senai115"
+            senha: process.env.DEFAULT_PASSWORD
         });
 
         console.log(response);

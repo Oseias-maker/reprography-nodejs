@@ -4,8 +4,11 @@ const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
 //Inicializando as models e as recebendo
-const { initModels } = require("../models/init-models")
-var { usuario, tipo_usuario } = initModels(sequelize)
+const { initModels } = require("../models/init-models");
+var { usuario, tipo_usuario } = initModels(sequelize);
+
+//Validators
+const unlink = require("../util/unlink.js");
 
 //Funções do usuário 
 module.exports = {
@@ -68,17 +71,15 @@ module.exports = {
         return usuarios;
     },
 
-    updateUser: async ({ user, param }) => {
+    updateUser: async ({ user, param, file }) => {
+
+        if(file) {
+            await unlink(user.imagem);
+        }
+        
         const updated = await user.update(param);
 
         return updated;
-    },
-
-    destroyUser: async (user) => {
-        await usuario.sequelize.query("SET FOREIGN_KEY_CHECKS=0;");
-        const deleted = await user.destroy();
-
-        return deleted;
     },
 
     getRoles: async (user) => {
@@ -100,8 +101,12 @@ module.exports = {
     },
 
     setRoles: (user, roles) => {
-        var userRoles = user.setRoles(roles);
+        const userRoles = user.setRoles(roles);
 
         return userRoles;
+    },
+
+    destroyUser: async (user) => {
+        return "Método não implementado!";
     },
 };

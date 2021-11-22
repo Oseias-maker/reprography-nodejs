@@ -4,10 +4,10 @@
   "description": "API for managing and requesting reprographics",
   "main": "index.js",
   "scripts": {
-    "start": "node src/database/createDb.js && node src/server.js",
+    "start": "node src/server.js",
     "dev": "nodemon src/server.js --inspect",
     "pre-test": "cross-env NODE_ENV=test node tests/tests-flow/pre-test/index.js",
-    "test": "cross-env NODE_ENV=test jest --runInBand"
+    "test": "cross-env NODE_ENV=test node tests/tests-flow/pre-test/index.js && jest --runInBand"
   },
   "author": "Squad Back-end (https://github.com/Squad-Back-End)",
   "license": "MIT",

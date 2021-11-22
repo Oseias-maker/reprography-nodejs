@@ -43,7 +43,7 @@ isAdmin = (req, res, next) => {
           //se não for, verificamos se ele é admin, se for ele recebe a array do pedido que solicitou
           //se ele não for admin, recebe a mensagem abaixo "Você precisa ser Administrador...".
           else {
-            return res.json(req.array);
+            return res.status(200).json(req.array);
           }
         }
       }

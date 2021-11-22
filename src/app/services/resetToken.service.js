@@ -10,7 +10,7 @@ var { resettoken } = initModels(sequelize);
 module.exports = {
 
     updateByEmail: async (email) => {
-        var updated = await resettoken.update({
+        const updated = await resettoken.update({
             used: 1
         },
             {
@@ -23,13 +23,13 @@ module.exports = {
     },
 
     addToken: async ({ param }) => {
-        var created = await resettoken.create(param);
+        const created = await resettoken.create(param);
 
         return created;
     },
 
     findOneByEmailandToken: async (email, token) => {
-        var token = await resettoken.findOne({
+        const tokenFinded = await resettoken.findOne({
             where: {
                 email: email,
                 token: token,
@@ -38,6 +38,6 @@ module.exports = {
             }
         });
 
-        return token;
+        return tokenFinded;
     },
 };

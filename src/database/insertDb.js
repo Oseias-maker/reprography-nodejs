@@ -1,4 +1,4 @@
-const config = require("../config/").authConfig;
+const config = require("../config/");
 //Biblioteca do sequelize 
 const Sequelize = require("sequelize");
 //Operadores do sequelize
@@ -203,32 +203,26 @@ exports.InserirRegistros = async () => {
                 valor_unitario: 0.45
             },
         ]);
-        console.log("\n(||||||||| | | -------- Registros Inseridos com sucesso!!! -------- | | |||||||||)")
+        console.log("\n(||||||||| | | -------- Registros Inseridos com sucesso!!! -------- | | |||||||||)");
     } catch {
-        console.log({ error: "Registros já inseridos! (Validation error)" })
-    }
-}
+        console.log({ error: "Registros já inseridos! (Validation error)" });
+    };
+};
 
-exports.InserirUsuario = async (password) => {
+exports.InserirUsuario = async () => {
     try {
-        if(!password){
-            password = await bcrypt.hash(config.adminAccount.pass, config.jwt.saltRounds);
-        }
-        else{
-            password = await bcrypt.hash(password, 10);
-        }
-
+        const password = await bcrypt.hash(config.authConfig.adminAccount.pass, config.authConfig.jwt.saltRounds);
         const user = await models.usuario.create({
-            nif: 123,
+            nif: config.authConfig.adminAccount.nif,
             senha: password,
             nome: "ADMIN ACCOUNT",
-            email: config.adminAccount.email,
+            email: config.authConfig.adminAccount.email,
             depto: 1,
             cfp: 0,
-            imagem: "uploads/user-img/default/usuario.png",
+            imagem: config.authConfig.adminAccount.defaultImage
             // ativado: 0,
             // primeiro_acesso: 1
-        })
+        });
         if (user) {
             const roles = await models.tipo_usuario.findAll({
                 where: {
@@ -238,13 +232,13 @@ exports.InserirUsuario = async (password) => {
                 }
             });
             if (roles) {
-                const setRoles = await user.setRoles(roles)
+                const setRoles = await user.setRoles(roles);
                 if (setRoles) {
-                    console.log(`(||||||||| | | -------- Usuário ADMIN criado com sucesso! -------- | | |||||||||)`)
-                }
-            }
+                    console.log(`(||||||||| | | -------- Usuário ADMIN criado com sucesso! -------- | | |||||||||)`);
+                };
+            };
         };
-    } catch (err){
-        console.log({ error: err })
-    }
+    } catch {
+        console.log({ error: "Usuário ADMIN já inserido! (Validation error)" });
+    };
 };
