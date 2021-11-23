@@ -1,4 +1,7 @@
- <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/diagrams/README-en.md">English Version</a>
+ <div>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a></p>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/diagrams/README-en.md">English Version</a></p>
+</div>
  
  <h2 align="center">💭Diagrams para planejamento do Projeto💭</h2>
 
