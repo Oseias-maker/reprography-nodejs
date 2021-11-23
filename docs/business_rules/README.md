@@ -1,4 +1,4 @@
-<a href="https://github.com/Luccazx12/reprography-nodejs/blob/main/docs/business_rules/README-en.md">English Version</a>
+<a href="https://github.com/Luccazx12/reprography-nodejs/blob/main/docs/business_rules/README-en.md">English Version</a>___
 <a align="right" href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a>
 
 ## Regras de Negócio: 
