@@ -1,6 +1,6 @@
 <div>
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a></p>
-  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/edit/master/docs/rest_api_client/README-en.md">English Version</a></p>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README-en.md">English Version</a></p>
 </div>
 
 <h2 align="center"> 📚 Rest API's Clients 📚 </h2>
