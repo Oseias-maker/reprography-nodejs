@@ -1,13 +1,13 @@
 <div>
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a></p>
-  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/edit/master/docs/rest_api_client/README-en.md">English Version</a></p>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/postman/README-en.md">English Version</a></p>
 </div>
 
 ## POSTMAN
 
-[English Version](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/postman/README-en.md)
-
 ### O que é Postman:
+
+https://github.com/Squad-Back-End/reprography-nodejs/blob/1a7a425a24bb4e8698d171cbadb8f6ab8e8b3ccb/docs/rest_api_client/postman/Reprography%20System.postman_collection.json
 
 O Postman é uma ferramenta que dá suporte à documentação das requisições feitas pela API. Ele possui ambiente para a documentação, execução de testes de APIs e requisições em geral.
 
