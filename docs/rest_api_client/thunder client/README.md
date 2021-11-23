@@ -3,20 +3,28 @@
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/thunder%20client/README-en.md">English Version</a></p>
 </div>
 
-## Thunder
-[Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/9fccc659999bc92faf7bc08dba65e4867226bb14/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json)
+## Índice
+ - [O que é Thunder](#OQueÉThunder)
+     - [Instalação](#Instalacao)
+     - [Como Utilizar](#ComoUtilizar)
+     - [Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/9fccc659999bc92faf7bc08dba65e4867226bb14/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json)
+ - [Importando Collection e Enviroments](#ImportandoCollectionEEnviroments)
 
-### O que é Thunder:
+
+## Thunder
+
+## <a name="OQueÉThunder"></a> O que é Thunder:
 
 No mundo do desenvolvimento Web, o Postman é a ferramenta mais escolhida para realizar testes em API’s. No entanto, depender de uma ferramenta externa pode muitas vezes dificultar o desenvolvimento e testagem. Por essa razão, o Thunder Client foi desenvolvido como uma extensão para o VsCode para centralizar todo esse processo dentro de um só local.
 
-Instalação:
+<a name="Instalacao"></a> Instalação:
 
 Como qualquer extensão do Visual Studio Code, a instalação é bem simples.
 
 ![image](https://user-images.githubusercontent.com/71888050/142630831-20114e67-5a60-4526-9381-de9b021f5404.png)
 
-Como Utilizar
+<a name="ComoUtilizar"></a> Como Utilizar
+
 Primeiramente, precisamos de uma API para fazer as chamadas. Para isso, criei uma API bem simples com o Json-Server. Em seguida, vamos clicar no ícone de raio, que acabou de aparecer no VsCode.
 
 ![image](https://user-images.githubusercontent.com/71888050/142630988-5974a77d-8a59-4875-b117-cd987faad477.png)
@@ -49,7 +57,7 @@ Chamadas HTTP no Thunder Client
 Seguindo essa lógica, você é capaz de realizar qualquer chamada HTTP sem maiores problemas, pois o Thunder Client vai suportar tranquilamente e não vai te atrapalhar durante a execução.
 
 
-### Importando Collection
+## <a name="ImportandoCollectionEEnviroments"></a> Importando Collection e Enviroments
 
 Primeiro clique no logo do Thunder Client em seu Visual Studio Code
 
@@ -68,15 +76,6 @@ Pronto, sua Collection foi importada:
 
 ![Thunder4](https://user-images.githubusercontent.com/71890228/142863383-568635ee-32ef-4386-ab44-965e88a87c50.png)
 
-Agora você já pode realizar as requisições na sua API! 
-
-E assim terminamos a importação.
+Agora você já pode realizar as requisições na sua API! E assim terminamos a importação.
 
 Como importar Collections e Enviroments via Thunder Client feito com o auxilio deste [Tutorial.](https://developers.refinitiv.com/en/article-catalog/article/how-to-test-http-rest-api-easily-with-visual-studio-code---thund)
-
-
-
-
-
-
-
