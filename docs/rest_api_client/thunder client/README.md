@@ -49,7 +49,7 @@ Chamadas HTTP no Thunder Client
 Seguindo essa lógica, você é capaz de realizar qualquer chamada HTTP sem maiores problemas, pois o Thunder Client vai suportar tranquilamente e não vai te atrapalhar durante a execução.
 
 
-### Importando Collection e Enviroments
+### Importando Collection
 
 Primeiro clique no logo do Thunder Client em seu Visual Studio Code
 
@@ -60,13 +60,15 @@ Depois, clique em "Collections", e em seguida em "Import"
 ![Thunder2](https://user-images.githubusercontent.com/71890228/142863037-bfcdd9f0-006b-4c08-b4de-f3a4469ffb50.png)
 
 
-Agora clique no arquivo que deseja importar, no meu caso irei importar o arquivo "thunder-collection_Reprography System" que está na pasta "thunder-client" que por sua vez está na pasta "rest-api-client":
+Agora clique no arquivo que deseja importar, no meu caso irei importar o arquivo "thunder-collection_Reprography System" que está na pasta "thunder-client" que por sua vez está na pasta "rest-api-client/thunder":
 
 ![Thunder3](https://user-images.githubusercontent.com/71890228/142861560-08f5bb20-d14f-4a15-8b9f-96756d69a196.png)
 
-Pronto, suas Collections e Enviroments foram importadas:
+Pronto, sua Collection foi importada:
 
 ![Thunder4](https://user-images.githubusercontent.com/71890228/142863383-568635ee-32ef-4386-ab44-965e88a87c50.png)
+
+Agora você já pode realizar as requisições na sua API! 
 
 E assim terminamos a importação.
 
