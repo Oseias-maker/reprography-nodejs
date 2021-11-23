@@ -1,3 +1,5 @@
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a>
+
 <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/README.md">Portuguese Version</a>
 
 ## <h2 align="center">Swagger</h2>
