@@ -1,17 +1,30 @@
+<div>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README.md">Go back</a></p>
+</div>
+
+## Index
+ - [What is Thunder](#WhatIsThunder)
+     - [Installation](#Installation)
+     - [How to Use](#HowToUse)
+     - [Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/9fccc659999bc92faf7bc08dba65e4867226bb14/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json)
+ - [Importing a Collection and Enviroments](#ImportingACollectionAndEnviroments)
+
+
 # Thunder
 
 
-## What is Thunder:
+## <a name="WhatIsThunder"></a> What is Thunder:
 
 In the world of Web development, Postman is the most chosen tool for performing API testing. However, relying on an external tool can often hinder development and testing. For this reason, thunder client was developed as an extension to VsCode to centralize this entire process within one location.
 
-Installation:
+<a name="Installation"></a> Installation:
 
 Like any Visual Studio Code extension, installation is pretty simple.
 
 ![image](https://user-images.githubusercontent.com/71888050/142630831-20114e67-5a60-4526-9381-de9b021f5404.png)
 
-How to Use 
+<a name="HowToUse"></a> How to Use 
+
 First, we need an API to make the calls. For this, I created a very simple API with Json-Server. Next, let's click on the radius icon, which just appeared in VsCode.
 
 ![image](https://user-images.githubusercontent.com/71888050/142630988-5974a77d-8a59-4875-b117-cd987faad477.png)
@@ -44,7 +57,7 @@ HTTP calls on thunder client
 Following this logic, you are able to make any HTTP call without major problems, as thunder client will support quietly and will not get in your way while running.
 
 
-## Importing a Collection and Enviroments
+## <a name="ImportingACollectionAndEnviroments"></a> Importing a Collection and Enviroments
 
 First click on the Thunder Client logo in your Visual Studio Code
 
