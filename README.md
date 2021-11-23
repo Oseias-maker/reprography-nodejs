@@ -172,7 +172,7 @@ E assim você terá sua aplicação rodando localmente.
 
 ## <a name="Documentações"></a> 📄 Documentações
 
- * [Área de documentação](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs)
+ * [Clique aqui para acessar a documentação](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/README.md)
 
 ### <a name="Swagger"></a> :triangular_flag_on_post: Swagger
 
