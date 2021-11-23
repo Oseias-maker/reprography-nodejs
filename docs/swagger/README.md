@@ -1,5 +1,5 @@
 <div>
-  <button><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a></button>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a></p>
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/README-en.md">English Version</a></p>
 </div>
 
