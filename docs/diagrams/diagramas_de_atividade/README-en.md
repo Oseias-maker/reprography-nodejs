@@ -1,5 +1,7 @@
 # Activity Diagrams
 
+[Portuguese Version](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/diagrams/diagramas_de_atividade/README.md)
+
 Diagrams made through lucidchart diagramming application
 www.lucidchart.com
 
