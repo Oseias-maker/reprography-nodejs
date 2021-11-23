@@ -1,11 +1,10 @@
 <div>
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README.md">Voltar</a></p>
-  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/thunder client/README-en.md">English Version</a></p>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/thunder%20client/README-en.md">English Version</a></p>
 </div>
 
 ## Thunder
-
-[English version](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/thunder%20client/README-en.md)
+[Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/9fccc659999bc92faf7bc08dba65e4867226bb14/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json)
 
 ### O que é Thunder:
 
