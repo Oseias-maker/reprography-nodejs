@@ -1,4 +1,9 @@
- <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/requirements/README-en.md">English Version</a>
+ 
+
+<div>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a></p>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/requirements/README-en.md">English Version</a></p>
+</div>
 
 <h3 align="center">📌 Requisitos Funcionais</h3>
 
