@@ -9,8 +9,8 @@
 
   **Escolha de acordo com sua preferência. Disponibilizamos o arquivo para download em suas respectivas pastas. Basta seguir o tutorial do readme para importar essa collection.**
 
-* #### [Postman](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/postman)
-* #### [Thunder](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/thunder%20client)
+* #### [Postman](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/postman/README.md)
+* #### [Thunder](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/thunder%20client/README.md)
 
 
 
