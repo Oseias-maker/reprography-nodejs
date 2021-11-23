@@ -1,3 +1,5 @@
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/README.md">Portuguese Version</a>
+
 ## <h2 align="center">Swagger</h2>
 
 > Swagger-UI running on: `http://localhost:3002/docs`
