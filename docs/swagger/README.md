@@ -1,5 +1,4 @@
-<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/README-en.md"> English Version</a>
-
+<div><p align="right"><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/README-en.md"> English Version</a></p><p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README.md">Voltar</a></p></div>
 ## <h2 align="center">Swagger</h2>
 
 > Swagger-UI rodando em: `http://localhost:3002/docs`
