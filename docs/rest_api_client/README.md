@@ -7,7 +7,7 @@
 * #### [Postman](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/postman)
 * #### [Thunder](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/thunder%20client)
 
- - **Escolha de acordo com sua preferência. Disponibilizamos o arquivo para download em suas respectivas pastas. Basta seguir o tutorial do readme para importar essa collection.**
+  **Escolha de acordo com sua preferência. Disponibilizamos o arquivo para download em suas respectivas pastas. Basta seguir o tutorial do readme para importar essa collection.**
 
 ### O que é uma Rest API ?
 
