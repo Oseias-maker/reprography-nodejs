@@ -56,10 +56,7 @@ Em seguida selecione o método HTTP desejado(GET, PUT, POST...)
 ![image](https://user-images.githubusercontent.com/71888050/142628688-46398c3e-1642-48ff-9f92-36d389ceeed4.png)
 
 ## Importando uma Collection:
-Colocamos essa URL de exemplo para importação, que será usada futuramente
-```bash 
-https://www.getpostman.com/collections/0c9b504d153a377db01a
-```
+
 Você pode importar pela tela inicial
 
 ![import6](https://user-images.githubusercontent.com/71890228/142638750-ae4c91fd-1fc0-45f2-9456-d5956a4569d4.png)
@@ -68,18 +65,16 @@ Agora, basta clicar em "Import" no canto superior esquerdo da tela
 
 ![import2](https://user-images.githubusercontent.com/71890228/142635964-49db79fc-86d1-4797-8b3a-d84ccd63217c.png)
 
-Clique em "Import from Link" e cole a URL de exemplo, depois clique em "continue"
+Clique em "Upload files", ou araste o seu arquivo que deseja fazer a importação para a area em destaque, depois clique em "Abrir"
 
-![import3](https://user-images.githubusercontent.com/71890228/142636416-14d76417-567d-4a82-bccf-050ef548acf0.png)
+![Postman1](https://user-images.githubusercontent.com/71890228/143041768-34a89193-604f-4a69-8f61-fb2f26cbc214.png)
 
-Clique "Import", aparecerá no canto esquerdo as coleções disponíveis
+Clique "Import", em seguida aparecerá no canto esquerdo as coleções disponíveis
 
-![import4](https://user-images.githubusercontent.com/71890228/142636674-13bca015-23be-4408-becf-6edff01fa90f.png)
+![Postman2](https://user-images.githubusercontent.com/71890228/143042027-4df6885c-efa9-44e2-9b77-1d4dd80c8235.png)
 
-Ao final aparecerá uma coleção chamada "DEFAULT", onde estará disponível todas as opções de requisição
+Ao final aparecerá uma coleção com o nome do seu arquivo (no meu caso, "Reprography System"), onde estará disponível
 
-![import5](https://user-images.githubusercontent.com/71890228/142637406-732b61cc-46a6-4ff0-ad80-07263c856664.png)
+![Postman3](https://user-images.githubusercontent.com/71890228/143042764-e395bc87-ccd5-4056-a3ee-71e0dd7fe2f3.png)
 
 Assim terminamos a importação de Collection via Postman.
-
-* Importação de collection criado com o auxilio deste [tutorial.](https://nfe.io/docs/documentacao/nota-fiscal-produto-eletronica/importar-colecao-postman/)
