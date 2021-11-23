@@ -1,6 +1,17 @@
+<div>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README.md">Go back</a></p>
+</div>
+
+ ## Index
+ - [What is Postman](#WhatIsPostman)
+     - [Why use Postman ?](#WhyUsePostman)
+     - [Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/3606d4b28179c114f7f759dc36be8609d7a6b56e/docs/rest_api_client/postman/Reprography%20System.postman_collection.json)
+     - [Creating a Collection](#CreatingACollection)
+ - [Importing a Collection](#ImportingACollection)
+
 ## POSTMAN
 
-### What is Postman:
+### <a name="WhatIsPostman"></a> What is Postman:
 
 Postman is a tool that supports documentation of api requests. It has an environment for documentation, testing APIs, and requests in general.
 
@@ -14,7 +25,7 @@ If this were the case with testing a GET request without using Postman, you woul
 
 If granted, you would probably need to write all of this to create a functional application using this API, but all this work would simply be to test its functionality, which in fact, in this format, is tedious and time-consuming.
 
-### Why use Postman ?
+### <a name="WhyUsePostman"></a> Why use Postman ?
 
 In addition to being a free and easy-to-learn application, with little time you will be sending your first requests (requests/ requests). In addition, it is a tool with broad support for all APIs and Schemas.
 
@@ -22,7 +33,7 @@ In addition to being a free and easy-to-learn application, with little time you 
 
 ![image](https://user-images.githubusercontent.com/71888050/142628036-780b4135-ce4b-4602-98fa-02969972ef8b.png)
 
-### Creating a Collection:
+### <a name="CreatingACollection"></a> Creating a Collection:
 
 Collection is the place where all developed codes are stored.
 
@@ -48,11 +59,8 @@ Then select the desired HTTP method (GET, PUT, POST...)
 
 ![image](https://user-images.githubusercontent.com/71888050/142628688-46398c3e-1642-48ff-9f92-36d389ceeed4.png)
 
-## Importing a Collection:
-We put this sample URL for import, which will be used in the future
-```bash 
-https://www.getpostman.com/collections/0c9b504d153a377db01a
-```
+## <a name="ImportingACollection"></a> Importing a Collection:
+
 You can import from the home screen
 
 ![import6](https://user-images.githubusercontent.com/71890228/142638750-ae4c91fd-1fc0-45f2-9456-d5956a4569d4.png)
@@ -61,18 +69,17 @@ Now just click "Import" in the upper left corner of the screen
 
 ![import2](https://user-images.githubusercontent.com/71890228/142635964-49db79fc-86d1-4797-8b3a-d84ccd63217c.png)
 
-Click "Import from Link" and paste the sample URL, then click "continue"
+Click "Upload files", or drag and drop the file that you want to import into the highlighted area, then click "Open"
 
-![import3](https://user-images.githubusercontent.com/71890228/142636416-14d76417-567d-4a82-bccf-050ef548acf0.png)
+![Postman1](https://user-images.githubusercontent.com/71890228/143041768-34a89193-604f-4a69-8f61-fb2f26cbc214.png)
 
-Click "Import", the available collections will appear in the left corner
+Click "Import", then the available collections will appear in the left corner
 
-![import4](https://user-images.githubusercontent.com/71890228/142636674-13bca015-23be-4408-becf-6edff01fa90f.png)
+![Postman2](https://user-images.githubusercontent.com/71890228/143042027-4df6885c-efa9-44e2-9b77-1d4dd80c8235.png)
 
-At the end a collection called "DEFAULT" will appear, where all request options will be available
+At the end a collection with the name of your file will appear (in my case, "Reprography System"), will be available
 
-![import5](https://user-images.githubusercontent.com/71890228/142637406-732b61cc-46a6-4ff0-ad80-07263c856664.png)
+![Postman3](https://user-images.githubusercontent.com/71890228/143042764-e395bc87-ccd5-4056-a3ee-71e0dd7fe2f3.png)
 
 So we finished importing Collection via Postman.
 
-* Importing collection created with the help of this [tutorial.](https://nfe.io/docs/documentacao/nota-fiscal-produto-eletronica/importar-colecao-postman/)
