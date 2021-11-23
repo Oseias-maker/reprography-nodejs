@@ -143,8 +143,6 @@ module.exports = {
 
         const { nome, telefone, email } = req.body;
 
-        console.log(user.imagem);
-
         let imagem = user.imagem;
 
         if (req.file) {
@@ -311,11 +309,15 @@ module.exports = {
     },
 
     alterarPorNif: async (req, res) => {
-        const { nome, senha, telefone, depto, email, cfp } = req.body;
-        let { admin } = req.body;
+        const { nome, senha, telefone, email, cfp } = req.body;
+        let { admin, depto } = req.body;
 
         try {
             const user = await service.findUserbyPk(req.params.nif, { attributes: { exclude: ["senha"] } });
+
+            if(depto === "0"){
+                depto = user.depto;
+            };
 
             if (user == null) {
                 return res.json({ status: status.error, message: constants.notFound });

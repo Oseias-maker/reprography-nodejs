@@ -11,7 +11,8 @@ checkDuplicateNifOrEmail = (req, res, next) => {
   service.findUserbyPk(req.body.nif, {attributes: null})
     .then(user => {
       if (user) {
-        res.status(400).send({
+        res.json({
+          status: "error",
           message: "Error! Usuário já cadastrado!"
         });
         return;
@@ -20,7 +21,8 @@ checkDuplicateNifOrEmail = (req, res, next) => {
       // Email
       service.findOneByEmail(req.body.email).then(user => {
         if (user) {
-          res.status(400).send({
+          res.json({
+            status: "error",
             message: "Error! Email já cadastrado!"
           });
           return;
@@ -46,8 +48,9 @@ checkRolesExisted = (req, res, next) => {
   if (admin) {
     for (let i = 0; i < admin.length; i++) {
       if (!ROLES.includes(admin[i])) {
-        res.status(400).send({
-          message: "Error! Role inexistente = " + admin[i]
+        res.status(400).json({
+          status: "error",
+          message: "Role inexistente = " + admin[i]
         });
         return;
       }
