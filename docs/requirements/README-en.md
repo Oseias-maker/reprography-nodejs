@@ -1,3 +1,8 @@
+<div>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Back</a></p>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/requirements/README.md">Portuguese Version</a></p>
+</div>
+
 <h3 align="center">📌 Functional Requirements</h3>
 
 <table>
