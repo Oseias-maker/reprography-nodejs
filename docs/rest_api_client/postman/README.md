@@ -3,9 +3,15 @@
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/postman/README-en.md">English Version</a></p>
 </div>
 
+ ## Índice
+ - [O que é Postman](#OQueÉPostman)
+     - [Por que usar o Postman](#PorQueUsarOPostman)
+     - [Criando uma Collection](#CriandoUmaCollection)
+ - [Importando uma Collection](#ImportandoUmaCollection)
+
 ## POSTMAN
 
-### O que é Postman:
+### <a name="OQueÉPostman"></a> O que é Postman:
 
 [Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/3606d4b28179c114f7f759dc36be8609d7a6b56e/docs/rest_api_client/postman/Reprography%20System.postman_collection.json)
 
@@ -21,7 +27,7 @@ Se fosse o caso de testar uma solicitação GET sem usar o Postman, você precis
 
 Se fosse concedido, provavelmente você precisaria escrever tudo isso para criar um aplicativo funcional usando essa API, mas todo esse trabalho seria simplesmente para testar a sua funcionalidade, o que de fato, nesse formato, é tedioso e demorado.
 
-### Por que usar o Postman?
+### <a name="PorQueUsarOPostman"></a> Por que usar o Postman?
 
 Além de ser um aplicativo gratuito e fácil de aprender, com pouco tempo você já estará enviando seus primeiros requests (solicitações/requisições). No mais, trata-se de uma ferramenta com um amplo suporte para todas as APIs e Schemas.
 
@@ -29,7 +35,7 @@ Além de ser um aplicativo gratuito e fácil de aprender, com pouco tempo você 
 
 ![image](https://user-images.githubusercontent.com/71888050/142628036-780b4135-ce4b-4602-98fa-02969972ef8b.png)
 
-### Criando uma Collection:
+### <a name="CriandoUmaCollection"></a> Criando uma Collection:
 
 Collection(coleções) é o local onde fica guardado todos os códigos desenvolvidos.
 
@@ -55,7 +61,7 @@ Em seguida selecione o método HTTP desejado(GET, PUT, POST...)
 
 ![image](https://user-images.githubusercontent.com/71888050/142628688-46398c3e-1642-48ff-9f92-36d389ceeed4.png)
 
-## Importando uma Collection:
+## <a name="ImportandoUmaCollection"></a> Importando uma Collection:
 
 Você pode importar pela tela inicial
 
