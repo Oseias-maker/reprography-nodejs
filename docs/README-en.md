@@ -6,7 +6,7 @@
 
   * [Business rules](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/business_rules/README-en.md)
   * [Swagger](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/README-en.md)
-  * [Functional Requirements]()
+  * [Functional Requirements](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/requirements/README-en.md)
 
 
 ### Diagrams: 
