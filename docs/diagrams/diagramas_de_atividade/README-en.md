@@ -1,3 +1,5 @@
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/diagrams/README-en.md">Back</a>
+
 # Activity Diagrams
 
 [Portuguese Version](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/diagrams/diagramas_de_atividade/README.md)
