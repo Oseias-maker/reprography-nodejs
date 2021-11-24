@@ -7,7 +7,6 @@
  - [O que é Thunder](#OQueÉThunder)
      - [Instalação](#Instalacao)
      - [Como Utilizar](#ComoUtilizar)
-     - [Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/9fccc659999bc92faf7bc08dba65e4867226bb14/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json)
  - [Importando Collection](#ImportandoCollectionEEnviroments)
 
 
@@ -68,7 +67,9 @@ Depois, clique em "Collections", e em seguida em "Import"
 ![Thunder2](https://user-images.githubusercontent.com/71890228/142863037-bfcdd9f0-006b-4c08-b4de-f3a4469ffb50.png)
 
 
-Agora clique no arquivo que deseja importar, no meu caso irei importar o arquivo "thunder-collection_Reprography System" que está na pasta "thunder-client" que por sua vez está na pasta "rest-api-client/thunder":
+Agora clique no arquivo que deseja importar, que é a collection do thunder que disponibilizamos aqui: 
+
+[Collection](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json) - Clique aqui e depois clique bom botão direito na página e em salvar como. Ou utilize a collection já disponível dentro da pasta docs/rest_api_client/thunder ao clonar o repositório
 
 ![Thunder3](https://user-images.githubusercontent.com/71890228/142861560-08f5bb20-d14f-4a15-8b9f-96756d69a196.png)
 
