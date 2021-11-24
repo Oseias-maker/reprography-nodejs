@@ -9,7 +9,7 @@ Para realizar e documentar os testes da nossa API, instalamos as dependências:
 
 Você pode seguir o tutorial do **[Medium](https://medium.com/beelabacademy/testes-automatizados-de-apis-com-jest-supertest-8aa6a96f61d1)**, mas basicamente os instalamos da seguinte forma:
 
-> `yarn add jest supertest`ou caso prefira npm `npm install jest supertest`
+> Execute o comando: `yarn add jest supertest`. Ou caso prefira npm: `npm install jest supertest`
 
 ### Como executar os testes
 
