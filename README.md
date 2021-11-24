@@ -30,7 +30,7 @@ Bem-vindo, este projeto é o nosso Trabalho de Conclusão de Curso <a href="http
     - [Configurando](#Configurando)
     - [Iniciando o servidor](#IniciandoOServidor)
 - [Documentações](#Documentações)
-    - [Swagger](#Swagger)
+- [Testes](#Testes)
 - [Como contribuir para o projeto](#ComoContribuirParaOProjeto)
 - [Desenvolvedores](#Desenvolvedores)
 - [Licença](#licença)
