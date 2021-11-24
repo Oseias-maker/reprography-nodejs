@@ -58,22 +58,22 @@ Seguindo essa lógica, você é capaz de realizar qualquer chamada HTTP sem maio
 
 ## <a name="ImportandoCollectionEEnviroments"></a> Importando Collection
 
-Primeiro clique no logo do Thunder Client em seu Visual Studio Code
+1. Primeiro clique no logo do Thunder Client em seu Visual Studio Code
 
 ![Thunder1](https://user-images.githubusercontent.com/71890228/142860674-22a3d10b-f746-4f91-be92-0fb88129ad06.png)
 
-Depois, clique em "Collections", e em seguida em "Import"
+2. Depois, clique em "Collections", e em seguida em "Import"
 
 ![Thunder2](https://user-images.githubusercontent.com/71890228/142863037-bfcdd9f0-006b-4c08-b4de-f3a4469ffb50.png)
 
 
-Agora clique no arquivo que deseja importar, que é a collection do thunder que disponibilizamos aqui: 
+3. Agora clique no arquivo que deseja importar, que é a collection do thunder que disponibilizamos aqui: 
 
 [Collection](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json) - Clique aqui e depois clique bom botão direito na página e em salvar como. Ou utilize a collection já disponível dentro da pasta docs/rest_api_client/thunder ao clonar o repositório
 
 ![Thunder3](https://user-images.githubusercontent.com/71890228/142861560-08f5bb20-d14f-4a15-8b9f-96756d69a196.png)
 
-Pronto, sua Collection foi importada:
+4. Pronto, sua Collection foi importada:
 
 ![Thunder4](https://user-images.githubusercontent.com/71890228/142863383-568635ee-32ef-4386-ab44-965e88a87c50.png)
 
