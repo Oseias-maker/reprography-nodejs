@@ -5,6 +5,8 @@
 
 ## <h2 align="center">Swagger</h2>
 
+Criando a documentação com o Swagger, conseguimos simplificar não só o desenvolvimento da nossa API e da squad como um todo, mas também o relacionamento com as outras partes do projeto (squad front-end, infra...). Por isso tentamos ao máximo deixa-lá autoexplicativa e completa. 
+
 > Swagger-UI rodando em: `http://localhost:3002/docs`
 
 ![swagger](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/swagger.png)
