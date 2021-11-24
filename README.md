@@ -177,7 +177,7 @@ E assim você terá sua aplicação rodando localmente.
 
 ## <a name="Testes"></a> ⚡ Testes
 
-* [Clique aqui para acessar os testes](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/README.md)
+* [Clique aqui para acessar os testes](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README.md)
 
 
 ## <a name="ComoContribuirParaOProjeto"></a>😯 Como contribuir para o projeto
