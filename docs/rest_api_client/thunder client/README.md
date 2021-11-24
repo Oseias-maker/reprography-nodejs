@@ -69,7 +69,7 @@ Seguindo essa lógica, você é capaz de realizar qualquer chamada HTTP sem maio
 
 3. Agora clique no arquivo que deseja importar, que é a collection do thunder que disponibilizamos aqui: 
 
-[Clique aqui](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json){:target="_blank"} e depois clique bom botão direito na página e em salvar como. 
+[Clique aqui](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json target="_blank") depois clique bom botão direito na página e em "salvar como".
 
 Ou utilize a collection já disponível dentro da pasta docs/rest_api_client/thunder ao clonar o repositório.
 
