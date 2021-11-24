@@ -171,7 +171,7 @@ And so you will have your application running locally.
 
 ## <a name="Docs"></a> 📄 Documentation:
 
- * [Documentation area](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs)
+ * [Documentation area](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md)
 
 ### <a name="Swagger"></a> :triangular_flag_on_post: Swagger
 
