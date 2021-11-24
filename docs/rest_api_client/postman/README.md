@@ -39,39 +39,39 @@ Além de ser um aplicativo gratuito e fácil de aprender, com pouco tempo você 
 
 Collection(coleções) é o local onde fica guardado todos os códigos desenvolvidos.
 
-Para criar uma collection, basta clicar em Collection:
+#### 1. Para criar uma collection, basta clicar em Collection:
 
 ![image](https://user-images.githubusercontent.com/71888050/142628476-bef75124-d3d1-401d-9e9f-e4f50a182030.png)
 
-Coloque um nome e clique em Create:
+#### 2. Coloque um nome e clique em Create:
 
 ![image](https://user-images.githubusercontent.com/71888050/142628517-ff8b1253-b4e6-4e25-ac66-0964424f1b13.png)
 
-Criando uma Requisição
+### Criando uma Requisição
 
-Para criar uma requisição, clique em New em seguida em request:
+#### 1. Para criar uma requisição, clique em New em seguida em request:
 
 ![image](https://user-images.githubusercontent.com/71888050/142628575-a4070117-45e2-4e74-b5b8-ec969ae9495c.png)
 
-Nomeie sua requisição, em seguida selecione a collection (Select a collection or folder to save to), e Salve na collection selecionada.
+#### 2. Nomeie sua requisição, em seguida selecione a collection (Select a collection or folder to save to), e Salve na collection selecionada.
 
 ![image](https://user-images.githubusercontent.com/71888050/142628632-c4b5dd99-259b-4d43-bd36-7253558d10f8.png)
 
-Em seguida selecione o método HTTP desejado(GET, PUT, POST...)
+#### 3. Em seguida selecione o método HTTP desejado(GET, PUT, POST...)
 
 ![image](https://user-images.githubusercontent.com/71888050/142628688-46398c3e-1642-48ff-9f92-36d389ceeed4.png)
 
-## <a name="ImportandoUmaCollection"></a> Importando uma Collection:
+### <a name="ImportandoUmaCollection"></a> Importando uma Collection:
 
-Você pode importar pela tela inicial
+#### 1. Você pode importar pela tela inicial
 
 ![import6](https://user-images.githubusercontent.com/71890228/142638750-ae4c91fd-1fc0-45f2-9456-d5956a4569d4.png)
 
-Agora, basta clicar em "Import" no canto superior esquerdo da tela
+#### 2. Agora, basta clicar em "Import" no canto superior esquerdo da tela
 
 ![import2](https://user-images.githubusercontent.com/71890228/142635964-49db79fc-86d1-4797-8b3a-d84ccd63217c.png)
 
-Clique em "Upload files", ou arraste o seu arquivo que deseja fazer a importação para a área em destaque, depois clique em "Abrir"
+#### 3. Clique em "Upload files", ou arraste o seu arquivo que deseja fazer a importação para a área em destaque, depois clique em "Abrir"
 
 Para vizualizar a collection do Postman, [Clique aqui](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/rest_api_client/postman/Reprography%20System.postman_collection.json) e depois clique bom botão direito na página e em "salvar como".
 
@@ -79,11 +79,11 @@ Ou utilize a collection já disponível dentro da pasta docs/rest_api_client/pos
 
 ![Postman1](https://user-images.githubusercontent.com/71890228/143041768-34a89193-604f-4a69-8f61-fb2f26cbc214.png)
 
-Clique "Import", em seguida aparecerá no canto esquerdo as coleções disponíveis
+#### 4. Clique "Import", em seguida aparecerá no canto esquerdo as coleções disponíveis
 
 ![Postman2](https://user-images.githubusercontent.com/71890228/143042027-4df6885c-efa9-44e2-9b77-1d4dd80c8235.png)
 
-Ao final aparecerá uma coleção com o nome do seu arquivo onde suas requisições estarão disponíveis
+#### 5. Ao final aparecerá uma coleção com o nome do seu arquivo onde suas requisições estarão disponíveis
 
 ![Postman3](https://user-images.githubusercontent.com/71890228/143042764-e395bc87-ccd5-4056-a3ee-71e0dd7fe2f3.png)
 
