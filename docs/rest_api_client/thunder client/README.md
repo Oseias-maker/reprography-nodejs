@@ -8,7 +8,7 @@
      - [Instalação](#Instalacao)
      - [Como Utilizar](#ComoUtilizar)
      - [Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/9fccc659999bc92faf7bc08dba65e4867226bb14/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json)
- - [Importando Collection e Enviroments](#ImportandoCollectionEEnviroments)
+ - [Importando Collection](#ImportandoCollectionEEnviroments)
 
 
 ## Thunder
@@ -57,7 +57,7 @@ Chamadas HTTP no Thunder Client
 Seguindo essa lógica, você é capaz de realizar qualquer chamada HTTP sem maiores problemas, pois o Thunder Client vai suportar tranquilamente e não vai te atrapalhar durante a execução.
 
 
-## <a name="ImportandoCollectionEEnviroments"></a> Importando Collection e Enviroments
+## <a name="ImportandoCollectionEEnviroments"></a> Importando Collection
 
 Primeiro clique no logo do Thunder Client em seu Visual Studio Code
 
