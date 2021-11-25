@@ -25,11 +25,11 @@ Welcome, this project is our Final Course Paper <a href="https://pt.wikipedia.or
 - [Resources used in this project](#ResourcesUsedInThisProject)
    - [Project dependencies](#ProjectDependencies)
 - [How to start the application](#HowToStartTheApplication)
-   - [Prerequisites](#preRequisites)
+   - [Pre-requisites](#preRequisites)
    - [Configuring](#Configuring)
    - [Starting the server](#StartingTheServer)
 - [Documentation](#Docs)
-   - [Swagger](#Swagger)
+- [Tests](#Tests)
 - [How to contribute to with the project](#HowtoContributeToWithTheProject)
 - [Developers](#Developers)
 - [License](#License)
@@ -123,7 +123,7 @@ MAILER_USER=
 MAILER_PASS=
 #Email that requests / reprography evaluations will be sent
 MAILER_COMPANY_EMAIL=
-MAILER_HOST_PORT= #Front-end Host and Port that will be sent in password recovery email
+#Front-end Host and Port that will be sent in password recovery email
 #exaple: http://localhost:3002
 MAILER_HOST_PORT= 
 
@@ -172,15 +172,11 @@ And so you will have your application running locally.
 ## <a name="Docs"></a> 📄 Documentation:
 
  * [Documentation area](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md)
+ 
 
-### <a name="Swagger"></a> :triangular_flag_on_post: Swagger
+## <a name="Tests"></a> ⚡ Tests
 
-
-By creating the documentation with Swagger, we were able to simplify not only the development of our API and squad as a whole, but also the relationship with the other parts of the project (front-end squad, infra...). So we try our best to make it self-explanatory and complete.
-
-⚡ Swagger running on: `http://localhost:3002/docs/`
-
-![image](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/swagger/swagger.png)
+* [Click here to access the tests](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README.md)
 
 
 ## <a name="HowtoContributeToWithTheProject"></a> 😯 How to contribute to with the project
