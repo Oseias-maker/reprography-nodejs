@@ -58,7 +58,7 @@ Seguindo essa lógica, você é capaz de realizar qualquer chamada HTTP sem maio
 
 ## <a name="ImportandoCollectionEEnviroments"></a> Importando Collection
 
-#### 1. Primeiro clique no logo do Thunder Client em seu Visual Studio Code
+#### 1. Primeiro, clique no logo do Thunder Client em seu Visual Studio Code
 
 ![Thunder1](https://user-images.githubusercontent.com/71890228/142860674-22a3d10b-f746-4f91-be92-0fb88129ad06.png)
 
