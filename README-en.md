@@ -1,3 +1,5 @@
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/README.md">Portuguese Version</a>
+
 <h3 align="center">🚧 ⚠️ In Progress... ⚠️ 🚧</h3>
 
 
