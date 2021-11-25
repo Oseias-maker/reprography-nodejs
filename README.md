@@ -33,7 +33,7 @@ Bem-vindo, este projeto é o nosso Trabalho de Conclusão de Curso <a href="http
 - [Testes](#Testes)
 - [Como contribuir para o projeto](#ComoContribuirParaOProjeto)
 - [Desenvolvedores](#Desenvolvedores)
-- [Licença](#licença)
+- [Licença](#Licenca)
 
 
 ## <a name="SobreoProjeto"></a> Sobre o Projeto
@@ -232,6 +232,6 @@ E assim você terá sua aplicação rodando localmente.
  </tr>
 </table>
 
-## <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/LICENSE">📝</a> <a name="Licença"></a> Licença
+## <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/LICENSE">📝</a> <a name="Licenca"></a> Licença
 
 Este projeto está sobre a licença MIT.
