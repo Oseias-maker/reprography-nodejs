@@ -1,4 +1,4 @@
-<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Back</a>
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Go Back</a>
 
 <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/business_rules/README.md">Portuguese Version</a>
 
