@@ -6,7 +6,6 @@
  - [What is Thunder](#WhatIsThunder)
      - [Installation](#Installation)
      - [How to Use](#HowToUse)
-     - [Collection](https://github.com/Squad-Back-End/reprography-nodejs/blob/9fccc659999bc92faf7bc08dba65e4867226bb14/docs/rest_api_client/thunder%20client/thunder-collection_Reprography%20System.json)
  - [Importing a Collection](#ImportingACollectionAndEnviroments)
 
 
