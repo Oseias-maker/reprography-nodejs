@@ -24,35 +24,35 @@ In the world of Web development, Postman is the most chosen tool for performing 
 
 <a name="HowToUse"></a> How to Use 
 
-First, we need an API to make the calls. For this, I created a very simple API with Json-Server. Next, let's click on the radius icon, which just appeared in VsCode.
+#### 2. First, we need an API to make the calls. For this, I created a very simple API with Json-Server. Next, let's click on the radius icon, which just appeared in VsCode.
 
 ![image](https://user-images.githubusercontent.com/71888050/142630988-5974a77d-8a59-4875-b117-cd987faad477.png)
 
-#### 2. Thunder Client extension on VSCode 
+#### 3. Thunder Client extension on VSCode 
 When you click, a tab will open next to it, there will be all the requests made and a button to create a new request. In my case, since I haven't made any requests yet, I only see the button.
 
 ![image](https://user-images.githubusercontent.com/71888050/142631066-fa782919-137e-4b37-81a1-8f893eccad11.png)
 
 
-#### 3. New Request on Thunder Client 
+#### 4. New Request on Thunder Client 
 Now let's click New Request. The vision is similar to other HTTP clients, such as Postman, so we're already familiar with the tool and understand how it works.
 
 ![image](https://user-images.githubusercontent.com/71888050/142631095-6270bc2d-d8e9-48a8-8a3d-f574e3e77a68.png)
 
 
-#### 4. Thunder Client 
+#### 5. Thunder Client 
 Now, let's put the URL that will access our API in the search bar, select the method we will use and click Send. Once that's done, we'll see the following answer:
 
 ![image](https://user-images.githubusercontent.com/71888050/142631127-b8943167-002d-4242-99fb-f915559f5608.png)
 
 
-#### 5. Thunder Client inserts 
+#### 6. Thunder Client inserts 
 To perform inserts is also quite simple! Just select the POST method next to it and then click body. That way, we can add all the information we want added.
 
 ![image](https://user-images.githubusercontent.com/71888050/142631292-f82521c6-44e8-4861-92b7-e72d9c1c4419.png)
 
 
-#### 6. HTTP calls on thunder client 
+#### 7. HTTP calls on thunder client 
 Following this logic, you are able to make any HTTP call without major problems, as thunder client will support quietly and will not get in your way while running.
 
 
