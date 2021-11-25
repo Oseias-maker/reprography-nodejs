@@ -20,7 +20,7 @@
 * #### DELETE: delete information;
 * #### PUT: Record updates.
 
-### What is a Rest API ?
+### What is a Rest API Client ?
 
 ##### Therefore, a REST API Client Service is a Business Process used to call the REST APIs and process the response accordingly. And you can call RESTAPIClient Business Process to access any REST web service.
 
