@@ -20,4 +20,8 @@
 * #### DELETE: delete information;
 * #### PUT: Record updates.
 
-##### Rest, which is the abbreviation of Representational State Transfer, is a set of restrictions used so that HTTP requests meet the guidelines defined in the architecture.
+### What is a Rest API ?
+
+##### Therefore, a REST API Client Service is a Business Process used to call the REST APIs and process the response accordingly. And you can call RESTAPIClient Business Process to access any REST web service.
+
+###### Note: Rest, which is short for Representational State Transfer, is a set of restrictions used so that HTTP requests meet the guidelines defined in the architecture.
