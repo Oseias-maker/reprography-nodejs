@@ -3,7 +3,7 @@
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README.md">Portuguese Version</a></p>
 </div>
 
-<h2 align="center"> 📚 Welcome to the Rest API project documentation 📚 </h2>
+<h2 align="center"> 📚 Rest API's Clients 📚 </h2>
 
 ### Rest API's used in the project:
 
