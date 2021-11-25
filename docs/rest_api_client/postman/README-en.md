@@ -1,6 +1,4 @@
-<div>
-  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README.md">Go back</a></p>
-</div>
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README-en.md">Go back</a>
 
  ## Index
  - [What is Postman](#WhatIsPostman)
