@@ -1,14 +1,14 @@
 <div>
-  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Back</a></p>
+  <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Go Back</a></p>
   <p><a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/rest_api_client/README.md">Portuguese Version</a></p>
 </div>
 
-<h2 align="center"> 📚 Welcome to the Rest API project documentation 📚 </h2>
+<h2 align="center"> 📚 Rest API's Clients 📚 </h2>
 
 ### Rest API's used in the project:
 
-* #### [Postman](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/postman)
-* #### [Thunder](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/thunder%20client)
+* #### [Postman](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/postman/README-en.md)
+* #### [Thunder](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/rest_api_client/thunder%20client/README-en.md)
 
 
 ### What is a Rest API ?
@@ -20,4 +20,8 @@
 * #### DELETE: delete information;
 * #### PUT: Record updates.
 
-##### Rest, which is the abbreviation of Representational State Transfer, is a set of restrictions used so that HTTP requests meet the guidelines defined in the architecture.
+### What is a Rest API Client ?
+
+##### Therefore, a REST API Client Service is a Business Process used to call the REST APIs and process the response accordingly. And you can call RESTAPIClient Business Process to access any REST web service.
+
+###### Note: Rest, which is short for Representational State Transfer, is a set of restrictions used so that HTTP requests meet the guidelines defined in the architecture.

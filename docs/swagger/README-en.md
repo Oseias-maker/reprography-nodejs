@@ -1,8 +1,10 @@
-<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Back</a>
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Go Back</a>
 
 <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/swagger/README.md">Portuguese Version</a>
 
 ## <h2 align="center">Swagger</h2>
+
+By creating the documentation with Swagger, we were able to simplify not only the development of our API and the squad as a whole, but also the relationship with the other parts of the project (front-end squad, infra...).
 
 > Swagger-UI running on: `http://localhost:3002/docs`
 

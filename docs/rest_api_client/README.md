@@ -23,6 +23,10 @@
 * #### DELETE: excluir as informações;
 * #### PUT: atualizações de registros.
 
-##### Rest, que é a abreviatura de Representational State Transfer, é um conjunto de restrições utilizadas para que as requisições HTTP atendam as diretrizes definidas na arquitetura.
+### O que é uma Rest API Client ?
+
+##### Sendo assim, uma REST API Client Service é um Processo de Negócios usado para chamar as APIs REST e processar a resposta de acordo.E você pode chamar RESTAPIClient Business Process para acessar qualquer serviço da web REST.
+
+###### Observação: Rest, que é a abreviatura de Representational State Transfer, é um conjunto de restrições utilizadas para que as requisições HTTP atendam as diretrizes definidas na arquitetura.
 
 

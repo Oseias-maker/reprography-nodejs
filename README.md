@@ -30,10 +30,10 @@ Bem-vindo, este projeto é o nosso Trabalho de Conclusão de Curso <a href="http
     - [Configurando](#Configurando)
     - [Iniciando o servidor](#IniciandoOServidor)
 - [Documentações](#Documentações)
-    - [Swagger](#Swagger)
+- [Testes](#Testes)
 - [Como contribuir para o projeto](#ComoContribuirParaOProjeto)
 - [Desenvolvedores](#Desenvolvedores)
-- [Licença](#licença)
+- [Licença](#Licenca)
 
 
 ## <a name="SobreoProjeto"></a> Sobre o Projeto
@@ -174,14 +174,10 @@ E assim você terá sua aplicação rodando localmente.
 
  * [Clique aqui para acessar a documentação](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/README.md)
 
-### <a name="Swagger"></a> :triangular_flag_on_post: Swagger
 
+## <a name="Testes"></a> ⚡ Testes
 
-Criando a documentação com o Swagger, conseguimos simplificar não só o desenvolvimento da nossa API e da squad como um todo, mas também o relacionamento com as outras partes do projeto (squad front-end, infra...). Por isso tentamos ao máximo deixa-lá autoexplicativa e completa. 
-
-⚡ Swagger rodando em: `http://localhost:3002/docs/`
-
-![image](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/swagger/swagger.png)
+* [Clique aqui para acessar os testes](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README.md)
 
 
 ## <a name="ComoContribuirParaOProjeto"></a>😯 Como contribuir para o projeto
@@ -236,6 +232,6 @@ Criando a documentação com o Swagger, conseguimos simplificar não só o desen
  </tr>
 </table>
 
-## <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/LICENSE">📝</a> <a name="Licença"></a> Licença
+## <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/LICENSE">📝</a> <a name="Licenca"></a> Licença
 
 Este projeto está sobre a licença MIT.
