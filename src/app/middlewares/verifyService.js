@@ -27,7 +27,7 @@ const verifyService = async (req, res, next) => {
     const CT = await service.findServicoByPk({ type: "ct", id: servicoCT });
 
     if (CA === null || CT === null) {
-        return res.json({ error: "Insira um serviço valido!" });
+        return res.json({ status: "error", message: "Selecione os serviços!" });
     };
 
     await verificaQtdade(req, res, CA);

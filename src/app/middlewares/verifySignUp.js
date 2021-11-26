@@ -19,7 +19,8 @@ checkDuplicateNifOrEmail = (req, res, next) => {
       };
 
       // Email
-      service.findOneByEmail(req.body.email).then(user => {
+      service.findOneByEmail(req.body.email)
+      .then(user => {
         if (user) {
           res.json({
             status: "error",
