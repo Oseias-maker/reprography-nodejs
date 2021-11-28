@@ -28,15 +28,15 @@ module.exports = {
                 pedidos.servico_pedidos[0].dataValues.servicoCA = constraints[5].descricao;
                 pedidos.servico_pedidos[0].dataValues.servicoCT = constraints[6].descricao;
                 pedidos.id_modo_envio = await constraints[4].descricao;
-            };
+            }
 
             // Retorna mensagem se encontrar um pedido nulo.
-            if (pedidos == null) {
+            else {
                 return res.json({ status: status.error, message: `Nenhum pedido com id ${req.params.id}` });
             }
 
             // Só passa para o serializer se o nif fornecido no login for o mesmo ao nif cadastrado no pedido.
-            else if (req.user.nif === pedidos.nif) {
+            if (req.user.nif === pedidos.nif) {
                 return res.status(200).json(pedidos);
             }
 
