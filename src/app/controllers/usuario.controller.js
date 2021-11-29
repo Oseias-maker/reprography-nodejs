@@ -139,17 +139,17 @@ module.exports = {
 
     //Altera 
     alterarMeuUsuario: async (req, res) => {
-        const user = await service.findUserbyPk(req.user.nif, { attributes: { exclude: ["senha"] } });
-
         const { nome, telefone, email } = req.body;
 
-        let imagem = user.imagem;
-
-        if (req.file) {
-            imagem = req.file.path;
-        }
-
         try {
+            const user = await service.findUserbyPk(req.user.nif, { attributes: { exclude: ["senha"] } });
+            
+            let imagem = user.imagem;
+
+            if (req.file) {
+                imagem = req.file.path;
+            }
+            
             await service.updateUser({ user, param: { nome, telefone, email, imagem }, file: req.file });
 
             return res.status(200).json({ status: status.ok, message: `Sua conta foi atualizada com sucesso!!` });
