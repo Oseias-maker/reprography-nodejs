@@ -182,7 +182,7 @@ module.exports = {
         const { num_copias, num_paginas, servicoCT, servicoCA, observacoes } = req.body;
 
         if (!num_copias || !num_paginas || !titulo_pedido || !modo_envio || !curso) {
-            return res.json({ status: status.error, message: "Solicitação faltando dados!" })
+            return res.json({ status: status.error, message: "Solicitação faltando dados!" });
         }
 
         const custo_total = [(num_copias * num_paginas) * req.sub_total];
