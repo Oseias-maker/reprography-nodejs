@@ -7,7 +7,8 @@ module.exports = {
       pass: process.env.MAILER_PASS
     },
     tls: {
-      ciphers: "SSLv3"
+      ciphers: "SSLv3",
+      rejectUnauthorized: false
     }
   },
   reproEmail: process.env.MAILER_COMPANY_EMAIL,

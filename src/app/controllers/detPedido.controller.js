@@ -43,7 +43,7 @@ module.exports = {
             // Verificando se o usuário que está querendo ver os detalhes do pedido de outro usuário é administrador
             else {
                 // Enviando a array de pedidos dentro da requisição
-                req.array = [pedidos];
+                req.array = pedidos;
 
                 // Executando middleware para verificar se o usuário é admin ou não
                 // se ele for admin, no propŕio middleware será retornado o array,
