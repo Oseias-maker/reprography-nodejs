@@ -10,7 +10,8 @@ const mailConfig = {
         pass: mailer.hotmail.auth.pass
     },
     tls: {
-        ciphers: mailer.hotmail.tls.ciphers
+        ciphers: mailer.hotmail.tls.ciphers,
+        rejectUnauthorized: mailer.hotmail.tls.rejectUnauthorized
     }
 };
 
