@@ -221,6 +221,7 @@ module.exports = {
                     const email = mailerConfig.reproEmail;
                     const title = `Solicitação de Reprografia Nº${pedido.id_pedido}`;
                     let attachments = [];
+                    
 
                     if (req.file) {
                         attachments = [
@@ -230,18 +231,18 @@ module.exports = {
                             }
                         ]
                         //Exclui o Anexo que foi feito upload pelo multer para ser enviado pelo mailer 
-                        //depois de 5seg
+                        //depois de 25seg
                         setTimeout(async () => {
                             await unlink(req.file.path, (err) => {
                                 if (err) throw err;
                                 console.log(`successfully deleted ${req.file.path}`);
                             });
 
-                        }, 5000);
+                        }, 25000);
                     }
 
                     else { attachments = null }
-
+                    
                     await mailer.sendEmails(email, title, output, { attachments: attachments });
 
                     return res.status(200).json({ status: status.ok, message: "Pedido realizado com sucesso!" });
