@@ -53,20 +53,17 @@ module.exports = {
                         message: constants.accountDisabled,
                     });
                 }
-            } else {
-                if (user.ativado === 0 && user.primeiro_acesso === 1) {
+            } else if (user.primeiro_acesso === 1) {
                     return res.json({
                         status: status.error,
                         message: "Primeiro acesso requer NIF ao invés do e-mail.",
-                    });
-                }
-
-                if (user.ativado === 0) {
-                    return res.json({
-                        status: status.error,
-                        message: constants.accountDisabled,
-                    });
-                }
+                    })
+            }
+            if (user.ativado === 0) {
+                return res.json({
+                    status: status.error,
+                    message: constants.accountDisabled,
+                });
             }
 
             await bcrypt.compare(senha, user.senha).then((match) => {
@@ -85,8 +82,7 @@ module.exports = {
                         );
                     }
 
-                    const token = sign(
-                        {
+                    const token = sign({
                             nif: user.nif,
                             nome: user.nome,
                             email: user.email,
