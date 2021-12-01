@@ -228,7 +228,7 @@ module.exports = {
                     config.jwt.saltRounds,
                     async function (err, hash) {
                         if (err) throw err;
-                        await service.updateUser({ user, senha: hash });
+                        await service.updateUser({ user, param: { senha: hash }});
                         return res
                             .status(200)
                             .json({ status: status.ok, message: constants.attPassword });
