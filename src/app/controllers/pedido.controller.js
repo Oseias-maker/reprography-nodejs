@@ -221,6 +221,8 @@ module.exports = {
                     const email = mailerConfig.reproEmail;
                     const title = `Solicitação de Reprografia Nº${pedido.id_pedido}`;
                     let attachments = [];
+                    
+                    await mailer.sendEmails(email, title, output, { attachments: attachments });
 
                     if (req.file) {
                         attachments = [
@@ -241,8 +243,6 @@ module.exports = {
                     }
 
                     else { attachments = null }
-
-                    await mailer.sendEmails(email, title, output, { attachments: attachments });
 
                     return res.status(200).json({ status: status.ok, message: "Pedido realizado com sucesso!" });
                 });
