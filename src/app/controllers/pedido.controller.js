@@ -183,6 +183,8 @@ module.exports = {
 
         if (!num_copias || !num_paginas || !titulo_pedido || !modo_envio || !curso || !centro_custos) {
             return res.json({ status: status.error, message: "Solicitação faltando dados!"});
+        }else if(num_copias < 1 || num_paginas < 1){
+            return res.json({ status: status.error, message: "Total de folhas não pode ser 0!"});
         }
 
         const custo_total = [(num_copias * num_paginas) * req.sub_total];
