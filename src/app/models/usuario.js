@@ -42,7 +42,7 @@ module.exports = function (sequelize, DataTypes) {
     ativado: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: 1
     },
     primeiro_acesso: {
       type: DataTypes.INTEGER,
