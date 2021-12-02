@@ -73,10 +73,10 @@ module.exports = {
 
     updateUser: async ({ user, param, file }) => {
 
-        if(file) {
+        if (file) {
             await unlink(user.imagem);
         }
-        
+
         const updated = await user.update(param);
 
         return updated;

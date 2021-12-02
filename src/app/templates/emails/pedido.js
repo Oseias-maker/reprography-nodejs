@@ -472,7 +472,7 @@ const pedidoEmail = ({ id, titulo_pedido, nif, centro_custos, curso, servicoCA, 
             </tr>
             <tr>
                 <td class="content-block powered-by">
-                    Telefone: (11) 5642-3400 | E-mail:secretaria115@sp.senai.br</a>.
+                    Telefone: (11) 5642-3400 | E-mail: secretaria115@sp.senai.br</a>.
                 </td>
             </tr>
         </table>

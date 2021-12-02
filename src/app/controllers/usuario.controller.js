@@ -40,7 +40,7 @@ module.exports = {
             let user = await service.findOneByEmail(emailOrNif);
 
             //Login com usuário ou NIF
-            if (user == null) {
+            if (user === null) {
                 user = await service.findUserbyPk(emailOrNif, { attributes: null });
                 if (!user) {
                     return res.json({
@@ -54,10 +54,10 @@ module.exports = {
                     });
                 }
             } else if (user.primeiro_acesso === 1) {
-                    return res.json({
-                        status: status.error,
-                        message: "Primeiro acesso requer NIF ao invés do e-mail.",
-                    })
+                return res.json({
+                    status: status.error,
+                    message: "Primeiro acesso requer NIF ao invés do e-mail.",
+                })
             }
             if (user.ativado === 0) {
                 return res.json({
@@ -83,12 +83,12 @@ module.exports = {
                     }
 
                     const token = sign({
-                            nif: user.nif,
-                            nome: user.nome,
-                            email: user.email,
-                            imagem: user.imagem,
-                            roles: authorities,
-                        },
+                        nif: user.nif,
+                        nome: user.nome,
+                        email: user.email,
+                        imagem: user.imagem,
+                        roles: authorities,
+                    },
                         config.jwt.secret,
                         {
                             expiresIn: 86400, // 24 hours
@@ -144,7 +144,7 @@ module.exports = {
                 attributes: { exclude: ["senha"] },
             });
 
-            if (user.primeiro_acesso == 0) {
+            if (user.primeiro_acesso === 0) {
                 return res.json({
                     status: status.error,
                     message: "Esse não é seu primeiro acesso!",
@@ -161,9 +161,10 @@ module.exports = {
                         param: { senha: hash, primeiro_acesso: 0, ativado: 1 },
                     });
 
-                    return res
-                        .status(200)
-                        .json({ status: status.ok, message: constants.attPassword });
+                    return res.status(200).json({
+                        status: status.ok,
+                        message: constants.attPassword
+                    });
                 }
             );
         } catch (err) {
@@ -228,10 +229,11 @@ module.exports = {
                     config.jwt.saltRounds,
                     async function (err, hash) {
                         if (err) throw err;
-                        await service.updateUser({ user, param: { senha: hash }});
-                        return res
-                            .status(200)
-                            .json({ status: status.ok, message: constants.attPassword });
+                        await service.updateUser({ user, param: { senha: hash } });
+                        return res.status(200).json({
+                            status: status.ok,
+                            message: constants.attPassword
+                        });
                     }
                 );
             });
@@ -247,19 +249,20 @@ module.exports = {
                 attributes: { exclude: ["senha"] },
             });
 
-            if (user == null) {
+            if (user.ativado === 0) {
                 return res.json({
                     status: status.error,
-                    message: "Não há nenhum usuário (ativado) com esse NIF",
+                    message: "Seu usuário já foi desativado",
                 });
             }
+            else {
+                await service.updateUser({ user, param: { ativado: 0 } });
 
-            await service.updateUser({ user, param: { ativado: 0 } });
-
-            return res.status(200).json({
-                status: status.ok,
-                message: `Sua conta foi desativada com sucesso!`,
-            });
+                return res.status(200).json({
+                    status: status.ok,
+                    message: `Sua conta foi desativada com sucesso!`,
+                });
+            }
         } catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         }
@@ -288,31 +291,32 @@ module.exports = {
         try {
             const adminValidated = await adminArray(admin);
 
-            bcrypt.hash(senha, config.jwt.saltRounds, async (err, hash) => {
-                if (err) throw err;
-                const user = await service.addUser({
-                    param: {
-                        nif: nif,
-                        senha: hash,
-                        nome: nome,
-                        telefone: telefone,
-                        depto,
-                        email: email,
-                        cfp: cfp,
-                        imagem: image,
-                    },
-                });
-                if (adminValidated) {
-                    let roles = await service.getDescRoles(adminValidated);
-                    await service.setRoles(user, roles);
-                } else {
-                    service.setRoles([1]);
-                }
-                return res.status(200).json({
-                    status: status.ok,
-                    message: `Usuário com nif ${user.nif} criado com sucesso!`,
-                });
+            const hash = await bcrypt.hash(senha, config.jwt.saltRounds);
+
+            const user = await service.addUser({
+                param: {
+                    nif: nif,
+                    senha: hash,
+                    nome: nome,
+                    telefone: telefone,
+                    depto: depto,
+                    email: email,
+                    cfp: cfp,
+                    imagem: image,
+                },
             });
+
+            if (adminValidated) {
+                let roles = await service.getDescRoles(adminValidated);
+                await service.setRoles(user, roles);
+            } else {
+                service.setRoles([1]);
+            }
+            return res.status(200).json({
+                status: status.ok,
+                message: `Usuário com nif ${user.nif} criado com sucesso!`,
+            });
+
         } catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         }
@@ -327,16 +331,16 @@ module.exports = {
             if (users.length < 1) {
                 return res.json({ status: status.error, message: "Sem registros..." });
             }
+            else {
+                for (let i = 0; i < users.length; i++) {
+                    const depto = await verifyConstraints({
+                        departamento: users[i].dataValues.depto,
+                    });
 
-            for (let i = 0; i < users.length; i++) {
-                const depto = await verifyConstraints({
-                    departamento: users[i].dataValues.depto,
-                });
-
-                users[i].dataValues.depto = depto[0].descricao;
+                    users[i].dataValues.depto = depto[0].descricao;
+                }
+                return res.status(200).json(users);
             }
-
-            return res.status(200).json(users);
         } catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         }
@@ -352,16 +356,16 @@ module.exports = {
                     message: `Usuários com nome ${req.params.user} não encontrados`,
                 });
             }
+            else {
+                for (let i = 0; i < users.length; i++) {
+                    const depto = await verifyConstraints({
+                        departamento: users[i].dataValues.depto,
+                    });
 
-            for (let i = 0; i < users.length; i++) {
-                const depto = await verifyConstraints({
-                    departamento: users[i].dataValues.depto,
-                });
-
-                users[i].dataValues.depto = depto[0].descricao;
+                    users[i].dataValues.depto = depto[0].descricao;
+                }
+                return res.status(200).json(users);
             }
-
-            return res.status(200).json(users);
         } catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         }
@@ -373,19 +377,19 @@ module.exports = {
                 attributes: { exclude: ["senha"] },
             });
 
-            if (user == null) {
-                return res
-                    .status(404)
-                    .json({ status: status.error, message: constants.notFound });
+            if (user === null) {
+                return res.json({
+                    status: status.error,
+                    message: constants.notFound
+                });
             }
-
-            const depto = await verifyConstraints({
-                departamento: user.dataValues.depto,
-            });
-
-            user.dataValues.depto = depto[0].descricao;
-
-            return res.status(200).json(user);
+            else {
+                const depto = await verifyConstraints({
+                    departamento: user.dataValues.depto,
+                });
+                user.dataValues.depto = depto[0].descricao;
+                return res.status(200).json(user);
+            }
         } catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         }
@@ -400,43 +404,48 @@ module.exports = {
                 attributes: { exclude: ["senha"] },
             });
 
-            if (depto === "0") {
-                depto = user.depto;
+            if (user === null) {
+                return res.json({
+                    status: status.error,
+                    message: constants.notFound
+                });
             }
+            else {
+                let imagem = user.imagem;
 
-            if (user == null) {
-                return res.json({ status: status.error, message: constants.notFound });
-            }
+                if (depto === "0") {
+                    depto = user.depto;
+                }
 
-            if (admin) {
-                const adminValidated = await adminArray(admin);
-                const roles = await service.getDescRoles(adminValidated);
-                await service.setRoles(user, roles);
-            }
+                if (admin) {
+                    const adminValidated = await adminArray(admin);
+                    const roles = await service.getDescRoles(adminValidated);
+                    await service.setRoles(user, roles);
+                }
 
-            let imagem = user.imagem;
+                if (req.file) {
+                    imagem = req.file.path;
+                }
 
-            if (req.file) {
-                imagem = req.file.path;
-            }
+                if (senha !== undefined && senha !== null) {
+                    bcrypt.hash(senha, config.jwt.saltRounds, async function (err, hash) {
+                        await service.updateUser({ user: user, param: { senha: hash } });
+                        if (err) throw err;
+                    });
+                }
 
-            if (senha !== undefined && senha !== null) {
-                bcrypt.hash(senha, config.jwt.saltRounds, async function (err, hash) {
-                    await service.updateUser({ user: user, param: { senha: hash } });
-                    if (err) throw err;
+                await service.updateUser({
+                    user: user,
+                    param: { nome, telefone, depto, email, cfp, imagem },
+                    file: req.file,
+                });
+
+                return res.status(200).json({
+                    status: status.ok,
+                    message: `Conta com NIF ${req.params.nif} atualizada com sucesso!!`,
                 });
             }
 
-            await service.updateUser({
-                user: user,
-                param: { nome, telefone, depto, email, cfp, imagem },
-                file: req.file,
-            });
-
-            return res.status(200).json({
-                status: status.ok,
-                message: `Conta com NIF ${req.params.nif} atualizada com sucesso!!`,
-            });
         } catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         }
@@ -450,18 +459,20 @@ module.exports = {
                 attributes: { exclude: ["senha"] },
             });
 
-            if (user == null) {
-                return res
-                    .status(404)
-                    .json({ status: status.error, message: constants.notFound });
+            if (user === null) {
+                return res.json({
+                    status: status.error,
+                    message: constants.notFound
+                });
             }
+            else {
+                await service.updateUser({ user: user, param: { ativado: enable } });
 
-            await service.updateUser({ user: user, param: { ativado: enable } });
-
-            return res.status(200).json({
-                status: status.ok,
-                message: `Status do Usuário ${user.nif} atualizado com sucesso!`,
-            });
+                return res.status(200).json({
+                    status: status.ok,
+                    message: `Status do Usuário ${user.nif} atualizado com sucesso!`,
+                });
+            }
         } catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         }

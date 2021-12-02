@@ -10,10 +10,15 @@ module.exports = function (app) {
     next();
   });
 
-  ////USUARIO COMUM
+  //// USUARIO COMUM
 
-  //GET
+  // GET
 
-  //Buscar pedido por id do pedido
-  app.get("/requestDetails/:id", [authJwt.validateToken], controller.buscarPorIdPedido);
+  // Buscar pedido por id do pedido
+  app.get("/requestDetails/:id",
+    [
+      authJwt.validateToken
+    ],
+    controller.buscarPorIdPedido
+  );
 };

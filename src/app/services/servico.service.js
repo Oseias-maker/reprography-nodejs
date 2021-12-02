@@ -33,7 +33,7 @@ module.exports = {
 
         const servico = await validators.isParameterValid(type);
 
-        if(servico === false){
+        if (servico === false) {
             return false;
         }
 
@@ -46,7 +46,7 @@ module.exports = {
 
         const servico = await validators.isParameterValid(type);
 
-        if(servico === false){
+        if (servico === false) {
             return false;
         }
 
@@ -59,7 +59,7 @@ module.exports = {
 
         const servico = await validators.isParameterValid(type);
 
-        if(servico === false){
+        if (servico === false) {
             return false;
         }
 

@@ -86,7 +86,7 @@ module.exports = {
         try {
             let pedidos = await pedidoService.findByPk(req.params.id);
 
-            if (pedidos == null) {
+            if (pedidos === null) {
                 return res.json({ status: status.error, message: constants.notFound });
             };
 
@@ -118,15 +118,16 @@ module.exports = {
             if (pedidos.length < 1) {
                 return res.json({ status: status.error, message: constants.notFoundArray });
             }
+            else {
+                for (let i = 0; i < pedidos.length; i++) {
+                    const constraints = await verifyConstraints({ modo_envio: pedidos[i].dataValues.id_modo_envio, avaliacao: pedidos[i].dataValues.id_avaliacao_pedido });
 
-            for (let i = 0; i < pedidos.length; i++) {
-                const constraints = await verifyConstraints({ modo_envio: pedidos[i].dataValues.id_modo_envio, avaliacao: pedidos[i].dataValues.id_avaliacao_pedido });
+                    pedidos[i].dataValues.id_avaliacao_pedido = constraints[1].descricao;
+                    pedidos[i].dataValues.id_modo_envio = constraints[4].descricao;
 
-                pedidos[i].dataValues.id_avaliacao_pedido = constraints[1].descricao;
-                pedidos[i].dataValues.id_modo_envio = constraints[4].descricao;
-
+                }
+                return res.status(200).json(pedidos);
             }
-            return res.status(200).json(pedidos);
         }
         catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
@@ -154,16 +155,17 @@ module.exports = {
             if (pedidos.length < 1) {
                 return res.json({ status: status.error, message: constants.notFoundArray });
             }
+            else {
+                //Verificando Constraints 
+                for (let i = 0; i < pedidos.length; i++) {
+                    const constraints = await verifyConstraints({ modo_envio: pedidos[i].dataValues.id_modo_envio, avaliacao: pedidos[i].dataValues.id_avaliacao_pedido });
 
-            //Verificando Constraints 
-            for (let i = 0; i < pedidos.length; i++) {
-                const constraints = await verifyConstraints({ modo_envio: pedidos[i].dataValues.id_modo_envio, avaliacao: pedidos[i].dataValues.id_avaliacao_pedido });
+                    pedidos[i].dataValues.id_avaliacao_pedido = constraints[1].descricao;
+                    pedidos[i].dataValues.id_modo_envio = constraints[4].descricao;
 
-                pedidos[i].dataValues.id_avaliacao_pedido = constraints[1].descricao;
-                pedidos[i].dataValues.id_modo_envio = constraints[4].descricao;
-
+                }
+                return res.status(200).json(pedidos);
             }
-            return res.status(200).json(pedidos);
         }
         catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
@@ -182,9 +184,10 @@ module.exports = {
         const { num_copias, num_paginas, servicoCT, servicoCA, observacoes } = req.body;
 
         if (!num_copias || !num_paginas || !titulo_pedido || !modo_envio || !curso || !centro_custos) {
-            return res.json({ status: status.error, message: "Solicitação faltando dados!"});
-        }else if(num_copias < 1 || num_paginas < 1){
-            return res.json({ status: status.error, message: "Total de folhas não pode ser 0!"});
+            return res.json({ status: status.error, message: "Solicitação faltando dados!" });
+        }
+        else if (num_copias < 1 || num_paginas < 1) {
+            return res.json({ status: status.error, message: "Total de folhas não pode ser 0!" });
         }
 
         const custo_total = [(num_copias * num_paginas) * req.sub_total];
@@ -223,7 +226,7 @@ module.exports = {
                     const email = mailerConfig.reproEmail;
                     const title = `Solicitação de Reprografia Nº${pedido.id_pedido}`;
                     let attachments = [];
-                    
+
 
                     if (req.file) {
                         attachments = [
@@ -233,7 +236,7 @@ module.exports = {
                             }
                         ]
                         //Exclui o Anexo que foi feito upload pelo multer para ser enviado pelo mailer 
-                        //depois de 25seg
+                        //depois de 25seg's
                         setTimeout(async () => {
                             await unlink(req.file.path, (err) => {
                                 if (err) throw err;
@@ -244,9 +247,8 @@ module.exports = {
                     }
 
                     else { attachments = null }
-                    
-                    await mailer.sendEmails(email, title, output, { attachments: attachments });
 
+                    await mailer.sendEmails(email, title, output, { attachments: attachments });
                     return res.status(200).json({ status: status.ok, message: "Pedido realizado com sucesso!" });
                 });
             });
@@ -269,17 +271,12 @@ module.exports = {
         try {
             const pedidos = await pedidoService.findByPk(req.params.id);
 
-            if (pedidos == null) {
+            if (pedidos === null) {
                 return res.json({ status: status.error, message: constants.notFound });
-            }
-
-            if (pedidos.id_avaliacao_pedido !== 0) {
+            } else if (pedidos.id_avaliacao_pedido !== 0) {
                 return res.json({ status: status.error, message: constants.alreadyRated });
-            }
-
-            if (req.user.nif === pedidos.nif) {
+            } else if (req.user.nif === pedidos.nif) {
                 await pedidoService.updateRequest({ request: pedidos, param: { id_avaliacao_pedido, avaliacao_obs } });
-
                 const constraints = await verifyConstraints({ avaliacao: id_avaliacao_pedido });
                 const output = template.avaliacaoEmail({ id: pedidos.id_pedido, titulo_pedido: pedidos.titulo_pedido, nif: pedidos.nif, avaliacao_obs: avaliacao_obs, avaliacao_pedido: constraints[1].descricao });
                 const email = mailerConfig.reproEmail;

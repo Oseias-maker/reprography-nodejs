@@ -20,7 +20,14 @@ module.exports = {
             let pedidos = await pedidoService.findByPk(req.params.id);
 
             if (pedidos !== null) {
-                const constraints = await verifyConstraints({ centro_custos: pedidos.det_pedidos[0].id_centro_custos, curso: pedidos.det_pedidos[0].id_curso, modo_envio: pedidos.id_modo_envio, avaliacao: pedidos.id_avaliacao_pedido, servicoCA: pedidos.servico_pedidos[0].servicoCA, servicoCT: pedidos.servico_pedidos[0].servicoCT });
+                const constraints = await verifyConstraints({
+                    centro_custos: pedidos.det_pedidos[0].id_centro_custos,
+                    curso: pedidos.det_pedidos[0].id_curso,
+                    modo_envio: pedidos.id_modo_envio,
+                    avaliacao: pedidos.id_avaliacao_pedido,
+                    servicoCA: pedidos.servico_pedidos[0].servicoCA,
+                    servicoCT: pedidos.servico_pedidos[0].servicoCT
+                });
 
                 pedidos.id_avaliacao_pedido = constraints[1].descricao;
                 pedidos.det_pedidos[0].id_centro_custos = constraints[2].descricao;
@@ -32,7 +39,10 @@ module.exports = {
 
             // Retorna mensagem se encontrar um pedido nulo.
             else {
-                return res.json({ status: status.error, message: `Nenhum pedido com id ${req.params.id}` });
+                return res.json({
+                    status: status.error,
+                    message: `Nenhum pedido com id ${req.params.id}`
+                });
             }
 
             // Só passa para o serializer se o nif fornecido no login for o mesmo ao nif cadastrado no pedido.
