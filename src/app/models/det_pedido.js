@@ -43,6 +43,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    anexo_name: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
+    anexo_path: {
+      type: DataTypes.STRING(255),
+      allowNull: true
+    },
     sub_total_copias: {
       type: DataTypes.DECIMAL(10, 5),
       allowNull: true

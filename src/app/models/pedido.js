@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
   return sequelize.define('pedido', {
     id_pedido: {
       autoIncrement: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER(),
       allowNull: false,
       primaryKey: true
     },
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     nif: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER(),
       allowNull: false,
       references: {
         model: 'usuario',
@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     id_modo_envio: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER(),
       allowNull: false,
       references: {
         model: 'modo_envio',
@@ -28,7 +28,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     id_avaliacao_pedido: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER(),
       allowNull: false,
       references: {
         model: 'avaliacao_pedido',
@@ -39,8 +39,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING(100),
       allowNull: true
     },
+    realizado_qtdade: {
+      type: DataTypes.INTEGER(),
+      allowNull: false,
+      defaultValue: 1
+    },
     custo_total: {
-      type: DataTypes.DECIMAL(10, 5),
+      type: DataTypes.FLOAT(),
       allowNull: true
     }
   }, {
