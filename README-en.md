@@ -1,3 +1,5 @@
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/README.md">Portuguese Version</a>
+
 <h3 align="center">🚧 ⚠️ In Progress... ⚠️ 🚧</h3>
 
 
@@ -25,11 +27,11 @@ Welcome, this project is our Final Course Paper <a href="https://pt.wikipedia.or
 - [Resources used in this project](#ResourcesUsedInThisProject)
    - [Project dependencies](#ProjectDependencies)
 - [How to start the application](#HowToStartTheApplication)
-   - [Prerequisites](#preRequisites)
+   - [Pre-requisites](#preRequisites)
    - [Configuring](#Configuring)
    - [Starting the server](#StartingTheServer)
 - [Documentation](#Docs)
-   - [Swagger](#Swagger)
+- [Tests](#Tests)
 - [How to contribute to with the project](#HowtoContributeToWithTheProject)
 - [Developers](#Developers)
 - [License](#License)
@@ -44,17 +46,21 @@ This application was requested by the coordinator of the Senai Suiço-Brasileira
 <table align="center">
  <th><h3>Runtime environment</h3></th>
  <th><h3>Language</h3></th>
- <th><h3>Data Base</h3></th>
+  <th><h3>  ORM  </h3></th>
+ <th><h3>Data base</h3></th>
  <th><h3>Framework</h3></th>
- <th><h3>Code Editor</h3></th>
  <th><h3>Documentation</h3></th>
- <tr>
+  <tr>
     <td valign="top" align="center">
       <a href="https://nodejs.org/en/" ><img height="80" width="80" src="https://cdn-icons-png.flaticon.com/512/919/919825.png" style="max-width:100%;"></img></a>
     </td>
 
    <td valign="top" align="center">
       <a href="https://www.javascript.com"><img height="80" width="80" src="https://www.seekpng.com/png/full/80-803501_javascript-logo-logo-de-java-script-png.png" style="max-width:100%;"></img></a>
+      </td>
+      
+   <td valign="top" align="center">
+      <a href="https://sequelize.org"><img height="80" width="100" src="https://sequelize.org/master/image/brand_logo.png" style="max-width:100%;"></img></a>
       </td>
   
    <td valign="top" align="center">
@@ -66,46 +72,40 @@ This application was requested by the coordinator of the Senai Suiço-Brasileira
     </td>
 
    <td valign="top" align="center">
-      <a href="https://code.visualstudio.com/Download"><img height="80" width="80" src="https://cdn.freebiesupply.com/logos/large/2x/visual-studio-code-logo-png-transparent.png" style="max-width:100%;"></img></a>
-    </td>
-
-   <td valign="top" align="center">
       <a href="https://swagger.io"><img height="80" width="80"src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png" style="max-width:100%;"></img></a>
     </td>
   </tr>
 </table>
 
 
-### <a name="ProjectDependencies"></a> Project dependencies
-- Nodejs
-  * Express 4.17.1 - It is a framework for Node.js that provides minimal resources for building web servers.
-  * Swagger-autogen 2.11.2
-  * Nodemon 2.0.13 - To restart the server whenever there is a change.
-  * Jwt - To protect private routes.
-  * Bcrypt 5.0.1 - To Encrypt user passwords before saving to bank.
-  * Cors 2.8.5 - It is a mechanism used by browsers to share resources between different sources
-  * Multer 1.4.2 - It is a node.js middleware to handle multipart, which is mainly used to upload files.
-  * Body-Parser 1.19.0 - Parses the JSON encoded data, buffer, string and URL sent using the HTTP POST request.
-  * MariaDB 2.5.4 - It's the database we use.
+### <a name="ProjectDependencies"></a> Project dependencies:
+  * [Express](https://www.npmjs.com/package/express) 4.17.1 - It is a framework for Node.js that provides minimal resources for building web servers.
+  * [Nodemon](https://www.npmjs.com/package/nodemon) 2.0.13 -  To restart the server whenever there is a change.
+  * [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) 8.5.1 - To protect private routes.
+  * [Bcrypt](https://www.npmjs.com/package/bcrypt) 5.0.1 - To Encrypt user passwords before saving to bank.
+  * [Crypto](https://www.npmjs.com/package/crypto) 1.0.1 - Used to create a random Token that will be transformed into a string.
+  * [Cors](https://www.npmjs.com/package/cors) 2.8.5 - It is a mechanism used by browsers to share resources between different sources
+  * [Multer](https://www.npmjs.com/package/multer) 1.4.2 - It is a node.js middleware to handle multipart, which is mainly used to upload files.
+  * [Nodemailer](https://www.npmjs.com/package/nodemailer) 6.6.3 - Used to send e-mails.
+  * [MariaDB](https://www.npmjs.com/package/mariadb) 2.5.4 - It's the database we use.
+  * [Dotenv](https://www.npmjs.com/package/dotenv) 10.0.0 - Used to place environment variables (sensitive data).
 
 
 ## <a name="HowToStartTheApplication"></a> :arrow_forward: How to start the application:
 
 ### <a name="preRequisites"></a> Pre-requisites
 
-Before you start, you will need to have installed on your machine the following tools:
+* Before you start, you will need to have installed on your machine the following tools:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
 
-Besides, it's good to have an editor to work with the code as: [VSCode](https://code.visualstudio.com).
+* Besides, it's good to have an editor to work with the code as: [VSCode](https://code.visualstudio.com).
 
 
 ### <a name="Configuring"></a> Configuring
 
 1. Clone or download this repository to your machine.
 
-2. Put the `.env.sample` file in [/src](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/src) and remember to rename this file to `.env.dev` if you want to use it in development or `.env` if you want to use it in production.
-
-**Remember**: What will define that you are running the API in **development mode** is the `NODE_ENV=dev` command before the start command. But we've already left everything set up for you on package.json. If you run the "dev" script, it will run with the environment variables (important to have the `.env.dev` created), otherwise it will run with the normal environment variables. 
+2. Install the project dependencies, with the `npm install` or `yarn install` command if you have [yarn](https://yarnpkg.com) installed
 
 3. The `.env.sample` file is used to configure all the environment variables you need, such as information about your **database**. Change all the information so that the application works properly.
 
@@ -119,12 +119,15 @@ DB_DATABASE=
 DB_DIALECT=
 
 # Mailer
-MAILER_SERVICE= #example: hotmail
+#example: hotmail
+MAILER_SERVICE= 
 MAILER_USER=
 MAILER_PASS=
 #Email that requests / reprography evaluations will be sent
 MAILER_COMPANY_EMAIL=
-MAILER_HOST_PORT= #Front-end Host and Port that will be sent in password recovery email
+#Front-end Host and Port that will be sent in password recovery email
+#exaple: http://localhost:3002
+MAILER_HOST_PORT= 
 
 #JWT 
 JWT_SECRET_KEY=
@@ -135,6 +138,8 @@ SALT_ROUNDS=
 ADMIN_EMAIL=
 ADMIN_PASS=
 ```
+
+4. Remember to rename this file to `.env` to be able to run the application
 
 
 ### <a name="StartingTheServer"></a> Starting the server
@@ -149,6 +154,7 @@ $ npm run dev
 # To start normally -> will run the "start" script of package.json.
 $ npm run start
 ```
+
 If you prefer Yarn:
 ```bash
 # To start in development mode (requires nodemon) -> will run the package.json "dev" script.
@@ -167,17 +173,12 @@ And so you will have your application running locally.
 
 ## <a name="Docs"></a> 📄 Documentation:
 
- * [Documentation area](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs)
+ * [Click here to acess documentation area](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md)
+ 
 
+## <a name="Tests"></a> ⚡ Tests
 
-### <a name="Swagger"></a> :triangular_flag_on_post: Swagger
-
-
-By creating the documentation with Swagger, we were able to simplify not only the development of our API and squad as a whole, but also the relationship with the other parts of the project (front-end squad, infra...). So we try our best to make it self-explanatory and complete.
-
-⚡ API Documentation (Swagger) running on: `http://localhost:3002/docs/`
-
-![image](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/swagger/swagger.png)
+* [Click here to access the tests](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README.md)
 
 
 ## <a name="HowtoContributeToWithTheProject"></a> 😯 How to contribute to with the project
@@ -226,6 +227,6 @@ By creating the documentation with Swagger, we were able to simplify not only th
  </tr>
 </table>
 
-## 📝 <a name="License"></a> License
+## <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/LICENSE">📝</a> <a name="License"></a> License
 
 This project is under the MIT license.

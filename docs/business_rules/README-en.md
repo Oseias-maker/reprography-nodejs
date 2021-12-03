@@ -1,3 +1,7 @@
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/README-en.md">Go Back</a>
+
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/docs/business_rules/README.md">Portuguese Version</a>
+
 ## Business rules:
 
 - A user can only request a copy if he is authenticated (logged in).

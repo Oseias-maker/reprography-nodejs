@@ -1,3 +1,5 @@
+<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/README-en.md">English Version</a>
+
 <h3 align="center">🚧 ⚠️ Em Desenvolvimento... ⚠️ 🚧</h3>
  
  
@@ -12,7 +14,6 @@
  <img src="https://img.shields.io/github/last-commit/luccazx12/reprography-nodejs">
  </div>
 
-<a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/README-en.md">English Version</a>
 
 ## Apresentação
 Bem-vindo, este projeto é o nosso Trabalho de Conclusão de Curso <a href="https://pt.wikipedia.org/wiki/Trabalho_de_conclus%C3%A3o_de_curso">(TCC)</a> do curso técnico de Desenvolvimento de sistemas da a Escola SENAI Suíço-Brasileira Paulo Ernesto Tolle.
@@ -29,10 +30,10 @@ Bem-vindo, este projeto é o nosso Trabalho de Conclusão de Curso <a href="http
     - [Configurando](#Configurando)
     - [Iniciando o servidor](#IniciandoOServidor)
 - [Documentações](#Documentações)
-    - [Swagger](#Swagger)
+- [Testes](#Testes)
 - [Como contribuir para o projeto](#ComoContribuirParaOProjeto)
 - [Desenvolvedores](#Desenvolvedores)
-- [Licença](#licença)
+- [Licença](#Licenca)
 
 
 ## <a name="SobreoProjeto"></a> Sobre o Projeto
@@ -147,10 +148,10 @@ ADMIN_PASS=
 Execute o comando abaixo para iniciar o Nodejs e conectar ao banco de dados:
 ``` bash
 # Para iniciar em modo de desenvolvimento (requer nodemon) -> Executará o script "dev" do package.json.
-$ npm run start
+$ npm run dev
 
 # Para iniciar normalmente -> Executará o script "start" do package.json.
-$ npm run dev
+$ npm run start
 ```
 
 Caso prefira o Yarn:
@@ -171,16 +172,12 @@ E assim você terá sua aplicação rodando localmente.
 
 ## <a name="Documentações"></a> 📄 Documentações
 
- * [Área de documentação](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs)
-
-### <a name="Swagger"></a> :triangular_flag_on_post: Swagger
+ * [Clique aqui para acessar a documentação](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/docs/README.md)
 
 
-Criando a documentação com o Swagger, conseguimos simplificar não só o desenvolvimento da nossa API e da squad como um todo, mas também o relacionamento com as outras partes do projeto (squad front-end, infra...). Por isso tentamos ao máximo deixa-lá autoexplicativa e completa. 
+## <a name="Testes"></a> ⚡ Testes
 
-⚡ Swagger rodando em: `http://localhost:3002/docs/`
-
-![image](https://raw.githubusercontent.com/Squad-Back-End/reprography-nodejs/master/docs/swagger/swagger.png)
+* [Clique aqui para acessar os testes](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README.md)
 
 
 ## <a name="ComoContribuirParaOProjeto"></a>😯 Como contribuir para o projeto
@@ -199,7 +196,7 @@ Criando a documentação com o Swagger, conseguimos simplificar não só o desen
     <td align="center"><a href="https://github.com/Luccazx12">
     <img src="https://avatars.githubusercontent.com/u/71888383?v=4" width="100px" alt="Imagem do perfil de Lucca"/>
     <br />
-     <sub><b>Lucca</b></sub><br />:snowflake:TechLead:snowflake:
+     <sub><b>Lucca</b></sub><br />:snowflake:<sub>TechLead</sub>:snowflake:
      </td>
     <td align="center"><a href="https://github.com/patricksp08">
     <img src="https://avatars.githubusercontent.com/u/71887999?v=4" width="100px" alt="Imagem do perfil de Ṕatrick"/>
@@ -214,10 +211,15 @@ Criando a documentação com o Swagger, conseguimos simplificar não só o desen
      <td align="center"><a href="https://github.com/Oseias-maker">
     <img src="https://avatars.githubusercontent.com/u/71889159?v=4" width="100px" alt="Imagem do perfil de Oséias"/>
     <br />
-    <sub><b>Oseias Farias Jesus</b></sub><br />:snowflake::snowman::snowflake:
+    <sub><b>Oseias Farias</b></sub><br />:snowflake::snowman::snowflake:
+     </td>
+       <td align="center"><a href="https://github.com/MauricioAlvesM">
+    <img src="https://avatars.githubusercontent.com/u/39388652?s=96&v=4" width="100px" alt="Imagem do perfil de Mauricio"/>
+    <br />
+     <sub><b>Mauricio Moreira</b></sub><br />:snowflake::snowman::snowflake:
      </td>
     <td align="center"><a href="https://github.com/JoaoOFS">
-    <img src="https://avatars.githubusercontent.com/u/71888050?v=4" width="100px" alt="Imagem do perfil de João"/>
+    <img src="https://avatars.githubusercontent.com/u/71888050?s=400&u=5b485943b684a34628ffa8a4f69f5bb08afa3784&v=4" width="100px" alt="Imagem do perfil de João"/>
     <br />
     <sub><b>João Otávio</b></sub><br />:snowflake::snowman::snowflake:
      </td>
@@ -226,9 +228,10 @@ Criando a documentação com o Swagger, conseguimos simplificar não só o desen
     <br />
     <sub><b>Tiago Soares</b></sub><br />:snowflake::snowman::snowflake:
      </td>
+
  </tr>
 </table>
 
-## <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/LICENSE">📝</a> <a name="Licença"></a> Licença
+## <a href="https://github.com/Squad-Back-End/reprography-nodejs/blob/master/LICENSE">📝</a> <a name="Licenca"></a> Licença
 
 Este projeto está sobre a licença MIT.
