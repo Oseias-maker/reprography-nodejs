@@ -30,8 +30,10 @@ const paramsForVerify = async (req, res, next) => {
             })
         }
         else {
-            req.body.servicoCA = jaSolicitado.servico_pedidos[0].servicoCA
-            req.body.servicoCT = jaSolicitado.servico_pedidos[0].servicoCT
+            req.body.num_copias = jaSolicitado.det_pedidos[0].num_copias/jaSolicitado.realizado_qtdade;
+            req.body.num_paginas = jaSolicitado.det_pedidos[0].num_paginas/jaSolicitado.realizado_qtdade;
+            req.body.servicoCA = jaSolicitado.servico_pedidos[0].servicoCA;
+            req.body.servicoCT = jaSolicitado.servico_pedidos[0].servicoCT;
             next();
     }
     } catch (error) {

@@ -199,6 +199,9 @@ module.exports = {
         // Input que será enviado para tabela Det_Pedido
         const { num_copias, num_paginas, servicoCT, servicoCA, observacoes } = req.body;
 
+        let nomeArquivo = "";
+        let caminhoArquivo = "";
+
         if (!num_copias || !num_paginas || !titulo_pedido || !modo_envio
             || !curso || !centro_custos) {
             return res.json({
@@ -214,7 +217,10 @@ module.exports = {
         }
 
         const custo_total = [(num_copias * num_paginas) * req.sub_total];
-
+        if(req.file){
+            nomeArquivo = req.file.filename;
+            caminhoArquivo = req.file.path;
+        }
         try {
             //Inserindo um pedido e seus detalhes/serviços:
             await pedidoService.pedidoCreate({
@@ -231,8 +237,8 @@ module.exports = {
                         num_copias: num_copias,
                         num_paginas: num_paginas,
                         observacoes: observacoes,
-                        anexo_name: req.file.filename,
-                        anexo_path: req.file.path,
+                        anexo_name: nomeArquivo,
+                        anexo_path: caminhoArquivo,
                         sub_total_copias: req.sub_total
                     },
                 }
@@ -323,7 +329,7 @@ module.exports = {
             });
         }
         catch (err) {
-            res.status(500).json({ status: status.error, message: err.message });
+           console.log(err)
         };
     },
 
