@@ -3,10 +3,10 @@ const process = require("process");
 const express = require("express");
 const cors = require("cors");
 
-//Titulo da API
+// Titulo da API
 process.title = "Reprographic System";
 
-//Routers
+// Routers
 const router = require("./app/routes/index.js");
 
 // var corsOptions = {
@@ -16,12 +16,13 @@ const router = require("./app/routes/index.js");
 
 const app = express();
 
-//Middlewares
+// Middlewares
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Usando rota de Uploads para renderizar as imagens que estão em /uploads no diretório da API
+// Usando rota de Uploads para renderizar as imagens que estão em 
+// uploads no diretório da API
 app.use("/src/uploads", express.static("src/uploads"));
 
 // Routers

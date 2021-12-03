@@ -9,11 +9,11 @@ const verificaQtdade = (req, res, prop) => {
 
     if (prop.quantidade <= 0) {
         req.err = true;
-        return res.json({ message: `Serviço ${prop.descricao} está esgotado!` });
+        return res.json({ status: "error", message: `Serviço ${prop.descricao} está esgotado!` });
     }
     else if (prop.quantidade < folhasImpressas) {
         req.err = true;
-        return res.json({ message: `Serviço ${prop.descricao} não contém quantidade suficiente para essa solicitação` });
+        return res.json({ status: "error", message: `Serviço ${prop.descricao} não contém quantidade suficiente para essa solicitação` });
     }
 };
 

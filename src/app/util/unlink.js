@@ -8,11 +8,11 @@ const unlinkImg = async (params) => {
         try {
             await unlink(params, (err) => {
                 if (err) throw err;
-                console.log(`successfully deleted ${params}`);
+                console.log(`Deletado com sucesso: ${params}`);
             });
             return;
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+            console.log(err);
             return;
         }
     } 

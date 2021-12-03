@@ -3,16 +3,16 @@
 const config = require("../config/").dbConfig;
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize(config.database,config.username, config.password, {
-    host: config.host,
-    dialect: config.dialect,
-    dialectOptions: {
-      useUTC: config.dialectOptions.useUTC, //for reading from database
-      dateStrings: config.dialectOptions.dateStrings,
-      typeCast: config.dialectOptions.typeCast
-    },
-    timezone: config.timezone //for writing to database
-  });
+const sequelize = new Sequelize(config.database, config.username, config.password, {
+  host: config.host,
+  dialect: config.dialect,
+  dialectOptions: {
+    useUTC: config.dialectOptions.useUTC, //for reading from database
+    dateStrings: config.dialectOptions.dateStrings,
+    typeCast: config.dialectOptions.typeCast
+  },
+  timezone: config.timezone //for writing to database
+});
 
 const fs = require('fs');
 const path = require('path');

@@ -3,7 +3,9 @@ const { initModels } = require("../models/init-models");
 const { sequelize } = require("../../database");
 var models = initModels(sequelize);
 
-const verifyConstraints = async ({ centro_custos, curso, modo_envio, avaliacao, servicoCA, servicoCT, departamento }) => {
+const verifyConstraints = async ({ 
+    centro_custos, curso, modo_envio, avaliacao, servicoCA, servicoCT, departamento 
+}) => {
 
     //Usuário
 

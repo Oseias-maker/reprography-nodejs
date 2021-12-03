@@ -31,7 +31,7 @@ module.exports = {
             // Pedido
 
             // Quantidade de pedidos solicitados no mes passado por parametro
-            const pedidos = await pedido.count({
+            const pedidos = await pedido.sum('realizado_qtdade', {
                 where: {
                     createdAt: {
                         [Op.between]: [startedDate, endDate]
@@ -57,7 +57,11 @@ module.exports = {
             // Percorrendo os quatro tipos de curso e trazendo os valores quando id_curso = 1, 2, 3 e 4
             for (let i = 1; i <= num_curso.length; i++) {
 
-                const cursoDesc = await curso.findOne({ where: { id_curso: i } }, { attributes: ["descricao"] });
+                const cursoDesc = await curso.findOne({
+                    where: { id_curso: i }
+                }, {
+                    attributes: ["descricao"]
+                });
 
                 const cursoCount = await det_pedido.count({
                     where: {
@@ -80,7 +84,11 @@ module.exports = {
 
             for (let i = 1; i <= num_centro_custos.length; i++) {
 
-                const centro_custosDesc = await centro_custos.findOne({ where: { id_centro_custos: i } }, { attributes: ["descricao"] });
+                const centro_custosDesc = await centro_custos.findOne({
+                    where: { id_centro_custos: i }
+                }, {
+                    attributes: ["descricao"]
+                });
 
                 const centro_custosCount = await det_pedido.count({
                     where: {
@@ -105,7 +113,11 @@ module.exports = {
             //Começa em 0 pois existe avaliação com id 0 (ainda não avaliado...)
             for (let i = 0; i < num_avaliacao_pedido.length; i++) {
 
-                const avaliacao_pedidoDesc = await avaliacao_pedido.findOne({ where: { id_avaliacao_pedido: i } }, { attributes: ["descricao"] });
+                const avaliacao_pedidoDesc = await avaliacao_pedido.findOne({
+                    where: { id_avaliacao_pedido: i }
+                }, {
+                    attributes: ["descricao"]
+                });
 
                 const avaliacao_pedidoCount = await pedido.count({
                     where: {
@@ -154,7 +166,11 @@ module.exports = {
 
             for (let i = 1; i <= num_servicoCT.length; i++) {
 
-                const servicoCTDesc = await servicoCopiaTamanho.findOne({ where: { id_servico: i } }, { attributes: ["descricao"] });
+                const servicoCTDesc = await servicoCopiaTamanho.findOne({
+                    where: { id_servico: i }
+                }, {
+                    attributes: ["descricao"]
+                });
 
                 const servicoCTCount = await servico_pedido.count({
                     where: {
@@ -178,7 +194,11 @@ module.exports = {
 
             for (let i = 1; i <= num_servicoCA.length; i++) {
 
-                const servicoCADesc = await servicoCapaAcabamento.findOne({ where: { id_servico: i } }, { attributes: ["descricao"] });
+                const servicoCADesc = await servicoCapaAcabamento.findOne({
+                    where: { id_servico: i }
+                }, {
+                    attributes: ["descricao"]
+                });
 
                 const servicoCACount = await servico_pedido.count({
                     where: {
@@ -274,7 +294,11 @@ module.exports = {
                 // Percorrendo os quatro tipos de curso e trazendo os valores quando id_curso = 1, 2, 3 e 4
                 for (let i = 1; i <= num_curso.length; i++) {
 
-                    const cursoDesc = await curso.findOne({ where: { id_curso: i } }, { attributes: ["descricao"] });
+                    const cursoDesc = await curso.findOne({
+                        where: { id_curso: i }
+                    }, {
+                        attributes: ["descricao"]
+                    });
 
                     const cursoCount = await det_pedido.count({
                         where: {
@@ -298,7 +322,11 @@ module.exports = {
 
                 for (let i = 1; i <= num_centro_custos.length; i++) {
 
-                    const centro_custosDesc = await centro_custos.findOne({ where: { id_centro_custos: i } }, { attributes: ["descricao"] });
+                    const centro_custosDesc = await centro_custos.findOne({
+                        where: { id_centro_custos: i }
+                    }, {
+                        attributes: ["descricao"]
+                    });
 
                     const centro_custosCount = await det_pedido.count({
                         where: {
@@ -323,7 +351,11 @@ module.exports = {
                 // Começa em 0 pois existe avaliação com id 0 (ainda não avaliado...)
                 for (let i = 0; i < num_avaliacao_pedido.length; i++) {
 
-                    const avaliacao_pedidoDesc = await avaliacao_pedido.findOne({ where: { id_avaliacao_pedido: i } }, { attributes: ["descricao"] });
+                    const avaliacao_pedidoDesc = await avaliacao_pedido.findOne({
+                        where: { id_avaliacao_pedido: i }
+                    }, {
+                        attributes: ["descricao"]
+                    });
 
                     const avaliacao_pedidoCount = await pedido.count({
                         where: {
@@ -372,7 +404,11 @@ module.exports = {
 
                 for (let i = 1; i <= num_servicoCT.length; i++) {
 
-                    const servicoCTDesc = await servicoCopiaTamanho.findOne({ where: { id_servico: i } }, { attributes: ["descricao"] });
+                    const servicoCTDesc = await servicoCopiaTamanho.findOne({
+                        where: { id_servico: i }
+                    }, {
+                        attributes: ["descricao"]
+                    });
 
                     const servicoCTCount = await servico_pedido.count({
                         where: {
@@ -396,7 +432,11 @@ module.exports = {
 
                 for (let i = 1; i <= num_servicoCA.length; i++) {
 
-                    const servicoCADesc = await servicoCapaAcabamento.findOne({ where: { id_servico: i } }, { attributes: ["descricao"] });
+                    const servicoCADesc = await servicoCapaAcabamento.findOne({
+                        where: { id_servico: i }
+                    }, {
+                        attributes: ["descricao"]
+                    });
 
                     const servicoCACount = await servico_pedido.count({
                         where: {
