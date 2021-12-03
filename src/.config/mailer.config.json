@@ -1,0 +1,15 @@
+{
+  "hotmail": {
+    "secureConnection": false,
+    "service": "hotmail",
+    "auth": {
+      "user": "oseiasfariasjesus2015@hotmail.com",
+      "pass": "55278088oo"
+    },
+    "tls": {
+      "ciphers": "SSLv3"
+    }
+  },
+  "reproEmail": "mario-lucca@hotmail.com",
+  "host": "http://localhost:3002"
+}

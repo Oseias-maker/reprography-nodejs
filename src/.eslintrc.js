@@ -4,11 +4,13 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: ['airbnb-base', 'eslint:recommended',"prettier"],
+  extends: ['airbnb-base', 'prettier'],
+  plugins: ['prettier'],
   parserOptions: {
     ecmaVersion: 12,
   },
   rules: {
+    'prettier/prettier': 'error',
     'arrow-parens': 'off',
     eqeqeq: 'error',
     'function-paren-newline': 'off',

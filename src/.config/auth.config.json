@@ -1,0 +1,12 @@
+{
+  "jwt": {
+    "secret": "slamano",
+    "header": "accessToken",
+    "saltRounds": 10
+  },
+  "adminAccount": {
+    "email": "admin@senaisp.edu.br",
+    "pass": "admin",
+    "defaultImage": "uploads/user-img/default/usuario.png"
+  }
+}
