@@ -203,7 +203,7 @@ exports.InserirRegistros = async () => {
                 valor_unitario: 0.45
             },
         ]);
-        console.log("\n(||||||||| | | -------- Registros Inseridos com sucesso!!! -------- | | |||||||||)");
+        console.log("\n(||| | | ----- Registros Inseridos com sucesso!!! ----- | | |||)");
     } catch {
         console.log({ error: "Registros já inseridos! (Validation error)" });
     };
@@ -211,7 +211,8 @@ exports.InserirRegistros = async () => {
 
 exports.InserirUsuario = async () => {
     try {
-        const password = await bcrypt.hash(config.authConfig.adminAccount.pass, config.authConfig.jwt.saltRounds);
+        const password = await bcrypt.hash(
+            config.authConfig.adminAccount.pass, config.authConfig.jwt.saltRounds);
         const user = await models.usuario.create({
             nif: config.authConfig.adminAccount.nif,
             senha: password,
@@ -220,8 +221,8 @@ exports.InserirUsuario = async () => {
             depto: 1,
             cfp: 0,
             imagem: config.authConfig.adminAccount.defaultImage
-            // ativado: 0,
-            // primeiro_acesso: 1
+            // ativado: 1, -> Valor já definido com defaultValue
+            // primeiro_acesso: 1 -> Valor já definido com defaultValue
         });
         if (user) {
             const roles = await models.tipo_usuario.findAll({
@@ -234,7 +235,7 @@ exports.InserirUsuario = async () => {
             if (roles) {
                 const setRoles = await user.setRoles(roles);
                 if (setRoles) {
-                    console.log(`(||||||||| | | -------- Usuário ADMIN criado com sucesso! -------- | | |||||||||)`);
+                    console.log(`(| | | --- Usuário ADMIN criado com sucesso! --- | | |)`);
                 };
             };
         };

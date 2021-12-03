@@ -39,7 +39,7 @@ checkRolesExisted = (req, res, next) => {
   //Transformando int em array para comparar se existe o Role em Models/Index.js. => ROLES
   var { admin } = req.body;
 
-  if (admin == 1) {
+  if (admin === "1") {
     admin = ["admin"];
   }
   else {

@@ -21,12 +21,12 @@ module.exports = {
             const servicos = await service.findAllServicos(enabled);
 
             if (servicos.servicosCT.length < 1 && servicos.servicosCA.length < 1) {
-                return res.json({ message: "Sem registros..." });
+                return res.json({ status: status.error, message: "Sem registros..." });
             }
 
             //Se a solicitação for de serviços habilitados (exibidos no formulário 
             // de pedido), então será retornado sem problemas o array para o usuário.
-            if (enabled == 1) {
+            if (enabled === "1") {
                 return res.status(200).json(servicos);
             }
             // Agora se o usuário estiver solicitando os serviços desabilitados,
@@ -34,7 +34,7 @@ module.exports = {
             // (ROLE ADMIN).
             else {
                 // Enviando a array de serviços dentro da requisição
-                req.array = [servicos];
+                req.array = servicos;
 
                 // Executando middleware para verificar se o usuário é admin ou não
                 // se ele for admin, no propŕio middleware será retornado o array,
@@ -54,10 +54,10 @@ module.exports = {
             const servicos = await service.findServicoByPk({ type: type, id: id });
 
             if (servicos === false) {
-                return res.json({ message: constants.invalidParameter });
+                return res.json({ status: status.error, message: constants.invalidParameter });
             }
             else if (servicos === null) {
-                return res.json({ message: constants.notFound });
+                return res.json({ status: status.error, message: constants.notFound });
             }
             else {
                 return res.status(200).json(servicos);
@@ -107,7 +107,7 @@ module.exports = {
 
         try {
             //aqui temos que passar o type e o id, para ele buscar pela service.
-            const servicos = await service.findServicoByPk({ type, id }); 
+            const servicos = await service.findServicoByPk({ type, id });
 
             if (servicos === false) {
                 return res.json({ status: status.error, message: constants.invalidParameter });
@@ -119,7 +119,7 @@ module.exports = {
 
             else {
                 //no update aqui temos que passar a array que recebemos do find...
-                await service.updateServico({ servico: servicos, param: { quantidade, valor_unitario } }); 
+                await service.updateServico({ servico: servicos, param: { quantidade, valor_unitario } });
                 okMessage = constants.successAtt;
 
                 if (type === "ca") {
@@ -145,7 +145,7 @@ module.exports = {
             const servicos = await service.findServicoByPk({ type, id });
 
             if (servicos === false) {
-                return res.json({ status: status.err, message: constants.invalidParameter });
+                return res.json({ status: status.error, message: constants.invalidParameter });
             }
             else if (servicos === null) {
                 return res.json({ status: status.error, message: constants.notFound });

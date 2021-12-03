@@ -29,7 +29,7 @@ module.exports = {
 
     const email = await serviceUsuario.findOneByEmail(mail);
 
-    if (email == null) {
+    if (email === null) {
       /**
        * Nós não queremos avisar á atacantes
        * sobre emails que não existem, porque
@@ -100,7 +100,7 @@ module.exports = {
     //   }
     // });
 
-    if (record == null) {
+    if (record === null) {
       return res.json({ status: status.error, message: 'Token não encontrado. Por favor, faça o processo de resetar a senha novamente.' });
     }
 

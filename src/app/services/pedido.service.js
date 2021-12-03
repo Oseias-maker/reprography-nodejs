@@ -65,7 +65,9 @@ module.exports = {
     //Adicionar pedido com detalhe solicitado por nif (usuario)
     pedidoCreate: async ({ param }) => {
         //Inserindo um pedido e seus detalhes/serviços:
-        const pedidoCreated = await pedido.create(param, { include: ['det_pedidos', 'nif_usuario'] });
+        const pedidoCreated = await pedido.create(param, 
+            { include: ['det_pedidos', 'nif_usuario'] 
+        });
 
         return pedidoCreated;
     },

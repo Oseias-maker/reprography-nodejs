@@ -10,13 +10,25 @@ module.exports = function (app) {
         next();
     });
 
-    //ADMIN
+    // ADMIN
 
-    //GET
+    // GET
 
-    //Estatísticas mensais, passando parâmetros de ano e mês.
-    app.get("/estatisticas/mensais/:ano/:mes", [authJwt.validateToken, authJwt.isAdmin], controller.estatisticasMensais);
+    // Estatísticas mensais, passando parâmetros de ano e mês.
+    app.get("/estatisticas/mensais/:ano/:mes",
+        [
+            authJwt.validateToken,
+            authJwt.isAdmin
+        ],
+        controller.estatisticasMensais
+    );
 
-    //Estatísticas dos ultimos quatro meses.
-    app.get("/estatisticas/quatroMeses", [authJwt.validateToken, authJwt.isAdmin], controller.estatisticasQuatroMeses);
+    // Estatísticas dos ultimos quatro meses.
+    app.get("/estatisticas/quatroMeses",
+        [
+            authJwt.validateToken,
+            authJwt.isAdmin
+        ],
+        controller.estatisticasQuatroMeses
+    );
 };
