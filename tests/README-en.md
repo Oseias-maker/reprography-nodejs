@@ -1,4 +1,4 @@
-<h2 align="center"> ⚡ Testes ⚡ </h2>
+<h2 align="center"> ⚡ Tests ⚡ </h2>
 
 ### Dependencies
 
