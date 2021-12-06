@@ -31,7 +31,7 @@ module.exports = {
             // Pedido
 
             // Quantidade de pedidos solicitados no mes passado por parametro
-            const pedidos = await pedido.count({
+            const pedidos = await pedido.sum('realizado_qtdade', {
                 where: {
                     createdAt: {
                         [Op.between]: [startedDate, endDate]

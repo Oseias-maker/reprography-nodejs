@@ -2,6 +2,7 @@ const { authJwt } = require("../middlewares");
 const { upload } = require("../middlewares");
 const { verifyService } = require("../middlewares");
 const controller = require("../controllers/pedido.controller");
+const { paramsForVerify } = require("../validators/pedido.validator")
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -28,6 +29,17 @@ module.exports = function (app) {
 
 
   //GET
+
+  // Requisita o mesmo pedido pelo id do pedido (Utilizamos no front para solicitar
+  // o mesmo pedido caso o usuário queira, após ele ter sido avaliado).
+  app.get("/requestAgain/:id",
+    [
+      authJwt.validateToken
+    ],
+    paramsForVerify,
+    verifyService,
+    controller.adicionarNovamente
+  );
 
   //Meus pedidos (pegar pedido pelo req.user.nif => nif do usuário logado, que será verificado
   // pelo token jwt)
