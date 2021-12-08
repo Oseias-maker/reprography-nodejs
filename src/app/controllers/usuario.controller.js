@@ -147,7 +147,7 @@ module.exports = {
             if (user.primeiro_acesso === 0) {
                 return res.json({
                     status: status.error,
-                    message: "Esse não é seu primeiro acesso!",
+                    message: "Esse não é o seu primeiro acesso!",
                 });
             }
 

@@ -1,6 +1,6 @@
 // Services
 // Service dos detalhes do Pedido.
-const pedidoService = require("../services/detPedido.service");
+const detPedidoService = require("../services/detPedido.service");
 // Service que envia descrição de constraints para o front-end/email
 const verifyConstraints = require("../services/verifyConstraints");
 
@@ -17,7 +17,7 @@ module.exports = {
     // Buscar os pedidos por ID do pedido
     buscarPorIdPedido: async (req, res) => {
         try {
-            let pedidos = await pedidoService.findByPk(req.params.id);
+            let pedidos = await detPedidoService.findByPk(req.params.id);
 
             if (pedidos !== null) {
                 const constraints = await verifyConstraints({
