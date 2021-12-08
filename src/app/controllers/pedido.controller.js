@@ -283,6 +283,7 @@ module.exports = {
                     const output = template.pedidoEmail({
                         id: pedido.id_pedido,
                         titulo_pedido: titulo_pedido,
+                        realizado_qtdade: pedido.realizado_qtdade,
                         nif: req.user.nif,
                         centro_custos: constraints[2].descricao,
                         curso: constraints[3].descricao,
@@ -323,7 +324,7 @@ module.exports = {
                     });
                     return res.status(200).json({
                         status: status.ok,
-                        message: "Pedido realizado com sucesso!"
+                        message: "Pedido solicitado com sucesso!"
                     });
                 });
             });
@@ -393,7 +394,9 @@ module.exports = {
 
                     const output = template.pedidoEmail({
                         id: pedido.id_pedido,
-                        titulo_pedido: titulo_pedido, nif: req.user.nif,
+                        titulo_pedido: titulo_pedido,
+                        realizado_qtdade: pedido.realizado_qtdade,
+                        nif: req.user.nif,
                         centro_custos: constraints[2].descricao,
                         curso: constraints[3].descricao,
                         servicoCA: constraints[5].descricao,
@@ -421,7 +424,7 @@ module.exports = {
                     await mailer.sendEmails(email, title, output, { attachments: attachments });
                     return res.status(200).json({
                         status: status.ok,
-                        message: "Pedido realizado com sucesso!"
+                        message: `Pedido ${jaSolicitado.id_pedido} solicitado novamente com sucesso!`
                     });
                 });
             }
@@ -444,24 +447,24 @@ module.exports = {
         }
 
         try {
-            const pedidos = await pedidoService.findByPk(req.params.id);
+            const pedido = await pedidoService.findByPk(req.params.id);
 
-            if (pedidos === null) {
+            if (pedido === null) {
                 return res.json({ status: status.error, message: constants.notFound });
-            } else if (pedidos.id_avaliacao_pedido !== 0) {
+            } else if (pedido.id_avaliacao_pedido !== 0) {
                 return res.json({ status: status.error, message: constants.alreadyRated });
-            } else if (req.user.nif === pedidos.nif) {
+            } else if (req.user.nif === pedido.nif) {
                 await pedidoService.updateRequest({
-                    request: pedidos,
+                    request: pedido,
                     param: {
                         id_avaliacao_pedido,
-                        avaliado_qtdade: pedidos.avaliado_qtdade + 1
+                        avaliado_qtdade: pedido.avaliado_qtdade + 1
                     }
                 });
                 await pedidoService.createFeedBack({
                     param: {
                         userId: req.user.nif,
-                        pedidoId: pedidos.id_pedido,
+                        pedidoId: pedido.id_pedido,
                         avaliacaoId: id_avaliacao_pedido,
                         avaliacao_obs,
                     }
@@ -470,27 +473,22 @@ module.exports = {
                     avaliacao: id_avaliacao_pedido
                 });
                 const output = template.avaliacaoEmail({
-                    id: pedidos.id_pedido,
+                    id: pedido.id_pedido,
                     titulo_pedido:
-                        pedidos.titulo_pedido,
-                    nif: pedidos.nif,
+                        pedido.titulo_pedido,
+                    realizado_qtdade: pedido.realizado_qtdade,
+                    nif: pedido.nif,
                     avaliacao_obs: avaliacao_obs,
                     avaliacao_pedido:
                         constraints[1].descricao
                 });
                 const email = mailerConfig.reproEmail;
-                let title = `Avaliação da Reprografia Nº${pedidos.id_pedido}`;
-                let message = `Avaliação do pedido ${req.params.id} atualizada com sucesso!`;
-
-                if (pedidos.realizado_qtdade > 1) {
-                    title = `Avaliação Nº${pedidos.realizado_qtdade} da Reprografia Nº${pedidos.id_pedido}`;
-                    message = `Avaliação Nº${pedidos.realizado_qtdade} do pedido ${req.params.id} atualizada com sucesso!`;
-                }
+                const title = `Avaliação Nº${pedido.realizado_qtdade} da Reprografia Nº${pedido.id_pedido}`;
 
                 await mailer.sendEmails(email, title, output, { attachments: null });
                 return res.status(200).json({
                     status: status.ok,
-                    message: message
+                    message: `Avaliação Nº${pedido.realizado_qtdade} do pedido ${req.params.id} atualizada com sucesso!`
                 });
             }
             else {

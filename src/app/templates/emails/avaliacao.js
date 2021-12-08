@@ -1,4 +1,4 @@
-const avaliacaoEmail = ({ id, titulo_pedido, nif, avaliacao_obs, avaliacao_pedido }) => `
+const avaliacaoEmail = ({ id, titulo_pedido, realizado_qtdade, nif, avaliacao_obs, avaliacao_pedido }) => `
 <!doctype html>
 <html>
 
@@ -410,7 +410,7 @@ const avaliacaoEmail = ({ id, titulo_pedido, nif, avaliacao_obs, avaliacao_pedid
                                     <tr>
                                         <td>
                                             <div>
-                                                <h1>Avaliação do pedido nº${id}: ${titulo_pedido} </h1>
+                                                <h1>Avaliação nº${realizado_qtdade} do pedido nº${id}: ${titulo_pedido} </h1>
                                                 <div class="flex">
                                                     <h3 class="align-center" id="status">Status: ${avaliacao_pedido}</h3>
                                                     <h3 class="align-center" id="nif">NIF do solicitante: <span>${nif}</span></h3>
