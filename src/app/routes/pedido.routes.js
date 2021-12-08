@@ -51,17 +51,6 @@ module.exports = function (app) {
   );
 
 
-  //PUT
-
-  //rota para atualizar a avaliação
-  app.put("/rating/:id",
-    [
-      authJwt.validateToken
-    ],
-    controller.alterarAvaliacao
-  );
-
-
   ////ADMIN
 
   //GET
