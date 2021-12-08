@@ -18,6 +18,22 @@ module.exports = {
 
     //GET
 
+    buscarPorId: async (req, res) => {
+        const { id } = req.params;
+        try {
+            const feedback = await feedbackService.findByPk(id);
+            if (feedback === null) {
+                return res.json({ status: status.error, message: "Avaliação não encontrada" })
+            }
+            else {
+                return res.status(200).json(feedback);
+            }
+        } catch (err) {
+            res.status(500).json({ status: status.error, message: err.message });
+        }
+    },
+
+
     todosFeedbackPorIdPedido: async (req, res) => {
         const { id } = req.params;
         try {

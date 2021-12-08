@@ -24,4 +24,10 @@ module.exports = {
 
         return feedbacks;
     },
+
+    findByPk: async (id) => {
+        const feedbacks = await feedback.findByPk(id)
+
+        return feedbacks;
+    }
 }

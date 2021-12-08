@@ -18,7 +18,14 @@ module.exports = function (app) {
             authJwt.validateToken
         ],
         controller.todosFeedbackPorIdPedido
-    )
+    );
+
+    app.get("/feedback/id/:id",
+        [
+            authJwt.validateToken
+        ],
+        controller.buscarPorId
+    );
 
     //PUT
 
