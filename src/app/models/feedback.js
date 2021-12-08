@@ -1,17 +1,13 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('pedido', {
-    id_pedido: {
+  return sequelize.define('feedback', {
+    feedBackId: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    titulo_pedido: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
-    nif: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -19,39 +15,29 @@ module.exports = function(sequelize, DataTypes) {
         key: 'nif'
       }
     },
-    id_modo_envio: {
+    pedidoId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'modo_envio',
-        key: 'id_modo_envio'
+        model: 'pedido',
+        key: 'id_pedido'
       }
     },
-    realizado_qtdade: {
+    avaliacaoId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 1
-    },
-    avaliado_qtdade: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
-    },
-    custo_total: {
-      type: DataTypes.FLOAT,
-      allowNull: true
-    },
-    id_avaliacao_pedido: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
       references: {
         model: 'avaliacao_pedido',
         key: 'id_avaliacao_pedido'
       }
+    },
+    avaliacao_obs: {
+      type: DataTypes.STRING(100),
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'pedido',
+    tableName: 'feedback',
     timestamps: true,
     indexes: [
       {
@@ -59,28 +45,28 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_pedido" },
+          { name: "feedBackId" },
         ]
       },
       {
-        name: "nif",
+        name: "userId",
         using: "BTREE",
         fields: [
-          { name: "nif" },
+          { name: "userId" },
         ]
       },
       {
-        name: "id_modo_envio",
+        name: "pedidoId",
         using: "BTREE",
         fields: [
-          { name: "id_modo_envio" },
+          { name: "pedidoId" },
         ]
       },
       {
-        name: "id_avaliacao_pedido",
+        name: "avaliacaoId",
         using: "BTREE",
         fields: [
-          { name: "id_avaliacao_pedido" },
+          { name: "avaliacaoId" },
         ]
       },
     ]

@@ -5,7 +5,7 @@ const Op = Sequelize.Op;
 
 //Inicializando as models e as recebendo
 const { initModels } = require("../models/init-models");
-var { pedido, servico_pedido } = initModels(sequelize)
+var { pedido, servico_pedido, feedback } = initModels(sequelize)
 
 module.exports = {
 
@@ -18,7 +18,7 @@ module.exports = {
                         [Op.or]: rated
                     }
                 },
-                // include: ['det_pedidos', 'servico_pedidos']
+                include: ["feedbacks"]
             },
         );
 
@@ -83,4 +83,10 @@ module.exports = {
 
         return pedidoUpdated;
     },
+
+    createFeedBack: async ({ param }) => {
+        const feedbackCreated = await feedback.create(param);
+
+        return feedbackCreated;
+    }
 };
