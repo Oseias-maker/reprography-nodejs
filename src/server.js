@@ -22,7 +22,7 @@ const port = process.env.PORT || 3002;
 // Criando/Verificando database/schema antes de sincronizar e inserir registros
 createDatabase().then(() => {
     // Sincronizando nosso banco de dados comforce as models já criadas!
-    db.sequelize.sync({ force: false }).then(() => {
+    db.sequelize.sync({ force: true }).then(() => {
         app.listen(port, async () => {
             await inserirRegistros.InserirRegistros();
             await inserirRegistros.InserirUsuario();
