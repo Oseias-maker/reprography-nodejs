@@ -22,13 +22,22 @@ module.exports = {
         const { id } = req.params;
         try {
             let feedbacks = await feedbackService.getFeedbackNif(id, req.user.nif);
-            
-            if(req.user.roles.includes('2_ROLE_ADMIN')){
+
+            if (req.user.roles.includes('2_ROLE_ADMIN')) {
                 feedbacks = await feedbackService.getFeedback(id);
+
             }
 
-            return res.status(200).json(feedbacks);
-        } 
+            if (feedbacks.length < 1) {
+                return res.json({
+                    status: status.error,
+                    message: "Avaliações não encontradas!"
+                })
+            }
+            else {
+                return res.status(200).json(feedbacks);
+            }
+        }
         catch (err) {
             res.status(500).json({ status: status.error, message: err.message });
         };
