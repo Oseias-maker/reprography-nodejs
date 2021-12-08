@@ -1,4 +1,4 @@
-const pedidoEmail = ({ id, titulo_pedido, nif, centro_custos, curso, servicoCA, servicoCT,
+const pedidoEmail = ({ id, titulo_pedido, realizado_qtdade, nif, centro_custos, curso, servicoCA, servicoCT,
   num_paginas, num_copias, modo_envio, observacoes
 }) => ` 
   
@@ -417,7 +417,7 @@ const pedidoEmail = ({ id, titulo_pedido, nif, centro_custos, curso, servicoCA, 
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td>
-                                            <h1>Pedido nº${id}: ${titulo_pedido} </h1>
+                                            <h1>Solicitação nº${realizado_qtdade} do pedido nº${id}: ${titulo_pedido} </h1>
                                             <div class="flex">
                                                 <h4 class="align-center" id="modo_envio">Modo de Envio: ${modo_envio}</h4>
                                                 <h4 class ="align-center" id="nif">NIF do solicitante: <span>${nif}</span></h4>

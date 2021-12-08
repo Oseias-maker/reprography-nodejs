@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   return sequelize.define('det_pedido', {
     id_det_pedido: {
       autoIncrement: true,
@@ -52,7 +52,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true
     },
     sub_total_copias: {
-      type: DataTypes.DECIMAL(10, 5),
+      type: DataTypes.DECIMAL(10,5),
       allowNull: true
     }
   }, {
