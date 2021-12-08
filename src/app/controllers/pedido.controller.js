@@ -295,7 +295,7 @@ module.exports = {
                         observacoes: observacoes
                     });
                     const email = mailerConfig.reproEmail;
-                    const title = `Solicitação de Reprografia Nº${pedido.id_pedido}`;
+                    const title = `Solicitação Nº${pedido.realizado_qtdade} da Reprografia Nº${pedido.id_pedido}`;
                     let attachments = [];
 
 
