@@ -1,5 +1,7 @@
 <h2 align="center"> ⚡ Testes ⚡ </h2>
 
+#### [English Version](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README-en.md)
+
 ### Dependências
 
 Para realizar e documentar os testes da nossa API, instalamos as dependências: 
