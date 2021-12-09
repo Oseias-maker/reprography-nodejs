@@ -148,19 +148,19 @@ ADMIN_PASS=
 
 Run the command below to start Nodejs and connect to the database:
 ``` bash
-# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
-$ npm run dev
-
 # To start normally -> will run the "start" script of package.json.
 $ npm run start
+
+# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
+$ npm run dev
 ```
 
 If you prefer Yarn:
 ```bash
-# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
+# To start normally -> will run the "start" script of package.json.
 $ yarn start
 
-# To start normally -> will run the "start" script of package.json.
+# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
 $ yarn dev
 ```
 
