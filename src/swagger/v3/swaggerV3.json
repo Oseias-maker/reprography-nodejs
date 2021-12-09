@@ -7014,66 +7014,6 @@
         "message"
       ]
     },
-    "Informaravaliação": {
-      "title": "Informaravaliação",
-      "example": {
-        "error": "Informe se o pedido lhe atendeu ou não, por favor!"
-      },
-      "type": "object",
-      "properties": {
-        "error": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "error"
-      ]
-    },
-    "Avaliaçãoatualizada": {
-      "title": "Avaliaçãoatualizada",
-      "example": {
-        "message": "Avaliação do pedido 1 atualizada com sucesso!"
-      },
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message"
-      ]
-    },
-    "Pedidojáavaliado": {
-      "title": "Pedidojáavaliado",
-      "example": {
-        "message": "Esse pedido já foi avaliado!"
-      },
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message"
-      ]
-    },
-    "Atualizaravaliação": {
-      "title": "Atualizaravaliação",
-      "example": {
-        "message": "Esse pedido não existe!"
-      },
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message"
-      ]
-    },
     "Meuspedidosaindanãoavaliados1": {
       "title": "Meuspedidosaindanãoavaliados1",
       "example": {
@@ -7147,6 +7087,66 @@
         "custo_total",
         "createdAt",
         "updatedAt"
+      ]
+    },
+    "Tentandorealizarumpedidoqueaindanãofoiavaliado": {
+      "title": "Tentandorealizarumpedidoqueaindanãofoiavaliado",
+      "example": {
+        "status": "error",
+        "message": "Primeiro realize a avaliação Nº2 seu pedido!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Solicitandonovamenteumpedidocomsucesso": {
+      "title": "Solicitandonovamenteumpedidocomsucesso",
+      "example": {
+        "status": "ok",
+        "message": "Pedido 4 solicitado novamente com sucesso!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Tentandorealizarnovamenteumpedidoquenãofoirealizadopeloseuusuário": {
+      "title": "Tentandorealizarnovamenteumpedidoquenãofoirealizadopeloseuusuário",
+      "example": {
+        "status": "error",
+        "message": "Esse pedido não foi realizado anteriormente pelo seu usuário!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
       ]
     },
     "Pedidoinexistente1": {
@@ -8573,6 +8573,244 @@
         "centro_custos",
         "curso",
         "custo_total"
+      ]
+    },
+    "Atualizandoavaliaçãodeumpedidoquejáfoirealizadonovamente": {
+      "title": "Atualizandoavaliaçãodeumpedidoquejáfoirealizadonovamente",
+      "example": {
+        "status": "ok",
+        "message": "Avaliação Nº2 do pedido 1 atualizada com sucesso!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Pedidojáavaliado": {
+      "title": "Pedidojáavaliado",
+      "example": {
+        "status": "error",
+        "message": "Esse pedido já foi avaliado!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Atualizadocomsucesso": {
+      "title": "Atualizadocomsucesso",
+      "example": {
+        "status": "ok",
+        "message": "Avaliação Nº1 do pedido 2 atualizada com sucesso!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Pedidonãoencontrado2": {
+      "title": "Pedidonãoencontrado2",
+      "example": {
+        "status": "error",
+        "message": "Pedido não encontrado!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Informeaavaliação,porfavor!": {
+      "title": "Informeaavaliação,porfavor!",
+      "example": {
+        "status": "error",
+        "message": "Informe se o pedido lhe atendeu ou não, por favor!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Avaliaçõesnãoencontradas": {
+      "title": "Avaliaçõesnãoencontradas",
+      "example": {
+        "status": "error",
+        "message": "Avaliações não encontradas!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Feedbacksdeumpedidocomid1": {
+      "title": "Feedbacksdeumpedidocomid1",
+      "example": {
+        "feedbackId": 1,
+        "userId": 123,
+        "pedidoId": 1,
+        "avaliacaoId": 1,
+        "avaliacao_obs": "Avaliação do pedido x",
+        "createdAt": "2021-12-09 18:31:26",
+        "updatedAt": "2021-12-09 18:31:26"
+      },
+      "type": "object",
+      "properties": {
+        "feedbackId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pedidoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacaoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacao_obs": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "feedbackId",
+        "userId",
+        "pedidoId",
+        "avaliacaoId",
+        "avaliacao_obs",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Avaliaçãonãoencontrada": {
+      "title": "Avaliaçãonãoencontrada",
+      "example": {
+        "status": "error",
+        "message": "Avaliação não encontrada"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Avaliaçãocomid6": {
+      "title": "Avaliaçãocomid6",
+      "example": {
+        "feedbackId": 6,
+        "userId": 123,
+        "pedidoId": 2,
+        "avaliacaoId": 2,
+        "avaliacao_obs": "As cópias que eu solicitei continha erros de impressão",
+        "createdAt": "2021-12-09 20:12:41",
+        "updatedAt": "2021-12-09 20:12:41"
+      },
+      "type": "object",
+      "properties": {
+        "feedbackId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pedidoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacaoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacao_obs": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "feedbackId",
+        "userId",
+        "pedidoId",
+        "avaliacaoId",
+        "avaliacao_obs",
+        "createdAt",
+        "updatedAt"
       ]
     }
   },
