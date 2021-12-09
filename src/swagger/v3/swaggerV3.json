@@ -4110,101 +4110,6 @@
         }
       }
     },
-    "/rating/{id}": {
-      "put": {
-        "summary": "Atualizar avaliação",
-        "tags": [
-          "USER"
-        ],
-        "operationId": "Atualizaravaliação",
-        "deprecated": false,
-        "produces": [
-          "application/json; charset=utf-8"
-        ],
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
-        "parameters": [
-          {
-            "name": "accessToken",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": ""
-          },
-          {
-            "name": "id_avaliacao_pedido",
-            "in": "formData",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": "1 = Atendeu, 2 = Não atendeu!"
-          },
-          {
-            "name": "avaliacao_obs",
-            "in": "formData",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Informaravalia%C3%A7%C3%A3o"
-            },
-            "examples": {
-              "application/json; charset=utf-8": {
-                "error": "Informe se o pedido lhe atendeu ou não, por favor!"
-              }
-            },
-            "headers": {
-              "X-Powered-By": {
-                "type": "string",
-                "default": "Express"
-              },
-              "Access-Control-Allow-Origin": {
-                "type": "string",
-                "default": "*"
-              },
-              "Access-Control-Allow-Headers": {
-                "type": "string",
-                "default": "accessToken, Origin, Content-Type, Accept"
-              },
-              "Content-Length": {
-                "type": "string",
-                "default": "63"
-              },
-              "ETag": {
-                "type": "string",
-                "default": "W/\"3f-0Zc7s0SsjbwBF6Dm1NhcETx+Oqw\""
-              },
-              "Date": {
-                "type": "string",
-                "default": "Mon, 01 Nov 2021 14:46:08 GMT"
-              },
-              "Connection": {
-                "type": "string",
-                "default": "keep-alive"
-              },
-              "Keep-Alive": {
-                "type": "string",
-                "default": "timeout=5"
-              }
-            }
-          }
-        }
-      }
-    },
     "/myRequests/rated={rated}": {
       "get": {
         "summary": "Meus Pedidos",
@@ -4747,6 +4652,559 @@
               "Date": {
                 "type": "string",
                 "default": "Fri, 05 Nov 2021 14:33:27 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rating/{id}": {
+      "put": {
+        "summary": "Atualizar avaliação",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Atualizaravaliação",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "id_avaliacao_pedido",
+            "in": "formData",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "1 = Atendeu, 2 = Não atendeu!"
+          },
+          {
+            "name": "avaliacao_obs",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Atualizandoavalia%C3%A7%C3%A3odeumpedidoquej%C3%A1foirealizadonovamente"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "ok",
+                "message": "Avaliação Nº2 do pedido 1 atualizada com sucesso!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "80"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"50-lL7F/87V3iFh+ImrE8I83IM0qHE\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:11:07 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "202": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Pedidoj%C3%A1avaliado"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Esse pedido já foi avaliado!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "60"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3c-OXCijUE/2q5vn6w+0z4IAGvsOeU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:11:46 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Atualizadocomsucesso"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "ok",
+                "message": "Avaliação Nº1 do pedido 2 atualizada com sucesso!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "80"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"50-PPr9koS41WOcebh8gbNH8/BqcBc\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:12:41 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "204": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Pedidon%C3%A3oencontrado2"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Pedido não encontrado!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "54"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"36-qp4S7/r4y6J1dm7sPmOQ6RurCE8\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:13:12 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "205": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Informeaavalia%C3%A7%C3%A3o%2Cporfavor%21"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Informe se o pedido lhe atendeu ou não, por favor!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "82"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"52-UQXTR4pevMmCEuOrWseoUBVNbM8\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:40:08 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feedbacks/{id}": {
+      "get": {
+        "summary": "Avaliações de um pedido",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Avaliaçõesdeumpedido",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Avalia%C3%A7%C3%B5esn%C3%A3oencontradas"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Avaliações não encontradas!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "61"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3d-PeTu8ewOyr/AeI8v9XlKofRjSPU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:10:19 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "default": "",
+              "items": {
+                "$ref": "#/definitions/Feedbacksdeumpedidocomid1"
+              }
+            },
+            "examples": {
+              "application/json; charset=utf-8": [
+                {
+                  "feedbackId": 1,
+                  "userId": 123,
+                  "pedidoId": 1,
+                  "avaliacaoId": 1,
+                  "avaliacao_obs": "Avaliação do pedido x",
+                  "createdAt": "2021-12-09 18:31:26",
+                  "updatedAt": "2021-12-09 18:31:26"
+                },
+                {
+                  "feedbackId": 5,
+                  "userId": 123,
+                  "pedidoId": 1,
+                  "avaliacaoId": 2,
+                  "avaliacao_obs": "As cópias que eu solicitei continha erros de impressão",
+                  "createdAt": "2021-12-09 20:11:07",
+                  "updatedAt": "2021-12-09 20:11:07"
+                }
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "372"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"174-0W7Z9z5v609oBx/6QX4lQ867H+I\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:14:18 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feedback/id/{id}": {
+      "get": {
+        "summary": "Avaliações por id",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Avaliaçõesporid",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Avalia%C3%A7%C3%A3on%C3%A3oencontrada"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Avaliação não encontrada"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "58"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3a-b8uDRGTkFrSgWdyLnwHECiirNd4\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:16:03 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Avalia%C3%A7%C3%A3ocomid6"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "feedbackId": 6,
+                "userId": 123,
+                "pedidoId": 2,
+                "avaliacaoId": 2,
+                "avaliacao_obs": "As cópias que eu solicitei continha erros de impressão",
+                "createdAt": "2021-12-09 20:12:41",
+                "updatedAt": "2021-12-09 20:12:41"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "201"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"c9-Byc6JhLHBUlyaAS6tC21yuLOa9M\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:17:00 GMT"
               },
               "Connection": {
                 "type": "string",
