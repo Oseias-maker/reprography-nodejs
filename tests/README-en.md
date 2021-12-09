@@ -1,6 +1,6 @@
 <h2 align="center"> ⚡ Tests ⚡ </h2>
 
-#### [Go back](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/tests)
+#### [Portuguese version](https://github.com/Squad-Back-End/reprography-nodejs/tree/master/tests)
 
 ### Dependencies
 
