@@ -148,19 +148,19 @@ ADMIN_PASS=
 
 Run the command below to start Nodejs and connect to the database:
 ``` bash
-# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
-$ npm run dev
-
 # To start normally -> will run the "start" script of package.json.
 $ npm run start
+
+# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
+$ npm run dev
 ```
 
 If you prefer Yarn:
 ```bash
-# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
+# To start normally -> will run the "start" script of package.json.
 $ yarn start
 
-# To start normally -> will run the "start" script of package.json.
+# To start in development mode (requires nodemon) -> will run the package.json "dev" script.
 $ yarn dev
 ```
 
@@ -178,7 +178,7 @@ And so you will have your application running locally.
 
 ## <a name="Tests"></a> ⚡ Tests
 
-* [Click here to access the tests](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README.md)
+* [Click here to access the tests](https://github.com/Squad-Back-End/reprography-nodejs/blob/master/tests/README-en.md)
 
 
 ## <a name="HowtoContributeToWithTheProject"></a> 😯 How to contribute to with the project
