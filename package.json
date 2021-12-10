@@ -9,17 +9,7 @@
     "pre-test": "cross-env NODE_ENV=test node tests/tests-flow/pre-test/index.js",
     "test": "cross-env NODE_ENV=test node tests/tests-flow/pre-test/index.js && jest --runInBand"
   },
-  "husky": {
-    "hooks": {
-        "pre-commit": "npx lint-staged"
-    }
-},
-"lint-staged": {
-    "src/**/*.js": [
-        "npx pretty-quick --staged",
-        "npx eslint --fix src --ext .js"
-    ]
-},
+ 
   "author": "Squad Back-end (https://github.com/Squad-Back-End)",
   "license": "MIT",
   "dependencies": {
