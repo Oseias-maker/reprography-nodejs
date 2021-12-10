@@ -847,8 +847,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Created",
+									"code": 201,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -2245,7 +2245,7 @@
 										}
 									},
 									"status": "OK",
-									"code": 200,
+									"code": 201,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -4188,8 +4188,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Accepted",
+									"code": 202,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -4876,8 +4876,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Accepted",
+									"code": 202,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -5492,7 +5492,7 @@
 							},
 							"response": [
 								{
-									"name": "Meus pedidos ainda não avaliados",
+									"name": "Nenhum pedido encontrado",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -5758,8 +5758,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Bad Request",
+									"code": 400,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -5906,8 +5906,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Accepted",
+									"code": 202,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -6656,8 +6656,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Created",
+									"code": 201,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -6907,8 +6907,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Accepted",
+									"code": 202,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -7091,8 +7091,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Accepted",
+									"code": 202,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -7323,8 +7323,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Accepted",
+									"code": 202,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -7434,7 +7434,7 @@
 											]
 										}
 									},
-									"status": "OK",
+									"status": "OK - 1",
 									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
@@ -7510,7 +7510,7 @@
 											]
 										}
 									},
-									"status": "OK",
+									"status": "OK - 2",
 									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
@@ -7586,7 +7586,7 @@
 											]
 										}
 									},
-									"status": "OK",
+									"status": "OK - 3",
 									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
@@ -7662,7 +7662,7 @@
 											]
 										}
 									},
-									"status": "OK",
+									"status": "OK - 4",
 									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
@@ -7725,7 +7725,7 @@
 								"header": [
 									{
 										"key": "accessToken",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoidXBsb2Fkcy91c2VyLWltZy9kZWZhdWx0L3VzdWFyaW8ucG5nIiwicm9sZXMiOlsiMl9ST0xFX0FETUlOIl0sImlhdCI6MTYzNjMxNDM1NywiZXhwIjoxNjM2NDAwNzU3fQ.bifDT_fL7SFdQbHd3M9W3SMLmQAD2vWY0jNRj3s4hDY",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoic3JjL3VwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjJfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzkwOTExMzYsImV4cCI6MTYzOTE3NzUzNn0.fFes44pYRo3VmYDgocFy0mWI_MAGFpwMx2KcFrfP4f0",
 										"type": "text"
 									}
 								],
@@ -7756,13 +7756,13 @@
 							},
 							"response": [
 								{
-									"name": "Estatisticas Mensais/:ano/:mes (solicitando estatisticas mensais passando ano e mês como parâmetro)",
+									"name": "Estatísticas mensais com mês&ano",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
 											{
 												"key": "accessToken",
-												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoidXBsb2Fkcy91c2VyLWltZy9kZWZhdWx0L3VzdWFyaW8ucG5nIiwicm9sZXMiOlsiMl9ST0xFX0FETUlOIl0sImlhdCI6MTYzNjMxNDM1NywiZXhwIjoxNjM2NDAwNzU3fQ.bifDT_fL7SFdQbHd3M9W3SMLmQAD2vWY0jNRj3s4hDY",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoic3JjL3VwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjJfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzkwOTExMzYsImV4cCI6MTYzOTE3NzUzNn0.fFes44pYRo3VmYDgocFy0mWI_MAGFpwMx2KcFrfP4f0",
 												"type": "text"
 											}
 										],
@@ -7813,15 +7813,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1680"
+											"value": "1914"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"690-aBNDSBy/it9sBpct2rGCe6Xu/EA\""
+											"value": "W/\"77a-5f+J19g2xwdrHx0EY8XTUhv24eg\""
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 07 Nov 2021 20:14:22 GMT"
+											"value": "Fri, 10 Dec 2021 00:12:14 GMT"
 										},
 										{
 											"key": "Connection",
@@ -7833,7 +7833,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"mes\": \"Novembro\",\n    \"ano\": \"2021\",\n    \"pedidos\": 29,\n    \"avaliacao_pedido\": {\n        \"0\": {\n            \"status\": \"Ainda não avaliado.\",\n            \"qtdade_solicitada\": 8\n        },\n        \"1\": {\n            \"status\": \"Atendeu!\",\n            \"qtdade_solicitada\": 4\n        },\n        \"2\": {\n            \"status\": \"Não atendeu!\",\n            \"qtdade_solicitada\": 17\n        }\n    },\n    \"servico_copiaTamanho\": {\n        \"1\": {\n            \"status\": \"Preto&Branco - Tamanho A5\",\n            \"qtdade_solicitada\": 23\n        },\n        \"2\": {\n            \"status\": \"Preto&Branco - Tamanho A4\",\n            \"qtdade_solicitada\": 2\n        },\n        \"3\": {\n            \"status\": \"Preto&Branco - Tamanho A3\",\n            \"qtdade_solicitada\": 2\n        },\n        \"4\": {\n            \"status\": \"Colorida - Tamanho A4\",\n            \"qtdade_solicitada\": 0\n        },\n        \"5\": {\n            \"status\": \"Preto&Branco - Reduzida\",\n            \"qtdade_solicitada\": 2\n        }\n    },\n    \"servico_capaAcabamento\": {\n        \"1\": {\n            \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n            \"qtdade_solicitada\": 23\n        },\n        \"2\": {\n            \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n            \"qtdade_solicitada\": 2\n        },\n        \"3\": {\n            \"status\": \"Capa em papel 150g e espirais de plástico\",\n            \"qtdade_solicitada\": 2\n        }\n    },\n    \"num_paginas\": 290,\n    \"num_copias\": 145,\n    \"folhas_impressas\": 42050,\n    \"centro_custos\": {\n        \"1\": {\n            \"descricao\": \"Aprendizagem Industrial Presencial\",\n            \"qtdade_solicitada\": 0\n        },\n        \"2\": {\n            \"descricao\": \"Técnico de Nível Média Presencial\",\n            \"qtdade_solicitada\": 0\n        },\n        \"3\": {\n            \"descricao\": \"Graduação Tecnológica Presencial\",\n            \"qtdade_solicitada\": 29\n        },\n        \"4\": {\n            \"descricao\": \"Pós-Graduação Presencial\",\n            \"qtdade_solicitada\": 0\n        },\n        \"5\": {\n            \"descricao\": \"Extensão Presencial\",\n            \"qtdade_solicitada\": 0\n        },\n        \"6\": {\n            \"descricao\": \"Iniciação Profissional Presencial\",\n            \"qtdade_solicitada\": 0\n        },\n        \"7\": {\n            \"descricao\": \"Qualificação Profissional Presencial\",\n            \"qtdade_solicitada\": 0\n        }\n    },\n    \"curso\": {\n        \"1\": {\n            \"descricao\": \"CT-DS\",\n            \"qtdade_solicitada\": 0\n        },\n        \"2\": {\n            \"descricao\": \"CT-MP\",\n            \"qtdade_solicitada\": 29\n        },\n        \"3\": {\n            \"descricao\": \"CST-MP\",\n            \"qtdade_solicitada\": 0\n        },\n        \"4\": {\n            \"descricao\": \"Pós-Graduação\",\n            \"qtdade_solicitada\": 0\n        }\n    },\n    \"custo_total\": 296.9\n}"
+									"body": "[\n    {\n        \"mes\": \"Novembro\",\n        \"ano\": \"2021\",\n        \"pedidos\": null,\n        \"avaliacao_pedido\": [\n            {\n                \"1\": {\n                    \"status\": \"Atendeu!\",\n                    \"qtdade_solicitada\": 0\n                },\n                \"2\": {\n                    \"status\": \"Não atendeu!\",\n                    \"qtdade_solicitada\": 0\n                }\n            }\n        ],\n        \"servico_copiaTamanho\": [\n            {\n                \"1\": {\n                    \"status\": \"Preto&Branco - Tamanho A5\",\n                    \"qtdade_solicitada\": null\n                },\n                \"2\": {\n                    \"status\": \"Preto&Branco - Tamanho A4\",\n                    \"qtdade_solicitada\": null\n                },\n                \"3\": {\n                    \"status\": \"Preto&Branco - Tamanho A3\",\n                    \"qtdade_solicitada\": null\n                },\n                \"4\": {\n                    \"status\": \"Colorida - Tamanho A4\",\n                    \"qtdade_solicitada\": null\n                },\n                \"5\": {\n                    \"status\": \"Preto&Branco - Reduzida\",\n                    \"qtdade_solicitada\": null\n                },\n                \"6\": {\n                    \"status\": \"Preto&Branco - Ampliada\",\n                    \"qtdade_solicitada\": null\n                }\n            }\n        ],\n        \"servico_capaAcabamento\": [\n            {\n                \"1\": {\n                    \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                    \"qtdade_solicitada\": null\n                },\n                \"2\": {\n                    \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                    \"qtdade_solicitada\": null\n                },\n                \"3\": {\n                    \"status\": \"Capa em papel 150g e espirais de plástico\",\n                    \"qtdade_solicitada\": null\n                },\n                \"4\": {\n                    \"status\": \"Capa em PVC e espirais de plástico\",\n                    \"qtdade_solicitada\": null\n                }\n            }\n        ],\n        \"num_paginas\": null,\n        \"num_copias\": null,\n        \"folhas_impressas\": 0,\n        \"centro_custos\": [\n            {\n                \"1\": {\n                    \"descricao\": \"Aprendizagem Industrial Presencial\",\n                    \"qtdade_solicitada\": null\n                },\n                \"2\": {\n                    \"descricao\": \"Técnico de Nível Média Presencial\",\n                    \"qtdade_solicitada\": null\n                },\n                \"3\": {\n                    \"descricao\": \"Graduação Tecnológica Presencial\",\n                    \"qtdade_solicitada\": null\n                },\n                \"4\": {\n                    \"descricao\": \"Pós-Graduação Presencial\",\n                    \"qtdade_solicitada\": null\n                },\n                \"5\": {\n                    \"descricao\": \"Extensão Presencial\",\n                    \"qtdade_solicitada\": null\n                },\n                \"6\": {\n                    \"descricao\": \"Iniciação Profissional Presencial\",\n                    \"qtdade_solicitada\": null\n                },\n                \"7\": {\n                    \"descricao\": \"Qualificação Profissional Presencial\",\n                    \"qtdade_solicitada\": null\n                },\n                \"8\": {\n                    \"descricao\": \"Aperfeiç./Especializ. Profis. Presencial\",\n                    \"qtdade_solicitada\": null\n                }\n            }\n        ],\n        \"curso\": [\n            {\n                \"1\": {\n                    \"descricao\": \"CT-DS\",\n                    \"qtdade_solicitada\": null\n                },\n                \"2\": {\n                    \"descricao\": \"CT-MP\",\n                    \"qtdade_solicitada\": null\n                },\n                \"3\": {\n                    \"descricao\": \"CST-MP\",\n                    \"qtdade_solicitada\": null\n                },\n                \"4\": {\n                    \"descricao\": \"Pós-Graduação\",\n                    \"qtdade_solicitada\": null\n                }\n            }\n        ],\n        \"custo_total\": null\n    }\n]"
 								}
 							]
 						},
@@ -7844,7 +7844,7 @@
 								"header": [
 									{
 										"key": "accessToken",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoidXBsb2Fkcy91c2VyLWltZy9kZWZhdWx0L3VzdWFyaW8ucG5nIiwicm9sZXMiOlsiMl9ST0xFX0FETUlOIl0sImlhdCI6MTYzNjMxNDM1NywiZXhwIjoxNjM2NDAwNzU3fQ.bifDT_fL7SFdQbHd3M9W3SMLmQAD2vWY0jNRj3s4hDY",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoic3JjL3VwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjJfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzkwOTExMzYsImV4cCI6MTYzOTE3NzUzNn0.fFes44pYRo3VmYDgocFy0mWI_MAGFpwMx2KcFrfP4f0",
 										"type": "text"
 									}
 								],
@@ -7863,13 +7863,13 @@
 							},
 							"response": [
 								{
-									"name": "Estatisticas Quatro Meses (solicitando as estatisticas dos ultimos 3 meses + mês atual)",
+									"name": "Estatisticas 4 últimos meses",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
 											{
 												"key": "accessToken",
-												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoidXBsb2Fkcy91c2VyLWltZy9kZWZhdWx0L3VzdWFyaW8ucG5nIiwicm9sZXMiOlsiMl9ST0xFX0FETUlOIl0sImlhdCI6MTYzNjMxNDM1NywiZXhwIjoxNjM2NDAwNzU3fQ.bifDT_fL7SFdQbHd3M9W3SMLmQAD2vWY0jNRj3s4hDY",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoic3JjL3VwbG9hZHMvdXNlci1pbWcvZGVmYXVsdC91c3VhcmlvLnBuZyIsInJvbGVzIjpbIjJfUk9MRV9BRE1JTiJdLCJpYXQiOjE2MzkwOTExMzYsImV4cCI6MTYzOTE3NzUzNn0.fFes44pYRo3VmYDgocFy0mWI_MAGFpwMx2KcFrfP4f0",
 												"type": "text"
 											}
 										],
@@ -7908,15 +7908,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "6678"
+											"value": "7895"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"1a16-7zh/QbF6NNCWhVapL5Os41KG890\""
+											"value": "W/\"1ed7-TDLhVQlEMP71b8iVLVhcxsTky90\""
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 07 Nov 2021 20:14:01 GMT"
+											"value": "Fri, 10 Dec 2021 00:12:49 GMT"
 										},
 										{
 											"key": "Connection",
@@ -7928,7 +7928,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"8\": {\n        \"ano\": 2021,\n        \"mes\": \"Agosto\",\n        \"pedidos\": 0,\n        \"avaliacao_pedido\": {\n            \"0\": {\n                \"status\": \"Ainda não avaliado.\",\n                \"qtdade_solicitada\": 0\n            },\n            \"1\": {\n                \"status\": \"Atendeu!\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Não atendeu!\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"servico_copiaTamanho\": {\n            \"1\": {\n                \"status\": \"Preto&Branco - Tamanho A5\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Preto&Branco - Tamanho A4\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"status\": \"Preto&Branco - Tamanho A3\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"status\": \"Colorida - Tamanho A4\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"status\": \"Preto&Branco - Reduzida\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"servico_capaAcabamento\": {\n            \"1\": {\n                \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"status\": \"Capa em papel 150g e espirais de plástico\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"num_paginas\": 0,\n        \"num_copias\": 0,\n        \"folhas_impressas\": 0,\n        \"centro_custos\": {\n            \"1\": {\n                \"descricao\": \"Aprendizagem Industrial Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"Técnico de Nível Média Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"descricao\": \"Graduação Tecnológica Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"descricao\": \"Extensão Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"6\": {\n                \"descricao\": \"Iniciação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"7\": {\n                \"descricao\": \"Qualificação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"curso\": {\n            \"1\": {\n                \"descricao\": \"CT-DS\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"CT-MP\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"descricao\": \"CST-MP\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"custo_total\": 0\n    },\n    \"9\": {\n        \"ano\": 2021,\n        \"mes\": \"Setembro\",\n        \"pedidos\": 0,\n        \"avaliacao_pedido\": {\n            \"0\": {\n                \"status\": \"Ainda não avaliado.\",\n                \"qtdade_solicitada\": 0\n            },\n            \"1\": {\n                \"status\": \"Atendeu!\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Não atendeu!\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"servico_copiaTamanho\": {\n            \"1\": {\n                \"status\": \"Preto&Branco - Tamanho A5\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Preto&Branco - Tamanho A4\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"status\": \"Preto&Branco - Tamanho A3\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"status\": \"Colorida - Tamanho A4\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"status\": \"Preto&Branco - Reduzida\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"servico_capaAcabamento\": {\n            \"1\": {\n                \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"status\": \"Capa em papel 150g e espirais de plástico\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"num_paginas\": 0,\n        \"num_copias\": 0,\n        \"folhas_impressas\": 0,\n        \"centro_custos\": {\n            \"1\": {\n                \"descricao\": \"Aprendizagem Industrial Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"Técnico de Nível Média Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"descricao\": \"Graduação Tecnológica Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"descricao\": \"Extensão Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"6\": {\n                \"descricao\": \"Iniciação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"7\": {\n                \"descricao\": \"Qualificação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"curso\": {\n            \"1\": {\n                \"descricao\": \"CT-DS\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"CT-MP\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"descricao\": \"CST-MP\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"custo_total\": 0\n    },\n    \"10\": {\n        \"ano\": 2021,\n        \"mes\": \"Outubro\",\n        \"pedidos\": 0,\n        \"avaliacao_pedido\": {\n            \"0\": {\n                \"status\": \"Ainda não avaliado.\",\n                \"qtdade_solicitada\": 0\n            },\n            \"1\": {\n                \"status\": \"Atendeu!\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Não atendeu!\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"servico_copiaTamanho\": {\n            \"1\": {\n                \"status\": \"Preto&Branco - Tamanho A5\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Preto&Branco - Tamanho A4\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"status\": \"Preto&Branco - Tamanho A3\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"status\": \"Colorida - Tamanho A4\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"status\": \"Preto&Branco - Reduzida\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"servico_capaAcabamento\": {\n            \"1\": {\n                \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"status\": \"Capa em papel 150g e espirais de plástico\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"num_paginas\": 0,\n        \"num_copias\": 0,\n        \"folhas_impressas\": 0,\n        \"centro_custos\": {\n            \"1\": {\n                \"descricao\": \"Aprendizagem Industrial Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"Técnico de Nível Média Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"descricao\": \"Graduação Tecnológica Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"descricao\": \"Extensão Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"6\": {\n                \"descricao\": \"Iniciação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"7\": {\n                \"descricao\": \"Qualificação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"curso\": {\n            \"1\": {\n                \"descricao\": \"CT-DS\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"CT-MP\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"descricao\": \"CST-MP\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"custo_total\": 0\n    },\n    \"11\": {\n        \"ano\": 2021,\n        \"mes\": \"Novembro\",\n        \"pedidos\": 29,\n        \"avaliacao_pedido\": {\n            \"0\": {\n                \"status\": \"Ainda não avaliado.\",\n                \"qtdade_solicitada\": 8\n            },\n            \"1\": {\n                \"status\": \"Atendeu!\",\n                \"qtdade_solicitada\": 4\n            },\n            \"2\": {\n                \"status\": \"Não atendeu!\",\n                \"qtdade_solicitada\": 17\n            }\n        },\n        \"servico_copiaTamanho\": {\n            \"1\": {\n                \"status\": \"Preto&Branco - Tamanho A5\",\n                \"qtdade_solicitada\": 23\n            },\n            \"2\": {\n                \"status\": \"Preto&Branco - Tamanho A4\",\n                \"qtdade_solicitada\": 2\n            },\n            \"3\": {\n                \"status\": \"Preto&Branco - Tamanho A3\",\n                \"qtdade_solicitada\": 2\n            },\n            \"4\": {\n                \"status\": \"Colorida - Tamanho A4\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"status\": \"Preto&Branco - Reduzida\",\n                \"qtdade_solicitada\": 2\n            }\n        },\n        \"servico_capaAcabamento\": {\n            \"1\": {\n                \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                \"qtdade_solicitada\": 23\n            },\n            \"2\": {\n                \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                \"qtdade_solicitada\": 2\n            },\n            \"3\": {\n                \"status\": \"Capa em papel 150g e espirais de plástico\",\n                \"qtdade_solicitada\": 2\n            }\n        },\n        \"num_paginas\": 290,\n        \"num_copias\": 145,\n        \"folhas_impressas\": 42050,\n        \"centro_custos\": {\n            \"1\": {\n                \"descricao\": \"Aprendizagem Industrial Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"Técnico de Nível Média Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"3\": {\n                \"descricao\": \"Graduação Tecnológica Presencial\",\n                \"qtdade_solicitada\": 29\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"5\": {\n                \"descricao\": \"Extensão Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"6\": {\n                \"descricao\": \"Iniciação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            },\n            \"7\": {\n                \"descricao\": \"Qualificação Profissional Presencial\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"curso\": {\n            \"1\": {\n                \"descricao\": \"CT-DS\",\n                \"qtdade_solicitada\": 0\n            },\n            \"2\": {\n                \"descricao\": \"CT-MP\",\n                \"qtdade_solicitada\": 29\n            },\n            \"3\": {\n                \"descricao\": \"CST-MP\",\n                \"qtdade_solicitada\": 0\n            },\n            \"4\": {\n                \"descricao\": \"Pós-Graduação\",\n                \"qtdade_solicitada\": 0\n            }\n        },\n        \"custo_total\": 296.9\n    }\n}"
+									"body": "[\n    {\n        \"9\": {\n            \"ano\": 2021,\n            \"mes\": \"Setembro\",\n            \"pedidos\": null,\n            \"avaliacao_pedido\": [\n                {\n                    \"0\": {\n                        \"status\": \"Ainda não avaliado.\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"1\": {\n                        \"status\": \"Atendeu!\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Não atendeu!\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"servico_copiaTamanho\": [\n                {\n                    \"1\": {\n                        \"status\": \"Preto&Branco - Tamanho A5\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Preto&Branco - Tamanho A4\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"status\": \"Preto&Branco - Tamanho A3\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"status\": \"Colorida - Tamanho A4\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"5\": {\n                        \"status\": \"Preto&Branco - Reduzida\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"6\": {\n                        \"status\": \"Preto&Branco - Ampliada\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"servico_capaAcabamento\": [\n                {\n                    \"1\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"status\": \"Capa em papel 150g e espirais de plástico\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"status\": \"Capa em PVC e espirais de plástico\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"num_paginas\": null,\n            \"num_copias\": null,\n            \"folhas_impressas\": 0,\n            \"centro_custos\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"Aprendizagem Industrial Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"descricao\": \"Técnico de Nível Média Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"descricao\": \"Graduação Tecnológica Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"5\": {\n                        \"descricao\": \"Extensão Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"6\": {\n                        \"descricao\": \"Iniciação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"7\": {\n                        \"descricao\": \"Qualificação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"8\": {\n                        \"descricao\": \"Aperfeiç./Especializ. Profis. Presencial\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"curso\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"CT-DS\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"descricao\": \"CT-MP\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"descricao\": \"CST-MP\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"custo_total\": null\n        },\n        \"10\": {\n            \"ano\": 2021,\n            \"mes\": \"Outubro\",\n            \"pedidos\": null,\n            \"avaliacao_pedido\": [\n                {\n                    \"0\": {\n                        \"status\": \"Ainda não avaliado.\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"1\": {\n                        \"status\": \"Atendeu!\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Não atendeu!\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"servico_copiaTamanho\": [\n                {\n                    \"1\": {\n                        \"status\": \"Preto&Branco - Tamanho A5\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Preto&Branco - Tamanho A4\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"status\": \"Preto&Branco - Tamanho A3\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"status\": \"Colorida - Tamanho A4\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"5\": {\n                        \"status\": \"Preto&Branco - Reduzida\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"6\": {\n                        \"status\": \"Preto&Branco - Ampliada\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"servico_capaAcabamento\": [\n                {\n                    \"1\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"status\": \"Capa em papel 150g e espirais de plástico\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"status\": \"Capa em PVC e espirais de plástico\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"num_paginas\": null,\n            \"num_copias\": null,\n            \"folhas_impressas\": 0,\n            \"centro_custos\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"Aprendizagem Industrial Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"descricao\": \"Técnico de Nível Média Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"descricao\": \"Graduação Tecnológica Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"5\": {\n                        \"descricao\": \"Extensão Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"6\": {\n                        \"descricao\": \"Iniciação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"7\": {\n                        \"descricao\": \"Qualificação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"8\": {\n                        \"descricao\": \"Aperfeiç./Especializ. Profis. Presencial\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"curso\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"CT-DS\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"descricao\": \"CT-MP\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"descricao\": \"CST-MP\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"custo_total\": null\n        },\n        \"11\": {\n            \"ano\": 2021,\n            \"mes\": \"Novembro\",\n            \"pedidos\": null,\n            \"avaliacao_pedido\": [\n                {\n                    \"0\": {\n                        \"status\": \"Ainda não avaliado.\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"1\": {\n                        \"status\": \"Atendeu!\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Não atendeu!\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"servico_copiaTamanho\": [\n                {\n                    \"1\": {\n                        \"status\": \"Preto&Branco - Tamanho A5\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Preto&Branco - Tamanho A4\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"status\": \"Preto&Branco - Tamanho A3\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"status\": \"Colorida - Tamanho A4\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"5\": {\n                        \"status\": \"Preto&Branco - Reduzida\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"6\": {\n                        \"status\": \"Preto&Branco - Ampliada\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"servico_capaAcabamento\": [\n                {\n                    \"1\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"status\": \"Capa em papel 150g e espirais de plástico\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"status\": \"Capa em PVC e espirais de plástico\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"num_paginas\": null,\n            \"num_copias\": null,\n            \"folhas_impressas\": 0,\n            \"centro_custos\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"Aprendizagem Industrial Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"descricao\": \"Técnico de Nível Média Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"descricao\": \"Graduação Tecnológica Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"5\": {\n                        \"descricao\": \"Extensão Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"6\": {\n                        \"descricao\": \"Iniciação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"7\": {\n                        \"descricao\": \"Qualificação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"8\": {\n                        \"descricao\": \"Aperfeiç./Especializ. Profis. Presencial\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"curso\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"CT-DS\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"2\": {\n                        \"descricao\": \"CT-MP\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"3\": {\n                        \"descricao\": \"CST-MP\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"custo_total\": null\n        },\n        \"12\": {\n            \"ano\": 2021,\n            \"mes\": \"Dezembro\",\n            \"pedidos\": 10,\n            \"avaliacao_pedido\": [\n                {\n                    \"0\": {\n                        \"status\": \"Ainda não avaliado.\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"1\": {\n                        \"status\": \"Atendeu!\",\n                        \"qtdade_solicitada\": 1\n                    },\n                    \"2\": {\n                        \"status\": \"Não atendeu!\",\n                        \"qtdade_solicitada\": 3\n                    }\n                }\n            ],\n            \"servico_copiaTamanho\": [\n                {\n                    \"1\": {\n                        \"status\": \"Preto&Branco - Tamanho A5\",\n                        \"qtdade_solicitada\": 3\n                    },\n                    \"2\": {\n                        \"status\": \"Preto&Branco - Tamanho A4\",\n                        \"qtdade_solicitada\": 2\n                    },\n                    \"3\": {\n                        \"status\": \"Preto&Branco - Tamanho A3\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"4\": {\n                        \"status\": \"Colorida - Tamanho A4\",\n                        \"qtdade_solicitada\": 1\n                    },\n                    \"5\": {\n                        \"status\": \"Preto&Branco - Reduzida\",\n                        \"qtdade_solicitada\": 4\n                    },\n                    \"6\": {\n                        \"status\": \"Preto&Branco - Ampliada\",\n                        \"qtdade_solicitada\": null\n                    }\n                }\n            ],\n            \"servico_capaAcabamento\": [\n                {\n                    \"1\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos laterais\",\n                        \"qtdade_solicitada\": 2\n                    },\n                    \"2\": {\n                        \"status\": \"Capa em papel 150g e 2 grampos a cavalo\",\n                        \"qtdade_solicitada\": 5\n                    },\n                    \"3\": {\n                        \"status\": \"Capa em papel 150g e espirais de plástico\",\n                        \"qtdade_solicitada\": 2\n                    },\n                    \"4\": {\n                        \"status\": \"Capa em PVC e espirais de plástico\",\n                        \"qtdade_solicitada\": 1\n                    }\n                }\n            ],\n            \"num_paginas\": 107,\n            \"num_copias\": 31,\n            \"folhas_impressas\": 3317,\n            \"centro_custos\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"Aprendizagem Industrial Presencial\",\n                        \"qtdade_solicitada\": 2\n                    },\n                    \"2\": {\n                        \"descricao\": \"Técnico de Nível Média Presencial\",\n                        \"qtdade_solicitada\": 1\n                    },\n                    \"3\": {\n                        \"descricao\": \"Graduação Tecnológica Presencial\",\n                        \"qtdade_solicitada\": 2\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"5\": {\n                        \"descricao\": \"Extensão Presencial\",\n                        \"qtdade_solicitada\": 2\n                    },\n                    \"6\": {\n                        \"descricao\": \"Iniciação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"7\": {\n                        \"descricao\": \"Qualificação Profissional Presencial\",\n                        \"qtdade_solicitada\": null\n                    },\n                    \"8\": {\n                        \"descricao\": \"Aperfeiç./Especializ. Profis. Presencial\",\n                        \"qtdade_solicitada\": 3\n                    }\n                }\n            ],\n            \"curso\": [\n                {\n                    \"1\": {\n                        \"descricao\": \"CT-DS\",\n                        \"qtdade_solicitada\": 3\n                    },\n                    \"2\": {\n                        \"descricao\": \"CT-MP\",\n                        \"qtdade_solicitada\": 1\n                    },\n                    \"3\": {\n                        \"descricao\": \"CST-MP\",\n                        \"qtdade_solicitada\": 3\n                    },\n                    \"4\": {\n                        \"descricao\": \"Pós-Graduação\",\n                        \"qtdade_solicitada\": 3\n                    }\n                }\n            ],\n            \"custo_total\": 57.80400109291077\n        }\n    }\n]"
 								}
 							]
 						}
@@ -8033,8 +8033,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 201,
+									"status": "Accepted",
+									"code": 202,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -8122,8 +8122,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 202,
+									"status": "Conflict",
+									"code": 409,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -8300,8 +8300,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 204,
+									"status": "Not Found",
+									"code": 404,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -8389,8 +8389,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 205,
+									"status": "Bad Request",
+									"code": 400,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -8496,8 +8496,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 201,
+									"status": "Not Found",
+									"code": 404,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -8673,8 +8673,8 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 201,
+									"status": "Not Found",
+									"code": 404,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
