@@ -8,7 +8,7 @@ const status = require("../constants/status.constant");
 
 //Inicializando as models e as recebendo
 const { initModels } = require("../models/init-models");
-var { pedido, det_pedido, centro_custos, curso, avaliacao_pedido, servico_pedido, servicoCapaAcabamento, servicoCopiaTamanho } = initModels(sequelize);
+var { pedido, det_pedido, centro_custos, curso, avaliacao_pedido, servico_pedido, servicoCapaAcabamento, servicoCopiaTamanho, feedback } = initModels(sequelize);
 
 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
@@ -63,13 +63,19 @@ module.exports = {
                     attributes: ["descricao"]
                 });
 
-                const cursoCount = await det_pedido.count({
+                const cursoCount = await pedido.sum('realizado_qtdade', {
                     where: {
                         createdAt: {
                             [Op.between]: [startedDate, endDate]
                         },
-                        id_curso: i
                     },
+                    include: {
+                        model: det_pedido,
+                        as: 'det_pedidos',
+                        where: {
+                            id_curso: i
+                        }
+                    }
                 });
 
                 cursoObj[i] = {
@@ -90,13 +96,19 @@ module.exports = {
                     attributes: ["descricao"]
                 });
 
-                const centro_custosCount = await det_pedido.count({
+                const centro_custosCount = await pedido.sum('realizado_qtdade', {
                     where: {
                         createdAt: {
                             [Op.between]: [startedDate, endDate]
                         },
-                        id_centro_custos: i
                     },
+                    include: {
+                        model: det_pedido,
+                        as: 'det_pedidos',
+                        where: {
+                            id_centro_custos: i
+                        }
+                    }
                 });
 
                 centro_custosObj[i] = {
@@ -111,7 +123,7 @@ module.exports = {
             let avaliacao_pedidoObj = {};
 
             //Começa em 0 pois existe avaliação com id 0 (ainda não avaliado...)
-            for (let i = 0; i < num_avaliacao_pedido.length; i++) {
+            for (let i = 1; i < num_avaliacao_pedido.length; i++) {
 
                 const avaliacao_pedidoDesc = await avaliacao_pedido.findOne({
                     where: { id_avaliacao_pedido: i }
@@ -119,12 +131,12 @@ module.exports = {
                     attributes: ["descricao"]
                 });
 
-                const avaliacao_pedidoCount = await pedido.count({
+                let avaliacao_pedidoCount = await feedback.count({
                     where: {
                         createdAt: {
                             [Op.between]: [startedDate, endDate]
                         },
-                        id_avaliacao_pedido: i
+                        avaliacaoId: i
                     },
                 });
 
@@ -133,6 +145,7 @@ module.exports = {
                     qtdade_solicitada: avaliacao_pedidoCount,
                 };
             };
+
 
 
             // Det Pedido 
@@ -172,13 +185,19 @@ module.exports = {
                     attributes: ["descricao"]
                 });
 
-                const servicoCTCount = await servico_pedido.count({
+                const servicoCTCount = await pedido.sum('realizado_qtdade', {
                     where: {
                         createdAt: {
                             [Op.between]: [startedDate, endDate]
                         },
-                        servicoCT: i
                     },
+                    include: {
+                        model: servico_pedido,
+                        as: 'servico_pedidos',
+                        where: {
+                            servicoCT: i
+                        }
+                    }
                 });
 
                 servicoCTObj[i] = {
@@ -200,13 +219,19 @@ module.exports = {
                     attributes: ["descricao"]
                 });
 
-                const servicoCACount = await servico_pedido.count({
+                const servicoCACount = await pedido.sum('realizado_qtdade', {
                     where: {
                         createdAt: {
                             [Op.between]: [startedDate, endDate]
                         },
-                        servicoCA: i
                     },
+                    include: {
+                        model: servico_pedido,
+                        as: 'servico_pedidos',
+                        where: {
+                            servicoCA: i
+                        }
+                    }
                 });
 
                 servicoCAObj[i] = {
@@ -268,7 +293,7 @@ module.exports = {
                 // Pedido
 
                 // Quantidade de pedidos solicitados no mes passado por parametro
-                const pedidos = await pedido.count({
+                const pedidos = await pedido.sum('realizado_qtdade', {
                     where: {
                         createdAt: {
                             [Op.between]: [startedDate, endDate]
@@ -300,13 +325,19 @@ module.exports = {
                         attributes: ["descricao"]
                     });
 
-                    const cursoCount = await det_pedido.count({
+                    const cursoCount = await pedido.sum('realizado_qtdade', {
                         where: {
                             createdAt: {
                                 [Op.between]: [startedDate, endDate]
                             },
-                            id_curso: i
                         },
+                        include: {
+                            model: det_pedido,
+                            as: 'det_pedidos',
+                            where: {
+                                id_curso: i
+                            }
+                        }
                     });
 
                     cursoObj[i] = {
@@ -314,7 +345,6 @@ module.exports = {
                         qtdade_solicitada: cursoCount,
                     };
                 };
-
                 // Lenght Centro_custos
                 const num_centro_custos = await centro_custos.findAll();
                 // Objeto que será preenchido
@@ -328,13 +358,19 @@ module.exports = {
                         attributes: ["descricao"]
                     });
 
-                    const centro_custosCount = await det_pedido.count({
+                    const centro_custosCount = await pedido.sum('realizado_qtdade', {
                         where: {
                             createdAt: {
                                 [Op.between]: [startedDate, endDate]
                             },
-                            id_centro_custos: i
                         },
+                        include: {
+                            model: det_pedido,
+                            as: 'det_pedidos',
+                            where: {
+                                id_centro_custos: i
+                            }
+                        }
                     });
 
                     centro_custosObj[i] = {
@@ -345,10 +381,10 @@ module.exports = {
 
                 // Lenght de avaliações... vai do 0 ao 2... 0 = não avaliado, 1 = atendeu, 2 = não atendeu!
                 const num_avaliacao_pedido = await avaliacao_pedido.findAll();
-                // Objeto 
+                // Objeto que será preenchido
                 let avaliacao_pedidoObj = {};
 
-                // Começa em 0 pois existe avaliação com id 0 (ainda não avaliado...)
+                //Começa em 0 pois existe avaliação com id 0 (ainda não avaliado...)
                 for (let i = 0; i < num_avaliacao_pedido.length; i++) {
 
                     const avaliacao_pedidoDesc = await avaliacao_pedido.findOne({
@@ -357,7 +393,7 @@ module.exports = {
                         attributes: ["descricao"]
                     });
 
-                    const avaliacao_pedidoCount = await pedido.count({
+                    let avaliacao_pedidoCount = await pedido.sum('avaliado_qtdade', {
                         where: {
                             createdAt: {
                                 [Op.between]: [startedDate, endDate]
@@ -365,6 +401,17 @@ module.exports = {
                             id_avaliacao_pedido: i
                         },
                     });
+
+                    if (i === 0 || avaliacao_pedidoDesc.realizado_qtdade > (avaliacao_pedidoDesc.avaliado_qtdade + 1)) {
+                        avaliacao_pedidoCount = await pedido.count({
+                            where: {
+                                createdAt: {
+                                    [Op.between]: [startedDate, endDate]
+                                },
+                                id_avaliacao_pedido: i
+                            },
+                        }) * avaliacao_pedidoDesc.realizado_qtdade
+                    };
 
                     avaliacao_pedidoObj[i] = {
                         status: avaliacao_pedidoDesc.descricao,
@@ -410,13 +457,19 @@ module.exports = {
                         attributes: ["descricao"]
                     });
 
-                    const servicoCTCount = await servico_pedido.count({
+                    const servicoCTCount = await pedido.sum('realizado_qtdade', {
                         where: {
                             createdAt: {
                                 [Op.between]: [startedDate, endDate]
                             },
-                            servicoCT: i
                         },
+                        include: {
+                            model: servico_pedido,
+                            as: 'servico_pedidos',
+                            where: {
+                                servicoCT: i
+                            }
+                        }
                     });
 
                     servicoCTObj[i] = {
@@ -438,13 +491,19 @@ module.exports = {
                         attributes: ["descricao"]
                     });
 
-                    const servicoCACount = await servico_pedido.count({
+                    const servicoCACount = await pedido.sum('realizado_qtdade', {
                         where: {
                             createdAt: {
                                 [Op.between]: [startedDate, endDate]
                             },
-                            servicoCA: i
                         },
+                        include: {
+                            model: servico_pedido,
+                            as: 'servico_pedidos',
+                            where: {
+                                servicoCA: i
+                            }
+                        }
                     });
 
                     servicoCAObj[i] = {
@@ -479,7 +538,7 @@ module.exports = {
                     custo_total: custo_total
                 };
             };
-            return res.status(200).json(mesObj);
+            return res.status(200).json([mesObj]);
         }
         catch (err) {
             res.status(500).json({ status: status.error, message: err.message });

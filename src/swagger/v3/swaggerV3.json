@@ -1,13 +1,14 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "3.0",
+    "version": "1.0",
     "title": "Reprography System",
     "description": "PT: Sistema para solicitação e controle de reprografias. \n EN: System for requesting and controlling reprographs.",
     "contact": {}
   },
   "host": "localhost:3002",
   "basePath": "/",
+  "securityDefinitions": {},
   "schemes": [
     "http"
   ],
@@ -39,7 +40,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Obtenha o token de acesso na requisição de Login"
+            "description": ""
           },
           {
             "name": "nif",
@@ -47,13 +48,6 @@
             "required": true,
             "type": "integer",
             "format": "int32",
-            "description": "Exemplo: 123"
-          },
-          {
-            "name": "senha",
-            "in": "formData",
-            "required": true,
-            "type": "string",
             "description": ""
           },
           {
@@ -77,7 +71,7 @@
             "required": true,
             "type": "integer",
             "format": "int32",
-            "description": "Exemplo: 1 = Aprendizagem Industrial Presencial; 2 = Técnico de Nível Médio Presencial; ...8"
+            "description": ""
           },
           {
             "name": "email",
@@ -92,7 +86,7 @@
             "required": true,
             "type": "integer",
             "format": "int32",
-            "description": "Exemplo: 123"
+            "description": ""
           },
           {
             "name": "admin",
@@ -100,7 +94,7 @@
             "required": true,
             "type": "integer",
             "format": "int32",
-            "description": "0 = não admin; 1 = admin"
+            "description": "1 = admin, any other value = user"
           },
           {
             "name": "image",
@@ -275,7 +269,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate seu token de acesso na rota de login"
           }
         ],
         "responses": {
@@ -490,7 +484,53 @@
                 "default": "timeout=5"
               }
             }
-          } 
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Todososusu%C3%A1riosativos"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Sem registros..."
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "47"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"2f-74B0P5jD74r8lmqlzp0GLf0vayg\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Mon, 01 Nov 2021 20:21:57 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
         }
       }
     },
@@ -780,13 +820,6 @@
         ],
         "parameters": [
           {
-            "name": "accessToken",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
             "name": "nif",
             "in": "path",
             "required": true,
@@ -795,23 +828,31 @@
             "description": ""
           },
           {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
             "name": "nome",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "string",
             "description": ""
           },
           {
             "name": "senha",
             "in": "formData",
-            "required": false,
-            "type": "string",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
             "name": "telefone",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "integer",
             "format": "int32",
             "description": ""
@@ -819,7 +860,7 @@
           {
             "name": "depto",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "integer",
             "format": "int32",
             "description": ""
@@ -827,14 +868,14 @@
           {
             "name": "email",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "string",
             "description": ""
           },
           {
             "name": "cfp",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "integer",
             "format": "int32",
             "description": ""
@@ -842,7 +883,7 @@
           {
             "name": "admin",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "integer",
             "format": "int32",
             "description": "1 = admin, any other value = user"
@@ -850,8 +891,8 @@
           {
             "name": "image",
             "in": "formData",
-            "required": false,
-            "type": "file",
+            "required": true,
+            "type": "string",
             "description": ""
           }
         ],
@@ -1193,7 +1234,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           },
           {
             "name": "enable",
@@ -1363,7 +1404,7 @@
         "produces": [
           "application/json; charset=utf-8"
         ],
-        "parameters": [
+         "parameters": [
           {
             "name": "rated",
             "in": "path",
@@ -1376,7 +1417,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           }
         ],
         "responses": {
@@ -1529,6 +1570,76 @@
               "Date": {
                 "type": "string",
                 "default": "Wed, 03 Nov 2021 12:42:32 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "type": "array",
+              "default": "",
+              "items": {
+                "$ref": "#/definitions/Todosospedidosj%C3%A1avaliado"
+              }
+            },
+            "examples": {
+              "application/json; charset=utf-8": [
+                {
+                  "id_pedido": 2,
+                  "titulo_pedido": "Livro XYZ",
+                  "nif": 123,
+                  "id_modo_envio": 1,
+                  "id_avaliacao_pedido": 1,
+                  "avaliacao_obs": "Atendeu muito bem!",
+                  "custo_total": 37.5,
+                  "createdAt": "2021-11-03 09:42:26",
+                  "updatedAt": "2021-11-03 09:43:05"
+                },
+                {
+                  "id_pedido": 4,
+                  "titulo_pedido": "Livro XYZ",
+                  "nif": 123,
+                  "id_modo_envio": 1,
+                  "id_avaliacao_pedido": 2,
+                  "avaliacao_obs": "Não me atendeu...",
+                  "custo_total": 10.48,
+                  "createdAt": "2021-11-03 09:44:18",
+                  "updatedAt": "2021-11-03 09:44:29"
+                }
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "442"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1ba-rzOZshH4tk9FlNfvlyXoUkBuaUU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Wed, 03 Nov 2021 12:44:38 GMT"
               },
               "Connection": {
                 "type": "string",
@@ -1764,7 +1875,7 @@
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Exemplo: Apostila X"
+            "description": ""
           },
           {
             "name": "accessToken",
@@ -1971,7 +2082,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           }
         ],
         "responses": {
@@ -2064,6 +2175,65 @@
               }
             }
           },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "type": "array",
+              "default": "",
+              "items": {
+                "$ref": "#/definitions/Pedidospornifj%C3%A1avaliado"
+              }
+            },
+            "examples": {
+              "application/json; charset=utf-8": [
+                {
+                  "id_pedido": 1,
+                  "titulo_pedido": "sadasd",
+                  "nif": 123,
+                  "id_modo_envio": 1,
+                  "id_avaliacao_pedido": 2,
+                  "avaliacao_obs": "Não me atendeu...",
+                  "custo_total": 15,
+                  "createdAt": "2021-11-02 14:53:34",
+                  "updatedAt": "2021-11-03 17:10:09"
+                }
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "216"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"d8-4BkTX1lmwa9H4fc1+JGRuhM6wng\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Wed, 03 Nov 2021 20:41:56 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
           "503": {
             "description": "Service Unavailable",
             "schema": {
@@ -2126,13 +2296,13 @@
         "consumes": [
           "application/x-www-form-urlencoded"
         ],
-        "parameters": [
+               "parameters": [
           {
             "name": "accessToken",
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           },
           {
             "name": "type",
@@ -2211,6 +2381,52 @@
               }
             }
           },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Criandoservi%C3%A7oCapa%26Acabamento"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "ok",
+                "message": "Serviço Capa&Acabamento 5 criado!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "62"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3e-n22IbZPuqD9iie99O886igIrUfE\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 02 Nov 2021 15:22:42 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
           "503": {
             "description": "Service Unavailable",
             "schema": {
@@ -2262,9 +2478,9 @@
     },
     "/services/enabled={enabled}": {
       "get": {
-        "summary": "Solicitando todos os serviços. (Somente gerentes conseguem ver os serviços desabilitados)",
+        "summary": "Servicos (solicitando todos os serviços - gerente)",
         "tags": [
-          "USER"
+          "ADMIN"
         ],
         "operationId": "Servicos(solicitandotodososserviços-gerente)",
         "deprecated": false,
@@ -2284,65 +2500,14 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           }
         ],
         "responses": {
-           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/Primeiroacessoerror1"
-            },
-            "examples": {
-              "application/json; charset=utf-8": {
-                "message": "Você precisa ser Administrador para executar essa ação!"
-              }
-            },
-            "headers": {
-              "X-Powered-By": {
-                "type": "string",
-                "default": "Express"
-              },
-              "Access-Control-Allow-Origin": {
-                "type": "string",
-                "default": "*"
-              },
-              "Access-Control-Allow-Headers": {
-                "type": "string",
-                "default": "accessToken, Origin, Content-Type, Accept"
-              },
-              "Content-Length": {
-                "type": "string",
-                "default": "78"
-              },
-              "ETag": {
-                "type": "string",
-                "default": "W/\"4e-KGj37nkwv9ZeYcgQq0x3C4OzIXg\""
-              },
-              "Date": {
-                "type": "string",
-                "default": "Mon, 01 Nov 2021 20:41:34 GMT"
-              },
-              "Connection": {
-                "type": "string",
-                "default": "keep-alive"
-              },
-              "Keep-Alive": {
-                "type": "string",
-                "default": "timeout=5"
-              }
-            }
-          },
           "200": {
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/Solicitandotodososservi%C3%A7oshabilitados"
-            },
-            "examples": {
-              "application/json; charset=utf-8": {
-                "servicosCA": [],
-                "servicosCT": []
-              }
             },
             "headers": {
               "X-Powered-By": {
@@ -2378,6 +2543,52 @@
                 "default": "timeout=5"
               }
             }
+          },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/Solicitandotodososservi%C3%A7osdesativados"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "servicosCA": [],
+                "servicosCT": []
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "33"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"21-iGfIuxfbUM4y7uR/HfV1u06AnEo\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 05 Nov 2021 21:54:06 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
           }
         }
       }
@@ -2399,7 +2610,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           },
           {
             "name": "id",
@@ -2466,6 +2677,55 @@
                 "default": "timeout=5"
               }
             }
+          },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/Solicitandoservi%C3%A7oCapa%26Acabamentocomid4"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "id_servicoCA": 4,
+                "descricao": "Capa em PVC e espirais de plástico",
+                "quantidade": 30000,
+                "valor_unitario": 0.45,
+                "ativado": 1
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "121"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"79-jwlXziJRvJItKhwl76R+gqRDIuM\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Tue, 02 Nov 2021 15:26:05 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
           }
         }
       },
@@ -2488,7 +2748,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           },
           {
             "name": "id",
@@ -2567,6 +2827,52 @@
                 "default": "timeout=5"
               }
             }
+          },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/Alterandoservi%C3%A7o1dotipoCA"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "ok",
+                "message": "Serviço Capa&Acabamento atualizado com sucesso!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "76"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"4c-vWmY7iqlBeGL3G8l6DHX4CwL1AU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Fri, 05 Nov 2021 14:05:47 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
           }
         }
       }
@@ -2588,7 +2894,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           },
           {
             "name": "id",
@@ -2615,7 +2921,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "OK - 1",
             "schema": {
               "$ref": "#/definitions/Habilitandoservi%C3%A7o1dotipoCA"
             },
@@ -2703,115 +3009,10 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/EstatisticasMensais~1%3Aano~1%3Ames%28solicitandoestatisticasmensaispassandoanoem%C3%AAscomopar%C3%A2metro%29"
-            },
-            "examples": {
-              "application/json; charset=utf-8": {
-                "mes": "Novembro",
-                "ano": "2021",
-                "pedidos": 29,
-                "avaliacao_pedido": {
-                  "0": {
-                    "status": "Ainda não avaliado.",
-                    "qtdade_solicitada": 8
-                  },
-                  "1": {
-                    "status": "Atendeu!",
-                    "qtdade_solicitada": 4
-                  },
-                  "2": {
-                    "status": "Não atendeu!",
-                    "qtdade_solicitada": 17
-                  }
-                },
-                "servico_copiaTamanho": {
-                  "1": {
-                    "status": "Preto&Branco - Tamanho A5",
-                    "qtdade_solicitada": 23
-                  },
-                  "2": {
-                    "status": "Preto&Branco - Tamanho A4",
-                    "qtdade_solicitada": 2
-                  },
-                  "3": {
-                    "status": "Preto&Branco - Tamanho A3",
-                    "qtdade_solicitada": 2
-                  },
-                  "4": {
-                    "status": "Colorida - Tamanho A4",
-                    "qtdade_solicitada": 0
-                  },
-                  "5": {
-                    "status": "Preto&Branco - Reduzida",
-                    "qtdade_solicitada": 2
-                  }
-                },
-                "servico_capaAcabamento": {
-                  "1": {
-                    "status": "Capa em papel 150g e 2 grampos laterais",
-                    "qtdade_solicitada": 23
-                  },
-                  "2": {
-                    "status": "Capa em papel 150g e 2 grampos a cavalo",
-                    "qtdade_solicitada": 2
-                  },
-                  "3": {
-                    "status": "Capa em papel 150g e espirais de plástico",
-                    "qtdade_solicitada": 2
-                  }
-                },
-                "num_paginas": 290,
-                "num_copias": 145,
-                "folhas_impressas": 42050,
-                "centro_custos": {
-                  "1": {
-                    "descricao": "Aprendizagem Industrial Presencial",
-                    "qtdade_solicitada": 0
-                  },
-                  "2": {
-                    "descricao": "Técnico de Nível Média Presencial",
-                    "qtdade_solicitada": 0
-                  },
-                  "3": {
-                    "descricao": "Graduação Tecnológica Presencial",
-                    "qtdade_solicitada": 29
-                  },
-                  "4": {
-                    "descricao": "Pós-Graduação Presencial",
-                    "qtdade_solicitada": 0
-                  },
-                  "5": {
-                    "descricao": "Extensão Presencial",
-                    "qtdade_solicitada": 0
-                  },
-                  "6": {
-                    "descricao": "Iniciação Profissional Presencial",
-                    "qtdade_solicitada": 0
-                  },
-                  "7": {
-                    "descricao": "Qualificação Profissional Presencial",
-                    "qtdade_solicitada": 0
-                  }
-                },
-                "curso": {
-                  "1": {
-                    "descricao": "CT-DS",
-                    "qtdade_solicitada": 0
-                  },
-                  "2": {
-                    "descricao": "CT-MP",
-                    "qtdade_solicitada": 29
-                  },
-                  "3": {
-                    "descricao": "CST-MP",
-                    "qtdade_solicitada": 0
-                  },
-                  "4": {
-                    "descricao": "Pós-Graduação",
-                    "qtdade_solicitada": 0
-                  }
-                },
-                "custo_total": 296.9
+              "type": "array",
+              "default": "",
+              "items": {
+                "$ref": "#/definitions/Estat%C3%ADsticasmensaiscomm%C3%AAs%26ano"
               }
             },
             "headers": {
@@ -2829,15 +3030,15 @@
               },
               "Content-Length": {
                 "type": "string",
-                "default": "1680"
+                "default": "1914"
               },
               "ETag": {
                 "type": "string",
-                "default": "W/\"690-aBNDSBy/it9sBpct2rGCe6Xu/EA\""
+                "default": "W/\"77a-5f+J19g2xwdrHx0EY8XTUhv24eg\""
               },
               "Date": {
                 "type": "string",
-                "default": "Sun, 07 Nov 2021 20:14:22 GMT"
+                "default": "Fri, 10 Dec 2021 00:12:14 GMT"
               },
               "Connection": {
                 "type": "string",
@@ -2876,7 +3077,11 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/generatedObject22"
+              "type": "array",
+              "default": "",
+              "items": {
+                "$ref": "#/definitions/generatedObject24"
+              }
             },
             "headers": {
               "X-Powered-By": {
@@ -2893,15 +3098,15 @@
               },
               "Content-Length": {
                 "type": "string",
-                "default": "6678"
+                "default": "7895"
               },
               "ETag": {
                 "type": "string",
-                "default": "W/\"1a16-7zh/QbF6NNCWhVapL5Os41KG890\""
+                "default": "W/\"1ed7-TDLhVQlEMP71b8iVLVhcxsTky90\""
               },
               "Date": {
                 "type": "string",
-                "default": "Sun, 07 Nov 2021 20:14:01 GMT"
+                "default": "Fri, 10 Dec 2021 00:12:49 GMT"
               },
               "Connection": {
                 "type": "string",
@@ -2935,7 +3140,8 @@
             "name": "emailOrNif",
             "in": "formData",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
@@ -3082,6 +3288,59 @@
               "Date": {
                 "type": "string",
                 "default": "Mon, 01 Nov 2021 14:13:10 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "201": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Logincomsucesso%28email%29"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "nif": 123,
+                "nome": "ADMIN ACCOUNT",
+                "email": "admin@senaisp.edu.br",
+                "imagem": "uploads/user-img/default/usuario.png",
+                "roles": [
+                  "2_ROLE_ADMIN"
+                ],
+                "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWYiOjEyMywibm9tZSI6IkFETUlOIEFDQ09VTlQiLCJlbWFpbCI6ImFkbWluQHNlbmFpc3AuZWR1LmJyIiwiaW1hZ2VtIjoidXBsb2Fkcy91c2VyLWltZy9kZWZhdWx0L3VzdWFyaW8ucG5nIiwicm9sZXMiOlsiMl9ST0xFX0FETUlOIl0sImlhdCI6MTYzNTc5OTYwNCwiZXhwIjoxNjM1ODg2MDA0fQ.IitifiyzWbGUNKrtywOO0UGe_Q5Hni7-rqkdp3jBMqY",
+                "primeiro_acesso": 0
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "486"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"1e6-2M5dDIpJl0HbnDhby0loHQkioLM\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Mon, 01 Nov 2021 20:46:44 GMT"
               },
               "Connection": {
                 "type": "string",
@@ -3304,35 +3563,35 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Insira seu Token"
+            "description": ""
           },
           {
             "name": "nome",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "string",
             "description": ""
           },
           {
             "name": "telefone",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "integer",
-            "format": "int64",
+            "format": "int32",
             "description": ""
           },
           {
             "name": "email",
             "in": "formData",
-            "required": false,
+            "required": true,
             "type": "string",
             "description": ""
           },
           {
             "name": "image",
             "in": "formData",
-            "required": false,
-            "type": "file",
+            "required": true,
+            "type": "string",
             "description": ""
           }
         ],
@@ -3454,20 +3713,22 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Obtenha o token de acesso na requisição de Login"
+            "description": ""
           },
           {
             "name": "senha",
             "in": "formData",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
             "description": ""
           },
           {
             "name": "confirmSenha",
             "in": "formData",
             "required": true,
-            "type": "string",
+            "type": "integer",
+            "format": "int32",
             "description": ""
           }
         ],
@@ -3630,7 +3891,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           }
         ],
         "responses": {
@@ -3751,7 +4012,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": "Insira seu Token"
+            "description": "Resgate o token de acesso na rota de login"
           },
           {
             "name": "senhaAntiga",
@@ -3891,7 +4152,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           },
           {
             "name": "centro_custos",
@@ -4110,101 +4371,6 @@
         }
       }
     },
-    "/rating/{id}": {
-      "put": {
-        "summary": "Atualizar avaliação",
-        "tags": [
-          "USER"
-        ],
-        "operationId": "Atualizaravaliação",
-        "deprecated": false,
-        "produces": [
-          "application/json; charset=utf-8"
-        ],
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
-        "parameters": [
-          {
-            "name": "accessToken",
-            "in": "header",
-            "required": true,
-            "type": "string",
-            "description": ""
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": ""
-          },
-          {
-            "name": "id_avaliacao_pedido",
-            "in": "formData",
-            "required": true,
-            "type": "integer",
-            "format": "int32",
-            "description": "1 = Atendeu, 2 = Não atendeu!"
-          },
-          {
-            "name": "avaliacao_obs",
-            "in": "formData",
-            "required": true,
-            "type": "string",
-            "description": ""
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/Informaravalia%C3%A7%C3%A3o"
-            },
-            "examples": {
-              "application/json; charset=utf-8": {
-                "error": "Informe se o pedido lhe atendeu ou não, por favor!"
-              }
-            },
-            "headers": {
-              "X-Powered-By": {
-                "type": "string",
-                "default": "Express"
-              },
-              "Access-Control-Allow-Origin": {
-                "type": "string",
-                "default": "*"
-              },
-              "Access-Control-Allow-Headers": {
-                "type": "string",
-                "default": "accessToken, Origin, Content-Type, Accept"
-              },
-              "Content-Length": {
-                "type": "string",
-                "default": "63"
-              },
-              "ETag": {
-                "type": "string",
-                "default": "W/\"3f-0Zc7s0SsjbwBF6Dm1NhcETx+Oqw\""
-              },
-              "Date": {
-                "type": "string",
-                "default": "Mon, 01 Nov 2021 14:46:08 GMT"
-              },
-              "Connection": {
-                "type": "string",
-                "default": "keep-alive"
-              },
-              "Keep-Alive": {
-                "type": "string",
-                "default": "timeout=5"
-              }
-            }
-          }
-        }
-      }
-    },
     "/myRequests/rated={rated}": {
       "get": {
         "summary": "Meus Pedidos",
@@ -4219,7 +4385,7 @@
         "parameters": [
           {
             "name": "rated",
-            "in": "path",
+	    "in": "path",
             "required": true,
             "type": "string",
             "description": "0 = ainda não avaliados, 1 = avaliados"
@@ -4229,14 +4395,14 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           }
         ],
         "responses": {
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/definitions/Meuspedidosaindan%C3%A3oavaliados1"
+              "$ref": "#/definitions/Nenhumpedidoencontrado1"
             },
             "examples": {
               "application/json; charset=utf-8": {
@@ -4396,6 +4562,176 @@
         }
       }
     },
+    "/requestAgain/{id}": {
+      "get": {
+        "summary": "Realizar o mesmo pedido",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Realizaromesmopedido",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Resgate o token de acesso na rota de login"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Tentandorealizarumpedidoqueaindan%C3%A3ofoiavaliado1"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Primeiro realize a avaliação Nº2 seu pedido!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "78"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"4e-m4pibI6TgAf9GnyBuuM9/T29oiA\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:05:50 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Solicitandonovamenteumpedidocomsucesso"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "ok",
+                "message": "Pedido 4 solicitado novamente com sucesso!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "70"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"46-yd800AFFBbOeEvFNY91HUZerE38\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:07:07 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/Tentandorealizarnovamenteumpedidoquen%C3%A3ofoirealizadopeloseuusu%C3%A1rio"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Esse pedido não foi realizado anteriormente pelo seu usuário!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "94"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"5e-PNgijIixkFGylK/QnSfdpJ+z530\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:07:33 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
     "/requestDetails/{id}": {
       "get": {
         "summary": "DetPedido/:id (solicitando detalhes do pedido por id do pedido)",
@@ -4421,7 +4757,7 @@
             "in": "header",
             "required": true,
             "type": "string",
-            "description": ""
+            "description": "Resgate o token de acesso na rota de login"
           }
         ],
         "responses": {
@@ -4569,7 +4905,7 @@
             "in": "formData",
             "required": true,
             "type": "string",
-            "description": "Insira um email de usuário válido"
+            "description": ""
           }
         ],
         "responses": {
@@ -4641,7 +4977,7 @@
             "in": "formData",
             "required": true,
             "type": "string",
-            "description": "Insira um email de usuário válido"
+            "description": ""
           },
           {
             "name": "token",
@@ -4747,6 +5083,559 @@
               "Date": {
                 "type": "string",
                 "default": "Fri, 05 Nov 2021 14:33:27 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rating/{id}": {
+      "put": {
+        "summary": "Atualizar avaliação",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Atualizaravaliação",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "id_avaliacao_pedido",
+            "in": "formData",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "1 = Atendeu, 2 = Não atendeu!"
+          },
+          {
+            "name": "avaliacao_obs",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/Atualizandoavalia%C3%A7%C3%A3odeumpedidoquej%C3%A1foirealizadonovamente"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "ok",
+                "message": "Avaliação Nº2 do pedido 1 atualizada com sucesso!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "80"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"50-lL7F/87V3iFh+ImrE8I83IM0qHE\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:11:07 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "schema": {
+              "$ref": "#/definitions/Pedidoj%C3%A1avaliado1"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Esse pedido já foi avaliado!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "60"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3c-OXCijUE/2q5vn6w+0z4IAGvsOeU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:11:46 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Atualizadocomsucesso"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "ok",
+                "message": "Avaliação Nº1 do pedido 2 atualizada com sucesso!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "80"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"50-PPr9koS41WOcebh8gbNH8/BqcBc\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:12:41 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Pedidon%C3%A3oencontrado3"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Pedido não encontrado!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "54"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"36-qp4S7/r4y6J1dm7sPmOQ6RurCE8\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:13:12 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/Informeaavalia%C3%A7%C3%A3o%2Cporfavor%211"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Informe se o pedido lhe atendeu ou não, por favor!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "82"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"52-UQXTR4pevMmCEuOrWseoUBVNbM8\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:40:08 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feedbacks/{id}": {
+      "get": {
+        "summary": "Avaliações de um pedido",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Avaliaçõesdeumpedido",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Avalia%C3%A7%C3%B5esn%C3%A3oencontradas1"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Avaliações não encontradas!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "61"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3d-PeTu8ewOyr/AeI8v9XlKofRjSPU\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:10:19 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "default": "",
+              "items": {
+                "$ref": "#/definitions/Feedbacksdeumpedidocomid1"
+              }
+            },
+            "examples": {
+              "application/json; charset=utf-8": [
+                {
+                  "feedbackId": 1,
+                  "userId": 123,
+                  "pedidoId": 1,
+                  "avaliacaoId": 1,
+                  "avaliacao_obs": "Avaliação do pedido x",
+                  "createdAt": "2021-12-09 18:31:26",
+                  "updatedAt": "2021-12-09 18:31:26"
+                },
+                {
+                  "feedbackId": 5,
+                  "userId": 123,
+                  "pedidoId": 1,
+                  "avaliacaoId": 2,
+                  "avaliacao_obs": "As cópias que eu solicitei continha erros de impressão",
+                  "createdAt": "2021-12-09 20:11:07",
+                  "updatedAt": "2021-12-09 20:11:07"
+                }
+              ]
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "372"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"174-0W7Z9z5v609oBx/6QX4lQ867H+I\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:14:18 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feedback/id/{id}": {
+      "get": {
+        "summary": "Avaliações por id",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Avaliaçõesporid",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/Avalia%C3%A7%C3%A3on%C3%A3oencontrada1"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Avaliação não encontrada"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "58"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"3a-b8uDRGTkFrSgWdyLnwHECiirNd4\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:16:03 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Avalia%C3%A7%C3%A3ocomid6"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "feedbackId": 6,
+                "userId": 123,
+                "pedidoId": 2,
+                "avaliacaoId": 2,
+                "avaliacao_obs": "As cópias que eu solicitei continha erros de impressão",
+                "createdAt": "2021-12-09 20:12:41",
+                "updatedAt": "2021-12-09 20:12:41"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "201"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"c9-Byc6JhLHBUlyaAS6tC21yuLOa9M\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:17:00 GMT"
               },
               "Connection": {
                 "type": "string",
@@ -6556,68 +7445,8 @@
         "message"
       ]
     },
-    "Informaravaliação": {
-      "title": "Informaravaliação",
-      "example": {
-        "error": "Informe se o pedido lhe atendeu ou não, por favor!"
-      },
-      "type": "object",
-      "properties": {
-        "error": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "error"
-      ]
-    },
-    "Avaliaçãoatualizada": {
-      "title": "Avaliaçãoatualizada",
-      "example": {
-        "message": "Avaliação do pedido 1 atualizada com sucesso!"
-      },
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message"
-      ]
-    },
-    "Pedidojáavaliado": {
-      "title": "Pedidojáavaliado",
-      "example": {
-        "message": "Esse pedido já foi avaliado!"
-      },
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message"
-      ]
-    },
-    "Atualizaravaliação": {
-      "title": "Atualizaravaliação",
-      "example": {
-        "message": "Esse pedido não existe!"
-      },
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "message"
-      ]
-    },
-    "Meuspedidosaindanãoavaliados1": {
-      "title": "Meuspedidosaindanãoavaliados1",
+    "Nenhumpedidoencontrado1": {
+      "title": "Nenhumpedidoencontrado1",
       "example": {
         "message": "Nenhum pedido encontrado!"
       },
@@ -6689,6 +7518,66 @@
         "custo_total",
         "createdAt",
         "updatedAt"
+      ]
+    },
+    "Tentandorealizarumpedidoqueaindanãofoiavaliado1": {
+      "title": "Tentandorealizarumpedidoqueaindanãofoiavaliado1",
+      "example": {
+        "status": "error",
+        "message": "Primeiro realize a avaliação Nº2 seu pedido!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Solicitandonovamenteumpedidocomsucesso": {
+      "title": "Solicitandonovamenteumpedidocomsucesso",
+      "example": {
+        "status": "ok",
+        "message": "Pedido 4 solicitado novamente com sucesso!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Tentandorealizarnovamenteumpedidoquenãofoirealizadopeloseuusuário": {
+      "title": "Tentandorealizarnovamenteumpedidoquenãofoirealizadopeloseuusuário",
+      "example": {
+        "status": "error",
+        "message": "Esse pedido não foi realizado anteriormente pelo seu usuário!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
       ]
     },
     "Pedidoinexistente1": {
@@ -7340,115 +8229,8 @@
         "message"
       ]
     },
-    "EstatisticasMensais/:ano/:mes(solicitandoestatisticasmensaispassandoanoemêscomoparâmetro)": {
-      "title": "EstatisticasMensais/:ano/:mes(solicitandoestatisticasmensaispassandoanoemêscomoparâmetro)",
-      "example": {
-        "mes": "Novembro",
-        "ano": "2021",
-        "pedidos": 29,
-        "avaliacao_pedido": {
-          "0": {
-            "status": "Ainda não avaliado.",
-            "qtdade_solicitada": 8
-          },
-          "1": {
-            "status": "Atendeu!",
-            "qtdade_solicitada": 4
-          },
-          "2": {
-            "status": "Não atendeu!",
-            "qtdade_solicitada": 17
-          }
-        },
-        "servico_copiaTamanho": {
-          "1": {
-            "status": "Preto&Branco - Tamanho A5",
-            "qtdade_solicitada": 23
-          },
-          "2": {
-            "status": "Preto&Branco - Tamanho A4",
-            "qtdade_solicitada": 2
-          },
-          "3": {
-            "status": "Preto&Branco - Tamanho A3",
-            "qtdade_solicitada": 2
-          },
-          "4": {
-            "status": "Colorida - Tamanho A4",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "status": "Preto&Branco - Reduzida",
-            "qtdade_solicitada": 2
-          }
-        },
-        "servico_capaAcabamento": {
-          "1": {
-            "status": "Capa em papel 150g e 2 grampos laterais",
-            "qtdade_solicitada": 23
-          },
-          "2": {
-            "status": "Capa em papel 150g e 2 grampos a cavalo",
-            "qtdade_solicitada": 2
-          },
-          "3": {
-            "status": "Capa em papel 150g e espirais de plástico",
-            "qtdade_solicitada": 2
-          }
-        },
-        "num_paginas": 290,
-        "num_copias": 145,
-        "folhas_impressas": 42050,
-        "centro_custos": {
-          "1": {
-            "descricao": "Aprendizagem Industrial Presencial",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "Técnico de Nível Média Presencial",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "descricao": "Graduação Tecnológica Presencial",
-            "qtdade_solicitada": 29
-          },
-          "4": {
-            "descricao": "Pós-Graduação Presencial",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "descricao": "Extensão Presencial",
-            "qtdade_solicitada": 0
-          },
-          "6": {
-            "descricao": "Iniciação Profissional Presencial",
-            "qtdade_solicitada": 0
-          },
-          "7": {
-            "descricao": "Qualificação Profissional Presencial",
-            "qtdade_solicitada": 0
-          }
-        },
-        "curso": {
-          "1": {
-            "descricao": "CT-DS",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "CT-MP",
-            "qtdade_solicitada": 29
-          },
-          "3": {
-            "descricao": "CST-MP",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "descricao": "Pós-Graduação",
-            "qtdade_solicitada": 0
-          }
-        },
-        "custo_total": 296.9
-      },
+    "Estatísticasmensaiscommês&ano": {
+      "title": "Estatísticasmensaiscommês&ano",
       "type": "object",
       "properties": {
         "mes": {
@@ -7458,54 +8240,50 @@
           "type": "string"
         },
         "pedidos": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "avaliacao_pedido": {
-          "type": "object",
-          "additionalProperties": {
+          "type": "array",
+          "items": {
             "$ref": "#/definitions/generatedObject"
           }
         },
         "servico_copiaTamanho": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "servico_capaAcabamento": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "num_paginas": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "num_copias": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "folhas_impressas": {
           "type": "integer",
           "format": "int32"
         },
         "centro_custos": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject12"
           }
         },
         "curso": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject12"
           }
         },
         "custo_total": {
-          "type": "number",
-          "format": "double"
+          "type": "string"
         }
       },
       "required": [
@@ -7526,8 +8304,8 @@
     "generatedObject": {
       "title": "generatedObject",
       "example": {
-        "status": "Ainda não avaliado.",
-        "qtdade_solicitada": 8
+        "status": "Atendeu!",
+        "qtdade_solicitada": 0
       },
       "type": "object",
       "properties": {
@@ -7544,11 +8322,31 @@
         "qtdade_solicitada"
       ]
     },
-    "generatedObject11": {
-      "title": "generatedObject11",
+    "generatedObject2": {
+      "title": "generatedObject2",
+      "example": {
+        "status": "Preto&Branco - Tamanho A5",
+        "qtdade_solicitada": null
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "qtdade_solicitada": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "qtdade_solicitada"
+      ]
+    },
+    "generatedObject12": {
+      "title": "generatedObject12",
       "example": {
         "descricao": "Aprendizagem Industrial Presencial",
-        "qtdade_solicitada": 0
+        "qtdade_solicitada": null
       },
       "type": "object",
       "properties": {
@@ -7556,8 +8354,7 @@
           "type": "string"
         },
         "qtdade_solicitada": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         }
       },
       "required": [
@@ -7565,115 +8362,8 @@
         "qtdade_solicitada"
       ]
     },
-    "generatedObject22": {
-      "title": "generatedObject22",
-      "example": {
-        "ano": 2021,
-        "mes": "Agosto",
-        "pedidos": 0,
-        "avaliacao_pedido": {
-          "0": {
-            "status": "Ainda não avaliado.",
-            "qtdade_solicitada": 0
-          },
-          "1": {
-            "status": "Atendeu!",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "status": "Não atendeu!",
-            "qtdade_solicitada": 0
-          }
-        },
-        "servico_copiaTamanho": {
-          "1": {
-            "status": "Preto&Branco - Tamanho A5",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "status": "Preto&Branco - Tamanho A4",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "status": "Preto&Branco - Tamanho A3",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "status": "Colorida - Tamanho A4",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "status": "Preto&Branco - Reduzida",
-            "qtdade_solicitada": 0
-          }
-        },
-        "servico_capaAcabamento": {
-          "1": {
-            "status": "Capa em papel 150g e 2 grampos laterais",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "status": "Capa em papel 150g e 2 grampos a cavalo",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "status": "Capa em papel 150g e espirais de plástico",
-            "qtdade_solicitada": 0
-          }
-        },
-        "num_paginas": 0,
-        "num_copias": 0,
-        "folhas_impressas": 0,
-        "centro_custos": {
-          "1": {
-            "descricao": "Aprendizagem Industrial Presencial",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "Técnico de Nível Média Presencial",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "descricao": "Graduação Tecnológica Presencial",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "descricao": "Pós-Graduação Presencial",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "descricao": "Extensão Presencial",
-            "qtdade_solicitada": 0
-          },
-          "6": {
-            "descricao": "Iniciação Profissional Presencial",
-            "qtdade_solicitada": 0
-          },
-          "7": {
-            "descricao": "Qualificação Profissional Presencial",
-            "qtdade_solicitada": 0
-          }
-        },
-        "curso": {
-          "1": {
-            "descricao": "CT-DS",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "CT-MP",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "descricao": "CST-MP",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "descricao": "Pós-Graduação",
-            "qtdade_solicitada": 0
-          }
-        },
-        "custo_total": 0
-      },
+    "generatedObject24": {
+      "title": "generatedObject24",
       "type": "object",
       "properties": {
         "ano": {
@@ -7684,54 +8374,50 @@
           "type": "string"
         },
         "pedidos": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "avaliacao_pedido": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "servico_copiaTamanho": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "servico_capaAcabamento": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "num_paginas": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "num_copias": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "folhas_impressas": {
           "type": "integer",
           "format": "int32"
         },
         "centro_custos": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject12"
           }
         },
         "curso": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject12"
           }
         },
         "custo_total": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         }
       },
       "required": [
@@ -7751,113 +8437,6 @@
     },
     "m10": {
       "title": "m10",
-      "example": {
-        "ano": 2021,
-        "mes": "Outubro",
-        "pedidos": 0,
-        "avaliacao_pedido": {
-          "0": {
-            "status": "Ainda não avaliado.",
-            "qtdade_solicitada": 0
-          },
-          "1": {
-            "status": "Atendeu!",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "status": "Não atendeu!",
-            "qtdade_solicitada": 0
-          }
-        },
-        "servico_copiaTamanho": {
-          "1": {
-            "status": "Preto&Branco - Tamanho A5",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "status": "Preto&Branco - Tamanho A4",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "status": "Preto&Branco - Tamanho A3",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "status": "Colorida - Tamanho A4",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "status": "Preto&Branco - Reduzida",
-            "qtdade_solicitada": 0
-          }
-        },
-        "servico_capaAcabamento": {
-          "1": {
-            "status": "Capa em papel 150g e 2 grampos laterais",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "status": "Capa em papel 150g e 2 grampos a cavalo",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "status": "Capa em papel 150g e espirais de plástico",
-            "qtdade_solicitada": 0
-          }
-        },
-        "num_paginas": 0,
-        "num_copias": 0,
-        "folhas_impressas": 0,
-        "centro_custos": {
-          "1": {
-            "descricao": "Aprendizagem Industrial Presencial",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "Técnico de Nível Média Presencial",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "descricao": "Graduação Tecnológica Presencial",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "descricao": "Pós-Graduação Presencial",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "descricao": "Extensão Presencial",
-            "qtdade_solicitada": 0
-          },
-          "6": {
-            "descricao": "Iniciação Profissional Presencial",
-            "qtdade_solicitada": 0
-          },
-          "7": {
-            "descricao": "Qualificação Profissional Presencial",
-            "qtdade_solicitada": 0
-          }
-        },
-        "curso": {
-          "1": {
-            "descricao": "CT-DS",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "CT-MP",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "descricao": "CST-MP",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "descricao": "Pós-Graduação",
-            "qtdade_solicitada": 0
-          }
-        },
-        "custo_total": 0
-      },
       "type": "object",
       "properties": {
         "ano": {
@@ -7868,54 +8447,50 @@
           "type": "string"
         },
         "pedidos": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "avaliacao_pedido": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "servico_copiaTamanho": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "servico_capaAcabamento": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "num_paginas": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "num_copias": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         },
         "folhas_impressas": {
           "type": "integer",
           "format": "int32"
         },
         "centro_custos": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject12"
           }
         },
         "curso": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject12"
           }
         },
         "custo_total": {
-          "type": "integer",
-          "format": "int32"
+          "type": "string"
         }
       },
       "required": [
@@ -7933,115 +8508,8 @@
         "custo_total"
       ]
     },
-    "m11": {
-      "title": "m11",
-      "example": {
-        "ano": 2021,
-        "mes": "Novembro",
-        "pedidos": 29,
-        "avaliacao_pedido": {
-          "0": {
-            "status": "Ainda não avaliado.",
-            "qtdade_solicitada": 8
-          },
-          "1": {
-            "status": "Atendeu!",
-            "qtdade_solicitada": 4
-          },
-          "2": {
-            "status": "Não atendeu!",
-            "qtdade_solicitada": 17
-          }
-        },
-        "servico_copiaTamanho": {
-          "1": {
-            "status": "Preto&Branco - Tamanho A5",
-            "qtdade_solicitada": 23
-          },
-          "2": {
-            "status": "Preto&Branco - Tamanho A4",
-            "qtdade_solicitada": 2
-          },
-          "3": {
-            "status": "Preto&Branco - Tamanho A3",
-            "qtdade_solicitada": 2
-          },
-          "4": {
-            "status": "Colorida - Tamanho A4",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "status": "Preto&Branco - Reduzida",
-            "qtdade_solicitada": 2
-          }
-        },
-        "servico_capaAcabamento": {
-          "1": {
-            "status": "Capa em papel 150g e 2 grampos laterais",
-            "qtdade_solicitada": 23
-          },
-          "2": {
-            "status": "Capa em papel 150g e 2 grampos a cavalo",
-            "qtdade_solicitada": 2
-          },
-          "3": {
-            "status": "Capa em papel 150g e espirais de plástico",
-            "qtdade_solicitada": 2
-          }
-        },
-        "num_paginas": 290,
-        "num_copias": 145,
-        "folhas_impressas": 42050,
-        "centro_custos": {
-          "1": {
-            "descricao": "Aprendizagem Industrial Presencial",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "Técnico de Nível Média Presencial",
-            "qtdade_solicitada": 0
-          },
-          "3": {
-            "descricao": "Graduação Tecnológica Presencial",
-            "qtdade_solicitada": 29
-          },
-          "4": {
-            "descricao": "Pós-Graduação Presencial",
-            "qtdade_solicitada": 0
-          },
-          "5": {
-            "descricao": "Extensão Presencial",
-            "qtdade_solicitada": 0
-          },
-          "6": {
-            "descricao": "Iniciação Profissional Presencial",
-            "qtdade_solicitada": 0
-          },
-          "7": {
-            "descricao": "Qualificação Profissional Presencial",
-            "qtdade_solicitada": 0
-          }
-        },
-        "curso": {
-          "1": {
-            "descricao": "CT-DS",
-            "qtdade_solicitada": 0
-          },
-          "2": {
-            "descricao": "CT-MP",
-            "qtdade_solicitada": 29
-          },
-          "3": {
-            "descricao": "CST-MP",
-            "qtdade_solicitada": 0
-          },
-          "4": {
-            "descricao": "Pós-Graduação",
-            "qtdade_solicitada": 0
-          }
-        },
-        "custo_total": 296.9
-      },
+    "m12": {
+      "title": "m12",
       "type": "object",
       "properties": {
         "ano": {
@@ -8056,20 +8524,20 @@
           "format": "int32"
         },
         "avaliacao_pedido": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject2"
           }
         },
         "servico_copiaTamanho": {
-          "type": "object",
-          "additionalProperties": {
+          "type": "array",
+          "items": {
             "$ref": "#/definitions/generatedObject"
           }
         },
         "servico_capaAcabamento": {
-          "type": "object",
-          "additionalProperties": {
+          "type": "array",
+          "items": {
             "$ref": "#/definitions/generatedObject"
           }
         },
@@ -8086,15 +8554,15 @@
           "format": "int32"
         },
         "centro_custos": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject113"
           }
         },
         "curso": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/generatedObject11"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/generatedObject113"
           }
         },
         "custo_total": {
@@ -8115,6 +8583,265 @@
         "centro_custos",
         "curso",
         "custo_total"
+      ]
+    },
+    "generatedObject113": {
+      "title": "generatedObject113",
+      "example": {
+        "descricao": "Aprendizagem Industrial Presencial",
+        "qtdade_solicitada": 2
+      },
+      "type": "object",
+      "properties": {
+        "descricao": {
+          "type": "string"
+        },
+        "qtdade_solicitada": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "descricao",
+        "qtdade_solicitada"
+      ]
+    },
+    "Atualizandoavaliaçãodeumpedidoquejáfoirealizadonovamente": {
+      "title": "Atualizandoavaliaçãodeumpedidoquejáfoirealizadonovamente",
+      "example": {
+        "status": "ok",
+        "message": "Avaliação Nº2 do pedido 1 atualizada com sucesso!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Pedidojáavaliado1": {
+      "title": "Pedidojáavaliado1",
+      "example": {
+        "status": "error",
+        "message": "Esse pedido já foi avaliado!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Atualizadocomsucesso": {
+      "title": "Atualizadocomsucesso",
+      "example": {
+        "status": "ok",
+        "message": "Avaliação Nº1 do pedido 2 atualizada com sucesso!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Pedidonãoencontrado3": {
+      "title": "Pedidonãoencontrado3",
+      "example": {
+        "status": "error",
+        "message": "Pedido não encontrado!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Informeaavaliação,porfavor!1": {
+      "title": "Informeaavaliação,porfavor!1",
+      "example": {
+        "status": "error",
+        "message": "Informe se o pedido lhe atendeu ou não, por favor!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Avaliaçõesnãoencontradas1": {
+      "title": "Avaliaçõesnãoencontradas1",
+      "example": {
+        "status": "error",
+        "message": "Avaliações não encontradas!"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Feedbacksdeumpedidocomid1": {
+      "title": "Feedbacksdeumpedidocomid1",
+      "example": {
+        "feedbackId": 1,
+        "userId": 123,
+        "pedidoId": 1,
+        "avaliacaoId": 1,
+        "avaliacao_obs": "Avaliação do pedido x",
+        "createdAt": "2021-12-09 18:31:26",
+        "updatedAt": "2021-12-09 18:31:26"
+      },
+      "type": "object",
+      "properties": {
+        "feedbackId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pedidoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacaoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacao_obs": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "feedbackId",
+        "userId",
+        "pedidoId",
+        "avaliacaoId",
+        "avaliacao_obs",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Avaliaçãonãoencontrada1": {
+      "title": "Avaliaçãonãoencontrada1",
+      "example": {
+        "status": "error",
+        "message": "Avaliação não encontrada"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "message"
+      ]
+    },
+    "Avaliaçãocomid6": {
+      "title": "Avaliaçãocomid6",
+      "example": {
+        "feedbackId": 6,
+        "userId": 123,
+        "pedidoId": 2,
+        "avaliacaoId": 2,
+        "avaliacao_obs": "As cópias que eu solicitei continha erros de impressão",
+        "createdAt": "2021-12-09 20:12:41",
+        "updatedAt": "2021-12-09 20:12:41"
+      },
+      "type": "object",
+      "properties": {
+        "feedbackId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "pedidoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacaoId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "avaliacao_obs": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "feedbackId",
+        "userId",
+        "pedidoId",
+        "avaliacaoId",
+        "avaliacao_obs",
+        "createdAt",
+        "updatedAt"
       ]
     }
   },

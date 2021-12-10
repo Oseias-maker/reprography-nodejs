@@ -147,19 +147,19 @@ ADMIN_PASS=
 
 Execute o comando abaixo para iniciar o Nodejs e conectar ao banco de dados:
 ``` bash
-# Para iniciar em modo de desenvolvimento (requer nodemon) -> Executará o script "dev" do package.json.
-$ npm run dev
-
 # Para iniciar normalmente -> Executará o script "start" do package.json.
 $ npm run start
+
+# Para iniciar em modo de desenvolvimento (requer nodemon) -> Executará o script "dev" do package.json.
+$ npm run dev
 ```
 
 Caso prefira o Yarn:
 ```bash
-# Para iniciar em modo de desenvolvimento (requer nodemon) -> Executará o script "dev" do package.json.
+# Para iniciar normalmente -> Executará o script "start" do package.json.
 $ yarn start
 
-# Para iniciar normalmente -> Executará o script "start" do package.json.
+# Para iniciar em modo de desenvolvimento (requer nodemon) -> Executará o script "dev" do package.json.
 $ yarn dev
 ```
 

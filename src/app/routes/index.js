@@ -9,5 +9,6 @@ require("./resetToken.routes")(app);
 require("./servico.routes")(app);
 require("./estatisticas.routes")(app);
 require("./swagger.routes")(app);
+require("./feedback.routes")(app);
 
 module.exports = app;
