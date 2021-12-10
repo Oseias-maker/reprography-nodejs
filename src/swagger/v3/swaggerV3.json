@@ -4110,6 +4110,84 @@
         }
       }
     },
+    "/requestAgain/{id}": {
+      "get": {
+        "summary": "Realizar o mesmo pedido",
+        "tags": [
+          "USER"
+        ],
+        "operationId": "Realizaromesmopedido",
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Tentandorealizarumpedidoqueaindan%C3%A3ofoiavaliado"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "status": "error",
+                "message": "Primeiro realize a avaliação Nº2 seu pedido!"
+              }
+            },
+            "headers": {
+              "X-Powered-By": {
+                "type": "string",
+                "default": "Express"
+              },
+              "Access-Control-Allow-Origin": {
+                "type": "string",
+                "default": "*"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string",
+                "default": "accessToken, Origin, Content-Type, Accept"
+              },
+              "Content-Length": {
+                "type": "string",
+                "default": "78"
+              },
+              "ETag": {
+                "type": "string",
+                "default": "W/\"4e-m4pibI6TgAf9GnyBuuM9/T29oiA\""
+              },
+              "Date": {
+                "type": "string",
+                "default": "Thu, 09 Dec 2021 23:05:50 GMT"
+              },
+              "Connection": {
+                "type": "string",
+                "default": "keep-alive"
+              },
+              "Keep-Alive": {
+                "type": "string",
+                "default": "timeout=5"
+              }
+            }
+          }
+        }
+      }
+    },
     "/myRequests/rated={rated}": {
       "get": {
         "summary": "Meus Pedidos",
